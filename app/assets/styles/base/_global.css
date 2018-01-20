@@ -15,9 +15,15 @@ img {
 	padding: 0.7rem 0;
 	border: none;
 	color: white;
+	text-align: center;
+	text-decoration: none;
+	cursor: pointer;
 
 	&__cta {
 		background-color: $mainAccent;
+	}
+	&__cta:hover {
+		background-color: color($mainAccent saturation(+ 10%) w(- 20%));
 	}
 
 	&__cancel {

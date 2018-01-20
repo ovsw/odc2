@@ -7,13 +7,11 @@ browserSync = require('browser-sync').create();
 gulp.task('watch', function(){
 
 	browserSync.init({
-		server: {
-			baseDir: 'app'
-		}
+
+		proxy: "http://odc2.ovs/"
 	});
 
-	watch(['./app/pages/**/*.html','./app/templates/**/*.html'], function(){
-		gulp.start('nunjucks');
+	watch(['./**/*.php','./**/*.inc'], function(){
 		browserSync.reload();
 	});
 
@@ -25,9 +23,6 @@ gulp.task('watch', function(){
 		gulp.start('scriptsRefresh');
 	});
 
-	// watch('./app/pug/**/*.pug', function(){
-	// 	gulp.start('pugTpl');
-	// });
 });
 // end gulp watch
 

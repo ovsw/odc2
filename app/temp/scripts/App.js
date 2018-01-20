@@ -18326,6 +18326,18 @@ __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.tabs__button').click( function(
 
 });
 
+__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.cards__card-wrapper').click(function(){
+	//console.log($(this).index());
+	__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.overlay').show();
+	__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.camp-details__wrapper .camp-details:eq('+ __WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).index() +')').clone(true, true).appendTo( '.overlay__content' );// 
+});
+
+__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.camp-details__back-btn').click(function(e){
+	e.preventDefault();
+	__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.overlay__content .camp-details').remove();
+	__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.overlay').hide();
+});
+
 // var john = new Person("John Doe", "blue");
 // john.greet();
 

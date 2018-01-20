@@ -11,6 +11,7 @@
   justify-content: center;
   /*background-color: rgba(0, 255, 0, 0.5);*/
   background-color: rgba(0, 0, 0, .8);
+  display: none;
 
   @mixin atMedium {
    /* padding: 50px 5%;*/
@@ -30,6 +31,9 @@
 
     @mixin atMedium {
       height: auto;
+      position: relative;
+      top: 50%;
+      transform: translateY(-60%);
     }
   }
 }

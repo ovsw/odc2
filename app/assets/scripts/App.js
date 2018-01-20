@@ -20,6 +20,18 @@ $('.tabs__button').click( function(){
 
 });
 
+$('.cards__card-wrapper').click(function(){
+	//console.log($(this).index());
+	$('.overlay').show();
+	$('.camp-details__wrapper .camp-details:eq('+ $(this).index() +')').clone(true, true).appendTo( '.overlay__content' );// 
+});
+
+$('.camp-details__back-btn').click(function(e){
+	e.preventDefault();
+	$('.overlay__content .camp-details').remove();
+	$('.overlay').hide();
+});
+
 // var john = new Person("John Doe", "blue");
 // john.greet();
 

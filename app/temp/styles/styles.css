@@ -372,9 +372,15 @@ img {
 	padding: 0.7rem 0;
 	border: none;
 	color: white;
+	text-align: center;
+	text-decoration: none;
+	cursor: pointer;
 }
 .button__cta {
 		background-color: #ff6b35;
+	}
+.button__cta:hover {
+		background-color: rgb(255, 68, 0);
 	}
 .button__cancel {
 		background-color: lightgray;
@@ -724,10 +730,12 @@ img {
             flex-direction: row;
     margin:0 auto;
     height: auto;
-    position: relative; 
-    top:-100px
+    position: relative
 }
  }
+.camp-details__wrapper .camp-details{
+      display: none;
+  }
 .camp-details__video .embed-container {
       position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;
     }
@@ -818,7 +826,7 @@ img {
       font-size:  1rem
   }
  }
-.camp-details__programs-list {
+.camp-details__programs ul {
     padding-left: 1rem;
   }
 .camp-details__description {
@@ -892,6 +900,7 @@ img {
           justify-content: center;
   /*background-color: rgba(0, 255, 0, 0.5);*/
   background-color: rgba(0, 0, 0, .8);
+  display: none;
 }
 @media (min-width: 768px) {
 .overlay {
@@ -914,7 +923,11 @@ img {
   }
 @media (min-width: 768px) {
 .overlay__content {
-      height: auto
+      height: auto;
+      position: relative;
+      top: 50%;
+      -webkit-transform: translateY(-60%);
+              transform: translateY(-60%)
   }
  }
 

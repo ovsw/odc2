@@ -20,8 +20,11 @@
     flex-direction: row;
     margin:0 auto;
     height: auto;
-    position: relative; 
-    top:-100px;
+    position: relative;
+  }
+
+  &__wrapper .camp-details{
+      display: none;
   }
   
   &__video {
@@ -108,7 +111,7 @@
     }
   }
 
-  &__programs-list {
+  &__programs ul {
     padding-left: 1rem;
   }
   
