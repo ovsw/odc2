@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Open Sans, sans-serif;
+  color: #333;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.button {
+	padding: 0.7rem 0;
+	border: none;
+	color: white;
+
+	&__cta {
+		background-color: $mainAccent;
+	}
+
+	&__cancel {
+		background-color: $lightGray;
+	}
+}

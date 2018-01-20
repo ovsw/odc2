@@ -1,0 +1,56 @@
+.large-hero {
+  position: relative;
+  background-color: $;
+  padding-top: 1px;
+  height: 100vh;
+  overflow: hidden;
+  background: @mixin simpleRadialGradient #fff #000;
+  
+  &__video-bg {
+    position: absolute;
+    min-width: 100%; 
+    min-height: 100%;
+    z-index: 1;
+    display: none;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+
+    @mixin atSmall {
+      display: block;
+    }
+  }
+
+  &__content {
+    position: absolute;
+    top:0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 500;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__top-area {
+    flex: 1 0 0;
+    position: relative;
+    display: flex;
+
+    padding-top: 70px;
+  }
+
+  &__bottom-area {
+    
+    display:flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-end;
+
+
+
+  }
+  
+
+
+}

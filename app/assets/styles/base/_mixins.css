@@ -1,0 +1,44 @@
+@define-mixin atTiny {
+  @media (min-width: 360px) {
+    @mixin-content;
+  }
+}
+@define-mixin atSmall {
+ @media (min-width: 530px) {
+  @mixin-content;
+ }
+}
+
+@define-mixin atMedium {
+ @media (min-width: 768px) {
+  @mixin-content;
+ }
+} 
+
+@define-mixin atLarge {
+ @media (min-width: 1024px) {
+  @mixin-content;
+ }
+} 
+
+@define-mixin atHuge {
+ @media (min-width: 1200px) {
+  @mixin-content;
+ }
+} 
+
+@define-mixin clearfix {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@define-mixin verticalAlign($position: relative) {
+  position: $position;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@define-mixin simpleRadialGradient $startColor, $endColor, $startStop: 0%, $endStop:100%, $position: center {
+  background: radial-gradient(ellipse at $position, $startColor 0%, $endColor 100%);
+}

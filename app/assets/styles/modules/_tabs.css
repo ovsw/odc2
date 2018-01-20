@@ -1,0 +1,67 @@
+.tabs {
+  
+  height: 100%;
+
+  @mixin atHuge {
+    height: inherit;
+  }
+
+
+  &__buttons {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    color: #000;
+  }
+
+  &__button {
+    display: inline-block;
+    color: $white;
+    background-color: $oasisGreen;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    font-size: 1rem;
+    @mixin atTiny {
+      font-size: 1.3rem;
+    }
+    
+    &.active {
+      background-color: $oasisBlue;
+      box-shadow: 1px 0px 0px #444;
+      position: relative;
+      z-index: 100;
+    }
+
+    &--campdetails-tab {
+      width: 50%;
+      display: block;
+      float:left;
+    }
+  }
+
+  &__content {
+    /*display: flex;*/
+    @mixin clearfix;
+    background-color: $oasisBlue;
+  }
+
+  &__tab {
+    visibility: hidden; 
+    float: left;
+    width: 100%;
+    margin-right: -100%;
+    /*display:none;*/
+    color: $white;
+    padding: 10px;
+    
+
+    &.active {
+      position: relative;
+      visibility: visible;
+      z-index: 10;
+      /*display:block;*/
+      background-color: $oasisBlue;
+    }
+  }
+
+}

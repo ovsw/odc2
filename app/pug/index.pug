@@ -1,0 +1,31 @@
+doctype html
+
+html(lang="en")
+    head
+        title Oasis Children's Services
+        meta(charset="utf-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
+        |
+        |
+        link(rel="manifest", href="site.manifest")
+        link(rel="apple-touch-icon", href="icon.png")
+        script(src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js")
+        script
+            |WebFont.load({
+            |   google: {
+            |       families: ['PT Sans', 'Open Sans', 'Josefin Sans']
+            |   }
+            |});
+        link(rel="stylesheet", src="/styles/main.css")
+        |
+        |
+        <!--[if lte IE 9]>
+        p.browserupgrade You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.
+        |
+        |
+        <![endif]-->
+    body
+        .mainwrapper
+            header.mainHeader
+                a(href="/").main-logo
+                    img(src="images/oasis-children-logo.svg", alt="Oasis Day Camp Logo")

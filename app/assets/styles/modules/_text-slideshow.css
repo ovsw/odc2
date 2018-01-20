@@ -1,0 +1,37 @@
+.text-slideshow {
+  flex: 1;
+  position: relative;
+
+  &__slide {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    color: #fff8dd;
+    font-size: 2rem;
+    line-height: .9em;
+    font-weight: 800;
+    font-family: $heading-font;
+    text-shadow: 1px 3px 5px rgba(58, 47, 47, 0.74);
+    padding: 0 5%;
+    margin: 0;
+
+    @mixin atTiny {
+      font-size:  3rem;
+    }
+
+    @mixin atSmall {
+      font-size: 4rem;
+    }
+
+    @mixin atMedium {
+      font-size: 6em;
+    }
+
+    @mixin atLarge {
+      font-size: 8em;
+    }
+  }
+}

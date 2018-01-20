@@ -1,0 +1,27 @@
+{
+  "name": "odc2",
+  "version": "1.0.0",
+  "dependencies": {
+    "gsap": "^1.20.3",
+    "jquery": "^3.2.1",
+    "normalize.css": "^7.0.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^7.2.3",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "browser-sync": "^2.22.0",
+    "gulp": "^3.9.1",
+    "gulp-nunjucks-render": "^2.2.1",
+    "gulp-postcss": "^7.0.0",
+    "gulp-pug2": "0.0.2",
+    "gulp-watch": "^4.3.11",
+    "postcss-color-function": "^4.0.1",
+    "postcss-import": "^11.0.0",
+    "postcss-mixins": "^6.2.0",
+    "postcss-nested": "^3.0.0",
+    "postcss-simple-vars": "^4.1.0",
+    "webpack": "^3.10.0"
+  }
+}

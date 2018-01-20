@@ -1,0 +1,168 @@
+.camp-details {
+  height: 100%;
+  display: flex;
+  line-height: 1.5;
+  flex-direction: column;
+  background-color: $oasisBlue;
+  position: relative; 
+  max-width: 1200px;
+
+  @mixin atMedium {
+    box-shadow: 3px 3px 13px #00000061;
+    margin: 50px 5%;
+  }
+
+  @mixin atLarge {
+    margin: 100px 25%;
+  }
+
+  @mixin atHuge {
+    flex-direction: row;
+    margin:0 auto;
+    height: auto;
+    position: relative; 
+    top:-100px;
+  }
+  
+  &__video {
+  
+    .embed-container {
+      position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;
+
+      iframe, object, embed {
+        position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      }
+    }
+
+    @mixin atHuge {
+      flex: 0 0 70%;
+      background-color: $oasisGreen;
+      padding:  10px;
+    }
+
+  }
+  
+  &__headings {
+    background-color: $oasisGreen;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#30b256+0,50bf7a+100 */
+    background: linear-gradient(to bottom, #30b256 0%,#5ee064 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  
+    @mixin atHuge {
+      position: absolute;
+      top: 0; 
+      right: 0; 
+      width:  30%;
+      z-index:  999;
+      background: linear-gradient(to right, #30b256 0%,#5ee064 99%);
+    }  
+
+  }
+
+  &__heading-intro {
+    position: absolute;
+    top:0 px;
+    left: 10px;
+    color: #e6ece8;
+    display:none;
+
+    @mixin atTiny {
+      display:block;
+    }
+  }
+
+  &__heading {
+    font-size: 1rem;
+    color: $white;
+    padding: 0 20px;
+
+    @mixin atTiny {
+      padding: 20px 0 0 20px;
+      font-size: 1.5rem;
+    }
+  }
+  
+  &__content {
+    flex:1;
+
+    @mixin atHuge {
+      padding-top: 95px;
+    }
+  }
+
+  &__programs {
+    background-color: $oasisBlue;
+    color: $white;
+    padding: .5em;
+    font-size: .8rem;
+
+    @mixin atTiny {
+      font-size: 0.925rem;
+    }
+
+    @mixin atSmall {
+      font-size:  1.1rem;
+    }
+
+    @mixin atLarge {
+      font-size:  1rem;
+    }
+  }
+
+  &__programs-list {
+    padding-left: 1rem;
+  }
+  
+  &__description {
+    font-size: 0.9rem;
+
+    @mixin atTiny {
+      font-size: 1.1rem;
+    }
+  }
+
+  &__buttons {
+    position: absolute;
+    bottom:0;
+    left:0;
+    width: 100%;
+    font-size: 1rem;
+
+    @mixin atTiny {
+      font-size: 1.3rem;
+    }
+
+    @mixin atMedium {
+      position:  static;
+      width:  100%;
+    }
+
+    @mixin atHuge {
+      position: absolute; 
+      width:  30%;
+      left: auto;
+      right: 0;
+    }
+  }
+
+  &__back-btn, &__learn-more-btn {
+    float: left;
+    padding: 0.7em 1em;
+    cursor: pointer;
+  }
+
+  &__learn-more-btn {
+    width: 70%;
+  }
+  &__back-btn {
+    width: 30%;
+  }
+
+  &__back-link {
+    display: none;
+  }
+
+  &__close-link {
+    display: none;
+  }
+}
+

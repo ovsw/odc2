@@ -1,0 +1,43 @@
+/* configure the spacing between the cards here*/
+.cards {
+  margin: .3125rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /*flex-direction: column;*/
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+}
+@media (min-width: 530px) {
+.cards {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row
+}
+ }
+.cards__card {
+    color: #ffffff;
+    padding: .3125rem;
+    cursor: pointer;
+    width:  50%; 
+  }
+@media (min-width: 530px) {
+.cards__card {
+      width: 25% 
+  }
+ }
+.cards__content {
+    background-color: rgba(1,102,175,.9);
+    height: 100%;
+    padding: .625rem;
+  }
+.cards__title {
+    font-size: 1.5rem;
+    margin-top: 0;
+  }
+.cards__subtitle {
+    margin-bottom: 0;
+  }
