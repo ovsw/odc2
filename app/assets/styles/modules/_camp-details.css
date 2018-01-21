@@ -98,6 +98,10 @@
     padding: .5em;
     font-size: .8rem;
 
+    & ul {
+      margin: 0;
+    }
+
     @mixin atTiny {
       font-size: 0.925rem;
     }

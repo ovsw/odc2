@@ -1,8 +1,10 @@
 /* configure the spacing between the cards here*/
+
+$grid-space-mobile: 0.15625rem;
 $grid-space: .3125rem;
 
 .cards {
-  margin: $grid-space;
+  margin: $grid-space-mobile;
   display: flex;
   /*flex-direction: column;*/
   flex-wrap: wrap;
@@ -13,12 +15,12 @@ $grid-space: .3125rem;
   }
   
   &__card-wrapper {
-    padding: $grid-space;
-    width:  50%;
+    padding: $grid-space-mobile;
+    width:  33%;
     perspective:1500;
     
     @mixin atMedium{
-      width: 25%;
+      width: 20%;
     } 
   }
   
@@ -59,6 +61,7 @@ $grid-space: .3125rem;
   &__title {
     margin-top: 0;
     font-size: 0.725rem;
+    margin-bottom:0;
 
     @mixin atTiny {
       font-size:  0.7em;
@@ -75,7 +78,7 @@ $grid-space: .3125rem;
 
   &__subtitle {
     margin-bottom: 0;
-    font-size: 0.9rem;
+    font-size: 0.7rem;
     color: $white;
     text-decoration: none;
     

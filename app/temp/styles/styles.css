@@ -387,13 +387,20 @@ img {
 	}
 .header {
 	position: fixed;
-	padding: 10px 5%;
+	padding: 0 5%;
 	z-index: 999;
 	width: 100%;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
 }
 .header__logo {
 		display: block;
 		width: 50%;
+		margin-top:10px;
 	}
 @media (min-width: 530px) {
 .header__logo {
@@ -403,6 +410,68 @@ img {
 .header__logo-img {
 		
 	}
+.top-nav__outer-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+.top-nav__item-level-1 {
+    display: inline-block;
+    background-color: #0166af;
+    margin-left: 10px;
+    border-radius: 0 0 10px 10px ;
+    position: relative;
+  }
+.top-nav__item-level-1 a {
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: #ffffff;
+    padding: 1.2rem  1.5rem;
+    display: inline-block;
+  }
+.top-nav__item-level-1.menu_link {
+    background-color: #ff6b35;
+  }
+.top-nav__item-level-1:hover {
+    background-color: #30b256;
+    padding-top:0.2rem;
+  }
+.top-nav__item-level-1:hover a {
+    padding-bottom: 1rem;
+  }
+.top-nav__inner-list {
+    list-style: none;
+    position: absolute;
+    top: 3.75rem;
+    left: 0;
+    min-width: 100%;
+    width: 200px;
+    margin: 0;
+    padding: 0;
+    display: none;
+  }
+.top-nav__item-level-2 {
+    background-color: #0166af;
+  }
+.top-nav__item-level-2 a {
+    display: block;
+  }
+.top-nav__item-level-2:hover {
+    background-color: #30b256;
+  }
+.top-nav__current,
+  .top-nav__parent {
+    background-color: #30b256;
+  }
+.top-nav__has-children:hover>.top-nav__inner-list {
+    display:block;
+  }
+.top-nav__has-children:hover>a {
+    background-color: #30b256;
+  }
 .large-hero {
   position: relative;
   background-color: $;
@@ -524,7 +593,7 @@ img {
  }
 /* configure the spacing between the cards here*/
 .cards {
-  margin: .3125rem;
+  margin: 0.15625rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -543,14 +612,14 @@ img {
 }
  }
 .cards__card-wrapper {
-    padding: .3125rem;
-    width:  50%;
+    padding: 0.15625rem;
+    width:  33%;
     -webkit-perspective:1500;
             perspective:1500; 
   }
 @media (min-width: 768px) {
 .cards__card-wrapper {
-      width: 25% 
+      width: 20% 
   }
  }
 .cards__card { 
@@ -599,6 +668,7 @@ img {
 .cards__title {
     margin-top: 0;
     font-size: 0.725rem;
+    margin-bottom:0;
   }
 @media (min-width: 360px) {
 .cards__title {
@@ -617,7 +687,7 @@ img {
  }
 .cards__subtitle {
     margin-bottom: 0;
-    font-size: 0.9rem;
+    font-size: 0.7rem;
     color: #ffffff;
     text-decoration: none;
   }
@@ -811,6 +881,9 @@ img {
     padding: .5em;
     font-size: .8rem;
   }
+.camp-details__programs ul {
+      margin: 0;
+    }
 @media (min-width: 360px) {
 .camp-details__programs {
       font-size: 0.925rem
