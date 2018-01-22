@@ -410,6 +410,9 @@ img {
 .header__logo-img {
 		
 	}
+.svg-inline--fa {
+  display: none;
+}
 .top-nav__outer-list {
     list-style: none;
     margin: 0;
@@ -471,6 +474,10 @@ img {
   }
 .top-nav__has-children:hover>a {
     background-color: #30b256;
+  }
+.top-nav__has-children > a .svg-inline--fa {
+    display: inline-block;
+    margin-left: 5px;
   }
 .large-hero {
   position: relative;

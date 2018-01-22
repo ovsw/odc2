@@ -20,6 +20,8 @@
       });
     </script>
 
+    <script src="<?= $config->urls->templates ?>vendor/fontawesome-all.min.js"></script>
+
     <link rel="stylesheet" href="<?= $config->urls->templates ?>app/temp/styles/styles.css" />
   </head>
   <body>
@@ -50,13 +52,9 @@
             'inner_tpl' => '<ul class="top-nav__inner-list">||</ul>',
             'list_tpl' => '<li%s>||</li>',
             'list_field_class' => '{template}',
-            'item_tpl' => '<a href="{link_url|url}">{title}</a>',
+            'item_tpl' => '<a href="{link_url|url}">{title}<i class="fas fa-angle-down"></i></a>',
             'item_current_tpl' => '<a href="{link_url|url}">{title}</a>',
-            'xtemplates' => '',
-            'xitem_tpl' => '<a href="{url}">{title}</a>',
-            'xitem_current_tpl' => '<span>{title}</span>',
-            'date_format' => 'Y/m/d',
-            'code_formatting' => false,
+            'code_formatting' => true,
             'debug' => false
         );
           echo $topMenu->render($topMenuOptions, null, $topMenuRootPage); ?>

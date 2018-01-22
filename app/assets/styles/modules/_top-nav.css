@@ -1,3 +1,7 @@
+.svg-inline--fa {
+  display: none;
+}
+
 .top-nav {
 
 
@@ -74,5 +78,9 @@
     background-color: $oasisGreen;
   }
 
+  &__has-children > a .svg-inline--fa {
+    display: inline-block;
+    margin-left: 5px;
+  }
 
 }
