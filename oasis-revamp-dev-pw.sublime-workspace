@@ -1,0 +1,321 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"box",
+				"box-shadow"
+			],
+			[
+				"flex",
+				"flex-start"
+			],
+			[
+				"camp",
+				"camp-details"
+			],
+			[
+				"flex-",
+				"flex-direction"
+			],
+			[
+				"spa",
+				"space-between"
+			],
+			[
+				"content",
+				"align-content"
+			],
+			[
+				"fade",
+				"fadeInDur"
+			],
+			[
+				"next",
+				"nextSlide"
+			],
+			[
+				"slide",
+				"slideEls"
+			],
+			[
+				"current",
+				"currentSlide"
+			],
+			[
+				"align",
+				"align-content"
+			],
+			[
+				"space",
+				"space-between"
+			],
+			[
+				"min",
+				"min-width"
+			],
+			[
+				"font",
+				"font-size"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 443.0,
+		"last_filter": "install",
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"remov",
+				"Package Control: Remove Package"
+			],
+			[
+				"sublime linter",
+				"SublimeLinter: Choose Lint Mode"
+			],
+			[
+				"project",
+				"Project: Close"
+			],
+			[
+				"pro",
+				"Project: Save As"
+			],
+			[
+				"package",
+				"Package Control: Remove Package"
+			],
+			[
+				"materi",
+				"Material Theme: Activate theme"
+			],
+			[
+				"package install",
+				"Package Control: Install Package"
+			],
+			[
+				"install pa",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 644.0
+	},
+	"console":
+	{
+		"height": 622.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/D/~ovs/Projects/Oasis/revamp-august-2017/local-dev/site/templates"
+	],
+	"file_history":
+	[
+		"/C/Windows/System32/drivers/etc/hosts",
+		"/C/wamp64/bin/apache/apache2.4.27/conf/extra/httpd-vhosts.conf",
+		"/C/wamp64/bin/apache/apache2.4.27/conf/httpd.conf",
+		"/D/~ovs/Projects/Oasis/revamp-august-2017/dev/app/templates/layout.html",
+		"/D/~ovs/Projects/mst/mainstages2/local-dev/site/templates/gulp/tasks/watch.js",
+		"/D/~ovs/Projects/Oasis/revamp-august-2017/dev/app/index.html",
+		"/D/~ovs/Projects/Oasis/revamp-august-2017/dev/app/assets/styles/modules/_large-hero.css",
+		"/D/~ovs/Projects/Oasis/revamp-august-2017/dev/app/assets/styles/modules/_overlay.css",
+		"/D/~ovs/Projects/Oasis/revamp-august-2017/dev/app/assets/styles/modules/_camp-details.css",
+		"/D/~ovs/Projects/Oasis/revamp-august-2017/dev/app/assets/styles/modules/_tabs.css",
+		"/D/~ovs/Projects/Oasis/revamp-august-2017/dev/app/assets/scripts/App.js",
+		"/D/~ovs/Projects/Oasis/revamp-august-2017/dev/.gitignore",
+		"/D/~ovs/Projects/Oasis/revamp-august-2017/dev/app/assets/styles/modules/_camp-card.css",
+		"/D/~ovs/Projects/Oasis/revamp-august-2017/dev/app/assets/styles/modules/_text-slideshow.css",
+		"/D/~ovs/Projects/Oasis/revamp-august-2017/dev/app/assets/styles/base/_mixins.css",
+		"/D/~ovs/Projects/Oasis/revamp-august-2017/dev/gulp/tasks/styles.js",
+		"/D/~ovs/Projects/Oasis/revamp-august-2017/dev/app/assets/styles/base/_variables.css",
+		"/D/~ovs/Projects/Oasis/revamp-august-2017/dev/app/assets/styles/base/_global.css",
+		"/D/Dropbox/.dropbox",
+		"/D/~ovs/Projects/Oasis/revamp-august-2017/dev/app/assets/styles/modules/_header.css",
+		"/D/~ovs/Projects/Oasis/revamp-august-2017/dev/app/assets/styles/styles.css",
+		"/D/~ovs/Projects/Oasis/revamp-august-2017/dev/app/assets/styles/modules/_card-details.css",
+		"/D/~ovs/Projects/Oasis/revamp-august-2017/dev/app/assets/images/oasis-children_logo.svg",
+		"/D/~ovs/Projects/Oasis/revamp-august-2017/Logo/exports/Artboard 10.svg",
+		"/D/~ovs/Projects/Oasis/revamp-august-2017/dev/app/assets/scripts/modules/Slideshow.js",
+		"/D/~ovs/Projects/mst/mainstages2/local-dev/site/templates/sources/scripts/App.js",
+		"/D/~ovs/Projects/Oasis/revamp-august-2017/dev/webpack.config.js",
+		"/D/~ovs/Projects/Oasis/revamp-august-2017/dev/package.json",
+		"/D/~ovs/Projects/mst/mainstages2/local-dev/site/templates/webpack.config.js",
+		"/D/~ovs/Projects/Oasis/revamp-august-2017/dev/.jshintrc",
+		"/C/Users/saves/AppData/Local/Temp/scp39517/public_html/site/templates/inner-page.php",
+		"/D/~ovs/Projects/Oasis/revamp-august-2017/dev/gulpfile.js",
+		"/D/~ovs/Projects/Oasis/revamp-august-2017/dev/app/assets/scripts/modules/Person.js",
+		"/D/~ovs/Projects/Oasis/revamp-august-2017/dev/gulp/tasks/watch.js",
+		"/D/~ovs/Projects/Oasis/revamp-august-2017/dev/gulp/tasks/scripts.js",
+		"/D/~ovs/Projects/webpack/main.js",
+		"/D/~ovs/Projects/webpack/person.js",
+		"/C/Users/saves/Desktop/37-webpack/app/assets/scripts/modules/Person.js",
+		"/C/Users/saves/Desktop/37-webpack/app/assets/scripts/App.js",
+		"/C/Users/saves/Desktop/37-webpack/webpack.config.js",
+		"/D/~ovs/Projects/Oasis/revamp-august-2017/dev/app/temp/styles/styles.css",
+		"/D/~ovs/Projects/Oasis/revamp-august-2017/dev/gulp/tasks/pug.js",
+		"/D/~ovs/Projects/Oasis/revamp-august-2017/dev/gulp/tasks/nunjucks.js",
+		"/D/~ovs/Projects/Oasis/revamp-august-2017/dev/app/templates/layout-initial.html",
+		"/D/~ovs/Projects/Oasis/revamp-august-2017/dev/app/pug/index.html",
+		"/D/~ovs/Projects/Oasis/revamp-august-2017/dev/app/pug/index.pug",
+		"/D/~ovs/Projects/Oasis/revamp-august-2017/dev/app/pages/index.html",
+		"/D/~ovs/Projects/Oasis/revamp-august-2017/dev/app/pages/index.nunjucks",
+		"/D/~ovs/Projects/Oasis/revamp-august-2017/dev/app/index.pug",
+		"/D/~ovs/Projects/Oasis/revamp-august-2017/dev/templates/layout.html",
+		"/D/~ovs/Projects/Oasis/revamp-august-2017/dev/pages/index.html",
+		"/D/~ovs/Projects/Oasis/revamp-august-2017/dev/package-lock.json",
+		"/D/~ovs/Projects/Oasis/revamp-august-2017/dev/test.scss"
+	],
+	"find":
+	{
+		"height": 77.0
+	},
+	"find_in_files":
+	{
+		"height": 176.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 38.0
+	},
+	"input":
+	{
+		"height": 96.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "oasis-revamp-dev-pw.sublime-project",
+	"replace":
+	{
+		"height": 72.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 625.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"D:\\~ovs\\Projects\\mst\\mainstages2\\local-dev2\\mst2-1.sublime-project"
+			]
+		],
+		"width": 475.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 303.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

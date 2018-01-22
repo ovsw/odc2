@@ -18300,17 +18300,19 @@ if (_gsScope._gsDefine) { _gsScope._gsQueue.pop()(); } //necessary in case Tween
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_jquery__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_gsap__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_gsap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_gsap__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modules_Person__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modules_Slideshow__ = __webpack_require__(5);
+throw new Error("Cannot find module \"font-awessome/css/font-awesome.min.css\"");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_gsap__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_gsap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_gsap__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modules_Person__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__modules_Slideshow__ = __webpack_require__(5);
 
 
 
 
 
 
-var hpSlideshow = new __WEBPACK_IMPORTED_MODULE_3__modules_Slideshow__["a" /* default */]('.text-slideshow__slide', 3, 1);
+
+var hpSlideshow = new __WEBPACK_IMPORTED_MODULE_4__modules_Slideshow__["a" /* default */]('.text-slideshow__slide', 3, 1);
 
 __WEBPACK_IMPORTED_MODULE_0_jquery___default()(".cards__card-wrapper").hover(
   function() {TweenLite.to(__WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).find(".cards__card"), 1.2, {rotationY:180, ease:Back.easeOut});},

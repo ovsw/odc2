@@ -1,0 +1,78 @@
+.top-nav {
+
+
+  &__outer-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+
+  &__item-level-1 {
+    display: inline-block;
+    background-color: $oasisBlue;
+    margin-left: 10px;
+    border-radius: 0 0 10px 10px ;
+    position: relative;
+  }
+  
+  &__item-level-1 a {
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: $white;
+    padding: 1.2rem  1.5rem;
+    display: inline-block;
+  }
+
+  &__item-level-1.menu_link {
+    background-color: $mainAccent;
+  }
+
+  &__item-level-1:hover {
+    background-color: $oasisGreen;
+    padding-top:0.2rem;
+  }
+
+  &__item-level-1:hover a {
+    padding-bottom: 1rem;
+  }
+
+  &__inner-list {
+    list-style: none;
+    position: absolute;
+    top: 3.75rem;
+    left: 0;
+    min-width: 100%;
+    width: 200px;
+    margin: 0;
+    padding: 0;
+    display: none;
+  }
+
+  &__item-level-2 {
+    background-color: $oasisBlue;
+  }
+
+  &__item-level-2 a {
+    display: block;
+  }
+
+  &__item-level-2:hover {
+    background-color: $oasisGreen;
+  }
+
+  &__current,
+  &__parent {
+    background-color: $oasisGreen;
+  }
+
+  &__has-children:hover>&__inner-list {
+    display:block;
+  }
+
+  &__has-children:hover>a {
+    background-color: $oasisGreen;
+  }
+
+
+}
