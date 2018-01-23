@@ -44,8 +44,27 @@ $('.tabs__button').click( function(){
 $('.cards__card-wrapper').click(function(){
   //console.log($(this).index());
   $('.overlay').show();
-  $('.camp-details__wrapper .camp-details:eq('+ $(this).index() +')').clone(true, true).appendTo( '.overlay__content' );// 
+  $('.camp-details__wrapper .camp-details:eq('+ $(this).index() +')').clone(true, true).appendTo( '.overlay__content' );
+
+  var video_url = $('.overlay__content .camp-details__video').data("videourl");
+
+  //console.log(video_url);
+  $('.overlay__content .embed-container')
+  .html('<iframe src="https://player.vimeo.com/video/'+ getVimeoId(video_url) +'?autoplay=0&title=0&byline=0&portrait=0" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>');
 });
+
+function getVimeoId( url ) {
+
+  // Look for a string with 'vimeo', then whatever, then a
+  // forward slash and a group of digits.
+  var match = /vimeo.*\/(\d+)/i.exec( url );
+
+  // If the match isn't null (i.e. it matched)
+  if ( match ) {
+    // The grouped/matched digits from the regex
+    return match[1];
+  }
+}
 
 // close card details
 $('.camp-details__back-btn').click(function(e){

@@ -141,8 +141,8 @@
         </div>
         <!-- /.headings -->
 
-        <div class="camp-details__video">
-          <div class='embed-container'><iframe src='https://player.vimeo.com/video/113165477?autoplay=0&title=0&byline=0&portrait=0' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+        <div class="camp-details__video" data-videourl="<?= $camp->video_url ?>">
+          <div class='embed-container'></div>
         </div>
         <!-- /.camp-details__video -->
 
