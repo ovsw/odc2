@@ -18310,8 +18310,28 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
+// mobile menu toggle
+__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.header__menu-icon').click(function(){
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.top-nav').toggleClass('top-nav__visible');
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).toggleClass('header__menu-icon--close-x');
+});
+
+// mobile menu sub-items toggle
+__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.top-nav__submenu-button').click(function(){
+  var menuItem = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).parent();
+
+  if (menuItem.hasClass('submenu-open')) {
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.top-nav__has-children').removeClass('submenu-open');
+  }else{
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.top-nav__has-children').removeClass('submenu-open');
+    menuItem.addClass('submenu-open');
+  }
+});
+
+// slideshow
 var hpSlideshow = new __WEBPACK_IMPORTED_MODULE_3__modules_Slideshow__["a" /* default */]('.text-slideshow__slide', 3, 1);
 
+// flip cards
 __WEBPACK_IMPORTED_MODULE_0_jquery___default()(".cards__card-wrapper").hover(
   function() {TweenLite.to(__WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).find(".cards__card"), 1.2, {rotationY:180, ease:Back.easeOut});},
   function() {TweenLite.to(__WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).find(".cards__card"), 1.2, {rotationY:0, ease:Back.easeOut});}
@@ -18326,17 +18346,20 @@ __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.tabs__button').click( function(
 
 });
 
+// show card details
 __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.cards__card-wrapper').click(function(){
-	//console.log($(this).index());
-	__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.overlay').show();
-	__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.camp-details__wrapper .camp-details:eq('+ __WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).index() +')').clone(true, true).appendTo( '.overlay__content' );// 
+  //console.log($(this).index());
+  __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.overlay').show();
+  __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.camp-details__wrapper .camp-details:eq('+ __WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).index() +')').clone(true, true).appendTo( '.overlay__content' );// 
 });
 
+// close card details
 __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.camp-details__back-btn').click(function(e){
-	e.preventDefault();
-	__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.overlay__content .camp-details').remove();
-	__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.overlay').hide();
+  e.preventDefault();
+  __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.overlay__content .camp-details').remove();
+  __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.overlay').hide();
 });
+
 
 // var john = new Person("John Doe", "blue");
 // john.greet();

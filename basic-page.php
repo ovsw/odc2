@@ -33,11 +33,12 @@
       <a href="/" class="header__logo"><img src="<?= $config->urls->templates ?>app/assets/images/oasis-children_logo.svg" alt="Oasis Children Logo" class="header__logo-img" ></a>
 
       <div class="top-nav">
+        <p class="top-nav__mobile-title">Menu</p>
         <?php 
           $topMenu = $modules->get("MarkupSimpleNavigation");
           $topMenuRootPage = $pages->get('1042');
           $topMenuOptions = array(
-            'parent_class' => 'top-nav__parent',
+            'parent_class' => 'top-nav__active-parent',
             'current_class' => 'top-nav__current',
             'has_children_class' => 'top-nav__has-children',
             'levels' => true,
@@ -52,14 +53,21 @@
             'inner_tpl' => '<ul class="top-nav__inner-list">||</ul>',
             'list_tpl' => '<li%s>||</li>',
             'list_field_class' => '{template}',
-            'item_tpl' => '<a href="{link_url|url}">{title}<i class="fas fa-angle-down"></i></a>',
-            'item_current_tpl' => '<a href="{link_url|url}">{title}</a>',
+            'item_tpl' => '<a href="{link_url|url}">{title}<i class="far fa-angle-down top-nav__ico-down"></i></a><span class="top-nav__submenu-button"><i class="fas fa-plus top-nav__ico-plus"></i><i class="fas fa-minus top-nav__ico-minus"></i></span>',
+            'item_current_tpl' => '<a href="{link_url|url}">{title}<i class="far fa-angle-down top-nav__ico-down"></i></a><span class="top-nav__submenu-button"><i class="fas fa-plus top-nav__ico-plus"></i><i class="fas fa-minus top-nav__ico-minus"></i></span>',
             'code_formatting' => true,
             'debug' => false
         );
+          //<i class="fas fa-plus top-nav__ico-plus"></i><i class="fas fa-minus top-nav__ico-minus"></i>
           echo $topMenu->render($topMenuOptions, null, $topMenuRootPage); ?>
       </div>
       <!-- /.top-nav -->
+      
+      <div class="header__menu-icon"> 
+        <div class="header__menu-icon__middle"></div>
+      </div>
+      <!-- /.header__menu-icon -->
+    
     </header>
     <!-- /.header -->
 

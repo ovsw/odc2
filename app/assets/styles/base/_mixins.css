@@ -32,13 +32,3 @@
   display: table;
   clear: both;
 }
-
-@define-mixin verticalAlign($position: relative) {
-  position: $position;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-@define-mixin simpleRadialGradient $startColor, $endColor, $startStop: 0%, $endStop:100%, $position: center {
-  background: radial-gradient(ellipse at $position, $startColor 0%, $endColor 100%);
-}

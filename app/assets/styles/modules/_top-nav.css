@@ -2,22 +2,73 @@
   display: none;
 }
 
+$mobile_break: atLarge;
+
 .top-nav {
 
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: 100% 50%;
+  background-color: $oasisBlue;
+  height: 100vh;
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  transition: all 0.3s ease-out;
+
+  @mixin $mobile_break {
+    display:  block;
+    position: static;
+    width: auto;
+    opacity: 1;
+    transition: none;
+    transform: none;
+    height: auto;
+    background-color: transparent;
+  }
+
+  &.top-nav__visible {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+
+  &__mobile-title {
+    color: $white;
+    margin: 1.3rem 1rem;
+    font-size:  2em;
+
+    @mixin $mobile_break {
+      display: none;
+    }
+  }
 
   &__outer-list {
     list-style: none;
     margin: 0;
     padding: 0;
-    display: flex;
+    border-top: 1px solid rgba($white, 0.3);
+    
+    @mixin $mobile_break  {
+      display: flex;
+      border-top: none;
+    }
   }
 
   &__item-level-1 {
-    display: inline-block;
     background-color: $oasisBlue;
-    margin-left: 10px;
-    border-radius: 0 0 10px 10px ;
     position: relative;
+    border-bottom: 1px solid rgba($white, 0.3);
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    @mixin $mobile_break{
+      display: inline-block;  
+      border-radius: 0 0 10px 10px ;
+      margin-left: 10px;
+    }
   }
   
   &__item-level-1 a {
@@ -25,7 +76,11 @@
     text-decoration: none;
     color: $white;
     padding: 1.2rem  1.5rem;
+    display: block; 
+   
+   @mixin $mobile_break {
     display: inline-block;
+   } 
   }
 
   &__item-level-1.menu_link {
@@ -33,28 +88,43 @@
   }
 
   &__item-level-1:hover {
-    background-color: $oasisGreen;
-    padding-top:0.2rem;
+    @mixin $mobile_break {
+      background-color: $oasisGreen;
+      padding-top:0.2rem;
+    }
+    
   }
 
   &__item-level-1:hover a {
-    padding-bottom: 1rem;
+    @mixin $mobile_break {
+      padding-bottom: 1rem;
+    }
   }
 
   &__inner-list {
     list-style: none;
-    position: absolute;
-    top: 3.75rem;
-    left: 0;
-    min-width: 100%;
-    width: 200px;
     margin: 0;
     padding: 0;
-    display: none;
+
+    @mixin $mobile_break {
+      height: auto;
+      display: none;
+      position: absolute;
+      top: 3.75rem;
+      left: 0;
+      min-width: 100%;
+      width: 200px;
+    }
   }
 
   &__item-level-2 {
     background-color: $oasisBlue;
+    height: 0;
+
+    @mixin $mobile_break {
+      height: auto;
+      border-top: 1px solid rgba($white, 0.2);
+    }
   }
 
   &__item-level-2 a {
@@ -66,21 +136,93 @@
   }
 
   &__current,
-  &__parent {
+  &__active-parent {
     background-color: $oasisGreen;
   }
 
-  &__has-children:hover>&__inner-list {
-    display:block;
+  &__submenu-button {
+    height: 100%;
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50px;
+    border-left: 1px solid rgba($white, 0.1);
+    color: $white;
   }
 
-  &__has-children:hover>a {
-    background-color: $oasisGreen;
-  }
+  &__has-children  {
+    
+    /* icons */
+    > .top-nav__submenu-button {
+      
+      display: inline-block;
 
-  &__has-children > a .svg-inline--fa {
-    display: inline-block;
-    margin-left: 5px;
+      .top-nav__ico-plus,
+      .top-nav__ico-minus {
+        position: absolute;
+        top: 50%;
+        left: 40%;
+        transform: translate(-50%,-50%);
+        margin-left: 5px;
+      }
+      .top-nav__ico-plus {display: inline-block;}
+    }
+
+    &.submenu-open {
+      > .top-nav__submenu-button {
+          background-color: $oasisBlue;
+        .top-nav__ico-plus {display: none;}
+        .top-nav__ico-minus {display: inline-block;}
+      }
+      .top-nav__item-level-2 {
+        height: auto;
+        border-top: 1px dotted rgba($white, 0.2);
+        background-color: #197bc1;
+        
+        a {
+          padding: 0.9rem  2rem ;
+        }
+
+        &.top-nav__current {
+          background-color: color($oasisGreen saturation(+ 10%) w(+ 5%));
+        }
+        
+      }
+
+    }
+
+    @mixin $mobile_break {
+
+      > .top-nav__submenu-button {display: none;}
+
+      > a .top-nav__ico-plus {
+        display: none;
+      }
+      
+      > a .top-nav__ico-down {
+        display: inline-block;
+        margin-left: 5px;
+      }
+
+    }
+
+    /* end icons */
+
+    &:hover {
+
+      @mixin $mobile_break {
+        & {
+          background-color: $oasisGreen;
+          border-radius: 0;
+        }
+      }
+
+      > .top-nav__inner-list {
+        display:block;
+      }
+    }
+
   }
 
 }
