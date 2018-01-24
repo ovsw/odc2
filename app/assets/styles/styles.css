@@ -7,9 +7,9 @@
 @import "modules/_top-nav";
 @import "modules/_large-hero";
 @import "modules/_text-slideshow";
-@import "modules/_camp-card";
+@import "modules/_cards";
 @import "modules/_tabs";
-@import "modules/_camp-details";
+@import "modules/_card-details";
 @import "modules/_overlay";
 
 
