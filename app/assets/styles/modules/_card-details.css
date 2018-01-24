@@ -1,4 +1,4 @@
-.camp-details {
+.card-details {
   height: 100%;
   display: flex;
   line-height: 1.5;
@@ -8,7 +8,7 @@
   max-width: 1200px;
 
   @mixin atMedium {
-    box-shadow: 3px 3px 13px #00000061;
+    box-shadow: 3px 3px 13px rgba(0, 0, 0, 0.61);
     margin: 50px 5%;
   }
 
@@ -23,7 +23,7 @@
     position: relative;
   }
 
-  &__wrapper .camp-details{
+  &__wrapper .card-details{
       display: none;
   }
   
