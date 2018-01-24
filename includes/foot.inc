@@ -1,0 +1,1 @@
+<script src="<?= $config->urls->templates ?>app/temp/scripts/App.js"></script>
