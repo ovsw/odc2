@@ -14,7 +14,7 @@ $('.header__menu-icon').click(function(){
 $('.top-nav__submenu-button').click(function(){
   var menuItem = $(this).parent();
 
-  if (menuItem.hasClass('submenu-open')) {
+  if (menuItem.hasClass('`submenu`-open')) {
     $('.top-nav__has-children').removeClass('submenu-open');
   }else{
     $('.top-nav__has-children').removeClass('submenu-open');
@@ -44,9 +44,9 @@ $('.tabs__button').click( function(){
 $('.cards__card-wrapper').click(function(){
   //console.log($(this).index());
   $('.overlay').show();
-  $('.camp-details__wrapper .camp-details:eq('+ $(this).index() +')').clone(true, true).appendTo( '.overlay__content' );
+  $('.card-details__wrapper .card-details:eq('+ $(this).index() +')').clone(true, true).appendTo( '.overlay__content' );
 
-  var video_url = $('.overlay__content .camp-details__video').data("videourl");
+  var video_url = $('.overlay__content .card-details__video').data("videourl");
 
   //console.log(video_url);
   $('.overlay__content .embed-container')
@@ -67,9 +67,9 @@ function getVimeoId( url ) {
 }
 
 // close card details
-$('.camp-details__back-btn').click(function(e){
+$('.card-details__back-btn').click(function(e){
   e.preventDefault();
-  $('.overlay__content .camp-details').remove();
+  $('.overlay__content .card-details').remove();
   $('.overlay').hide();
 });
 
