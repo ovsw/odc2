@@ -15,10 +15,18 @@
 
   &__rt-image {
     padding-top: 1.3rem;
+    
     background-color: $cream;
 
+    @mixin atMedium {
+      display: flex;
+      padding-bottom: 1.3rem;
+    }
+
+    /*----------  elements  ----------*/
+
     &__title {
-      background-color: color($oasisBlue  w(+ 30%));
+      background-color: color($oasisBlue  w(+ 30%) a(85%));
       color: $white;
       margin: 0 2%;
       padding: 0.5rem 5% 1rem 5%;
@@ -26,6 +34,8 @@
       font-size: 1.8rem;
       line-height: 2.5rem;
     }
+
+    /*----------  text block styles  ----------*/
 
     &__text-content{
       font-size: 0.875rem;
@@ -52,30 +62,46 @@
       & h5 {
         font-size: 0.875rem;
         color: color($mainAccent w(+ 20%));
+        margin-bottom: 0;
       }
     }
 
     &__rich-text {
       padding: 1rem 5%;
     }
+    
+   /*----------  image  ----------*/
 
     &__image-wrapper {
      margin: 0 2%;
-     border: 7px solid color($oasisBlue  w(+ 30%));
+     border: 7px solid color($oasisBlue  w(+ 30%) a(85%));
+
+     @mixin atMedium {
+       flex: 0 0 40%;
+       overflow: hidden;
+       position: relative;
+      
+     }
     }
 
     &__image {
       display:block;
-      box-shadow: 1px 1px 0px rgba($white,0.5),
-      -1px -1px 0px rgba($white,0.5);
-      
+      box-shadow: 1px 1px 0px rgba($white,0.5),-1px -1px 0px rgba($white,0.5);
+
+      @mixin atMedium{
+        max-width: none;
+        height: 100%;
+        position: absolute;
+        top:50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+      }
     }
 
     &-even {
-      // background-color: color($cream w(- 15%));
+      @mixin atMedium {
+        background-color: color($cream w(- 10%)); 
+      }
     }
-    
-
-
   }
 }

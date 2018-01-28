@@ -40,7 +40,7 @@
       <div class="mx__rt-image<?= $alternateClass ?>">
 
         <div class="mx__rt-image__image-wrapper">
-          <img class="mx__rt-image__image" src="<?= $block->matrix_single_image->getCrop("square_large")->url ?>" alt="$block->matrix_single_image->description">
+          <img class="mx__rt-image__image" src="<?= $block->matrix_single_image->getCrop("square_large")->url ?>" alt="<?= $block->matrix_single_image->description ?>">
         </div>
         <!-- /.mx__rt-image__image-wrapper -->
         
