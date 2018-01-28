@@ -1,0 +1,81 @@
+.mx {
+
+  &__section-heading {
+    background-color: color($oasisGreen  w(+ 30%));
+    color: $white;
+    text-align: center;
+    padding: 1.5rem 5%;
+    
+    &__title {
+      margin: 0;
+      font-weight: 300;
+      font-size: 2rem;
+    }
+  }
+
+  &__rt-image {
+    padding-top: 1.3rem;
+    background-color: $cream;
+
+    &__title {
+      background-color: color($oasisBlue  w(+ 30%));
+      color: $white;
+      margin: 0 2%;
+      padding: 0.5rem 5% 1rem 5%;
+      font-weight: 300;
+      font-size: 1.8rem;
+      line-height: 2.5rem;
+    }
+
+    &__text-content{
+      font-size: 0.875rem;
+      line-height: 1.5rem;
+
+      & ul {
+        padding-left: 30px;
+      }
+
+      & li {
+        padding-bottom: 1rem;
+      }
+
+      & h4 {
+        font-size: 1.125rem;
+        color: color($oasisBlue w(+ 30%));
+        font-weight: 400;
+      }
+
+      & h4:first-child {
+        margin-top: 0;
+      }
+
+      & h5 {
+        font-size: 0.875rem;
+        color: color($mainAccent w(+ 20%));
+      }
+    }
+
+    &__rich-text {
+      padding: 1rem 5%;
+    }
+
+    &__image-wrapper {
+     margin: 0 2%;
+     border: 7px solid color($oasisBlue  w(+ 30%));
+    }
+
+    &__image {
+      display:block;
+      box-shadow: 1px 1px 0px rgba($white,0.5),
+      -1px -1px 0px rgba($white,0.5);
+      
+    }
+
+    &-even {
+      // background-color: color($cream w(- 15%));
+    }
+    
+
+
+  }
+}
