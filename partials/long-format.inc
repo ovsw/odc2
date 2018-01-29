@@ -33,7 +33,7 @@
     </div>
     <!-- /.mx__section-heading -->
 
-    <?php elseif ($block->type == 'rich_text_with_image_5050') : ?>
+    <?php elseif (($block->type == 'rich_text_with_image_5050') || ($block->type == 'program')) : ?>
 
       <?php 
         $rt_block_counter++;
@@ -41,7 +41,7 @@
         $alternateClass = $rt_block_counter % 2 == 0 ? " mx__rt-image-even" : ""; 
       ?>
 
-      <div class="mx__rt-image<?= $alternateClass ?>">
+      <div class="mx__rt-image<?= $alternateClass ?>" id="<?= createSlug($block->title) ?>">
 
         <div class="mx__rt-image__block-row">
           
