@@ -4,7 +4,6 @@
   z-index: 999;
   width: 100%;
   display: flex;
-  flex-direction: row-reverse;
   justify-content: space-between;
   /*background-color: rgba(210, 230, 209, 0.9);*/
   background-color: #d6e8d6;
@@ -15,6 +14,7 @@
     background-color: transparent;
     border-bottom: none;
     box-shadow: none;
+    flex-direction: row-reverse;
   }
 
   &__logo {
