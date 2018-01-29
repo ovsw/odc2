@@ -4,6 +4,7 @@ $grid-space-mobile: 0.15625rem;
 $grid-space: .3125rem;
 
 .cards {
+  font-family: "PT Sans", sans-serif;
   margin: $grid-space-mobile;
   display: flex;
   /*flex-direction: column;*/
@@ -21,7 +22,26 @@ $grid-space: .3125rem;
     
     @mixin atMedium{
       width: 20%;
-    } 
+    }
+
+    &.of-2 {
+      @mixin atMedium {
+        width: 50%;
+      }
+    }
+
+    &.of-3 {
+      @mixin atMedium {
+        width: 33.33%;
+      }
+    }
+    
+    &.of-4 {
+      @mixin atMedium {
+        width: 25%;
+      }
+    }
+    
   }
   
   &__card { 
@@ -43,15 +63,24 @@ $grid-space: .3125rem;
   &__cardface {
     backface-visibility: hidden;
     position: absolute;
-    padding: calc($grid-space*2);
+    /* padding: calc($grid-space*2); */
+    padding: 5px;
     top: 0;
     bottom: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(1,102,175,.9);
+    background-color: rgba($oasisBlue,0.9);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    .cards__card-wrapper--alternate &{
+      background-color: color($oasisBlue l(+11%) a(90%));
+    }
+
+    @mixin atSmall {
+      padding: calc($grid-space*2);
+    }
   }
 
   &__cardface-back {
@@ -62,6 +91,7 @@ $grid-space: .3125rem;
     margin-top: 0;
     font-size: 0.725rem;
     margin-bottom:0;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, .73);
 
     @mixin atTiny {
       font-size:  0.7em;

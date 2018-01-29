@@ -19,12 +19,14 @@
         </div>
         <!-- /.large-hero__slideshow-wrapper -->
       
-        <?php $camps = $pages->get('1015')->children(); ?>
+        <?php $camps = $pages->get('1015')->children(); $i = 0;?>
 
         <div class="large-hero__bottom-area">
           <div class="cards">
             <?php foreach ( $camps as $camp ) : ?>
-            	<div class="cards__card-wrapper">
+              <?php $i++; $alternateClass = ($i % 2 == 0) ? " cards__card-wrapper--alternate" : "";  ?>
+                
+            	<div class="cards__card-wrapper<?= $alternateClass ?>">
                 <div class="cards__card">
                   <div class="cards__cardface cards__cardface-front">
                     <h2 class="cards__title"><?= $camp->title ?></h2>
