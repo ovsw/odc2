@@ -47,6 +47,16 @@
     align-items: stretch;
     justify-content: flex-end;
 
+    @mixin atLarge{
+      padding-left: 10%;
+      padding-right: 10%;
+    }
+
+    @mixin atHuge{
+      padding-left: 20%;
+      padding-right: 20%;
+    }
+
 
 
   }
