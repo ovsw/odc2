@@ -1,3 +1,4 @@
+<?php require($config->paths->templates."includes/functions.inc"); ?>
 <!doctype html>
 <html class="no-js" lang="en">
   <head>
