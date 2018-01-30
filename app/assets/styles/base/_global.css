@@ -35,3 +35,93 @@ a {
 		background-color: $lightGray;
 	}
 }
+
+.rte_wrapper {
+
+			font-size: 0.875rem;
+      line-height: 1.5rem;
+			padding: 0  1rem;
+
+      @mixin atHuge {
+        padding-top: .9rem;
+        font-size: 1rem;
+        line-height: 1.7rem;
+      }
+			
+			h2	{
+				background-color: color($oasisBlue  w(+ 30%) a(85%));
+				color: $white;
+				margin: 3rem 0 3rem 0;
+				padding: 1rem 5% 1rem 5%;
+				font-weight: 300;
+				font-size: 1.3rem;
+				line-height: 2.5rem;
+
+				@mixin atLarge{
+					font-size: 1.8rem;
+				}
+			}
+
+			h3 {
+				font-size: 1.325rem;
+        color: color($oasisGreen w(+ 30%));
+        font-weight: 400;
+			}
+
+      & a {
+        font-weight: bold;
+      }
+
+      & ul {
+        padding-left: 30px;
+      }
+
+      & li {
+        padding-bottom: 1rem;
+      }
+
+      & h4 {
+        font-size: 1.125rem;
+        color: color($oasisBlue w(+ 30%));
+        font-weight: 400;
+      }
+
+      & h5 {
+        font-size: 0.875rem;
+        color: color($mainAccent w(+ 20%));
+        margin-bottom: 0;
+        font-weight: 400;
+
+        @mixin atHuge {
+          font-size: 1.265rem;
+        }
+      }
+
+      table {
+        font-size: 12px;
+
+        @mixin atMedium{
+          font-size: 1rem;
+        }
+      }
+
+      th {
+        background-color: $oasisBlue;
+        color: $white;
+        font-weight: 400;
+
+        @mixin atMedium {
+          padding: 0.9rem 1.2rem;
+        }
+      }
+
+      td {
+        padding: 6px 3px;
+        text-align: center;
+
+        @mixin atLarge{
+          padding: 0.9rem 1.2rem;
+        }
+      }
+
+}

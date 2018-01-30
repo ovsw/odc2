@@ -31,8 +31,21 @@
   }
 
   &__wrapper {
-    
 
+    @mixin atMedium {
+        padding-bottom: 1.3rem;
+      }
+
+      @mixin atLarge{
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      @mixin atHuge {
+       padding: 0;
+       max-width: 1200px;
+      }
+  
   }
 
 }

@@ -12,7 +12,7 @@
 </div>
 <!-- /.basic-page__hero -->
 
-<div class="basic-page__wrapper">
+<div>
 
   <?php 
     $rt_block_counter = 0;
@@ -54,7 +54,7 @@
           </div>
           <!-- /.mx__rt-image__image-wrapper -->
           
-          <div class="mx__rt-image__text-content">
+          <div class="mx__rt-image__text-content rte_wrapper">
             <h3 class="mx__rt-image__title"><?= $section_header_counter.".".$subsection_header_counter." ".$block->title ?></h3> 
             <div class="mx__rt-image__rich-text">
               <?= $block->rich_text ?>
@@ -82,7 +82,7 @@
 
         <div class="mx__rt-noimage__block-row">
           
-          <div class="mx__rt-noimage__text-content">
+          <div class="mx__rt-noimage__text-content rte_wrapper ">
             <h3 class="mx__rt-noimage__title"><?= $section_header_counter.".".$subsection_header_counter." ".$block->title ?></h3> 
             <div class="mx__rt-noimage__rich-text">
               <?= $block->rich_text ?>
@@ -113,14 +113,14 @@
             <div class="mx__faqs__text-content">
               <h3 class="mx__rt-noimage__title"><?= $section_header_counter.".".$subsection_header_counter." ".$block->title ?></h3> 
               
-              <div class="mx__faqs__rich-text">
+              <div class="mx__faqs__rich-text ">
                 <?php foreach ($block->faqs_repeater as $faq) : ?>
                   <div class="mx__faqs__faq-wrapper">
                     <div class="mx__faqs__question">
                       <h4 class="mx__faqs__question-text"><?= $faq->title ?></h4>
                     </div>
                     
-                    <div class="mx__faqs__answer">
+                    <div class="mx__faqs__answer rte_wrapper">
                       <?= $faq->rich_text ?>
                     </div>
                   </div>
