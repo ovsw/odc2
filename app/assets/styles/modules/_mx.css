@@ -172,4 +172,109 @@
       
     }
   }
+
+  &__rt-noimage {
+
+    padding: 1rem;
+
+    &__block-row{
+
+      
+    }
+
+    &__title {
+      column-span: all;
+      background-color: color($oasisBlue  w(+ 30%) a(85%));
+      color: $white;
+      margin: 0 2%;
+      padding: 0.5rem 5% 1rem 5%;
+      font-weight: 300;
+      font-size: 1.8rem;
+      line-height: 2.5rem;
+
+      @mixin atHuge{
+        margin: 1rem 0 0 0;
+        padding: 2rem 4rem;
+      }
+    }
+
+    &__rich-text {
+
+      background-color: $white;
+      
+      @mixin  atLarge {
+       
+        padding: 2rem 2rem;
+
+      }
+    }
+
+    &__text-content {
+
+      @mixin atLarge {
+        margin: 0 auto;
+        max-width: 1000px;
+      }
+      
+      & ul {
+        padding-left: 30px;
+      }
+
+      & li {
+        padding-bottom: 1rem;
+      }
+
+      & h4 {
+        font-size: 1.125rem;
+        color: color($oasisBlue w(+ 30%));
+        font-weight: 400;
+      }
+
+      & h5 {
+        font-size: 0.875rem;
+        color: color($mainAccent w(+ 20%));
+        margin-bottom: 0;
+
+        @mixin atHuge {
+          font-size: 1.265rem;
+        }
+      }
+
+      table {
+        font-size: 12px;
+
+        @mixin atLarge{
+          font-size: 1rem;
+        }
+      }
+
+      th {
+        background-color: $oasisBlue;
+        color: $white;
+        font-weight: 400;
+
+        @mixin atLarge {
+          padding: 0.9rem 1.2rem;
+        }
+      }
+
+      td {
+        padding: 6px 3px;
+
+        @mixin atLarge{
+          padding: 0.9rem 1.2rem;
+        }
+      }
+
+    }
+
+    &-even {
+      
+      @mixin atMedium {
+        background-color: color($cream w(- 10%)); 
+      }
+      
+    }
+
+  }
 }

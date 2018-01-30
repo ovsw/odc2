@@ -9,39 +9,96 @@
         
         <div class="large-hero__top-area">
           <div class="text-slideshow">
-            <h1 class="text-slideshow__slide">Play, Learn, Grow</h1>
-            <h1 class="text-slideshow__slide">Second Slide</h1>
-            <h1 class="text-slideshow__slide">Third Slide</h1>
-            <h1 class="text-slideshow__slide">Fourth Slide</h1>
-            <h1 class="text-slideshow__slide">Fifth Slide</h1>
+            <h1 class="text-slideshow__slide">Welcome to Oasis</h1>
           </div>
           <!-- /.text-slideshow -->
         </div>
         <!-- /.large-hero__slideshow-wrapper -->
       
-        <?php $camps = $pages->get('1015')->children(); ?>
+        <?php 
+          $blocks = $page->children("template=long-format")->first()->repeater_matrix;
+          $nof_programs = 0;
+          foreach ( $blocks as $block ) {
+            if ($block->type == "program") {$nof_programs++;}
+          }
+        ?>
 
         <div class="large-hero__bottom-area">
           <div class="cards">
-            <?php foreach ( $camps as $camp ) : ?>
-            	<div class="cards__card-wrapper">
-                <div class="cards__card">
-                  <div class="cards__cardface cards__cardface-front">
-                    <h2 class="cards__title"><?= $camp->title ?></h2>
-                    <a href="tel:{{ camp.tel }}" class="cards__subtitle"><?= $camp->phone_no ?></a>
+            <?php foreach ( $blocks as $block ) : ?>
+
+              <?php if ($block->type == 'program') : ?>
+                
+                <div class="cards__card-wrapper of-<?= $nof_programs ?>">
+                  <div class="cards__card">
+                    <div class="cards__cardface cards__cardface-front">
+                      <h2 class="cards__title"><?= $block->menu_title ?></h2>
+                      <a href="tel:{{ camp.tel }}" class="cards__subtitle"><?= $block->program_ages ?></a>
+                    </div>
+                    <!-- /.cards__cardface -->
+                    <div class="cards__cardface cards__cardface-back">
+                      <h2 class="cards__title">back of card</h2>
+                    </div>
+                    <!-- /.cards__cardface -->
                   </div>
-                  <!-- /.cards__cardface -->
-                  <div class="cards__cardface cards__cardface-back">
-                    <h2 class="cards__title">back of card</h2>
-                  </div>
-                  <!-- /.cards__cardface -->
+                  <!-- /.cards__card -->
                 </div>
-                <!-- /.cards__card -->
-              </div>
-              <!-- /.cards__card-wrapper -->
+                <!-- /.cards__card-wrapper -->
+
+              <?php endif; ?>
+
             <?php endforeach; ?>
           </div>
           <!-- /.cards -->
+
+          <div class="cards">
+
+            <div class="cards__card-wrapper">
+              <div class="cards__card">
+                <div class="cards__cardface cards__cardface-front">
+                  <h2 class="cards__title">Director's Corner</h2>
+                  <a href="tel:{{ camp.tel }}" class="cards__subtitle">blog</a>
+                </div>
+                <!-- /.cards__cardface -->
+                <div class="cards__cardface cards__cardface-back">
+                  <h2 class="cards__title">back of card</h2>
+                </div>
+                <!-- /.cards__cardface -->
+              </div>
+              <!-- /.cards__card -->
+            </div>
+            <!-- /.cards__card-wrapper -->
+
+            <?php foreach ( $blocks as $block ) : ?>
+
+              <?php if ($block->type == 'rich_text_with_image_5050') : ?>
+
+                <?php if ($block->featured) : ?>
+                
+                  <div class="cards__card-wrapper">
+                    <div class="cards__card">
+                      <div class="cards__cardface cards__cardface-front">
+                        <h2 class="cards__title"><?= $block->title ?></h2>
+                        <a href="tel:{{ camp.tel }}" class="cards__subtitle">blog</a>
+                      </div>
+                      <!-- /.cards__cardface -->
+                      <div class="cards__cardface cards__cardface-back">
+                        <h2 class="cards__title">back of card</h2>
+                      </div>
+                      <!-- /.cards__cardface -->
+                    </div>
+                    <!-- /.cards__card -->
+                  </div>
+                  <!-- /.cards__card-wrapper -->
+                
+                <?php endif; ?>
+
+              <?php endif; ?>
+
+            <?php endforeach; ?>
+          </div>
+          <!-- /.cards -->
+          
         </div>
         <!-- /.large-hero__bottom-area -->
       </div>
@@ -50,7 +107,7 @@
     </div>
     <!-- /.large_hero -->
     
-    <div class="overlay" style="">
+    <div class="overlay">
       <div class="overlay__content">
       
       </div>

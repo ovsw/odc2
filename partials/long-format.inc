@@ -55,16 +55,73 @@
             <div class="mx__rt-image__rich-text">
               <?= $block->rich_text ?>
             </div>
-            <!-- /.dsadas -->
+            <!-- /.mx__rt-image__rich-text -->
           </div>
           <!-- /.mx__rt-image__text-content -->
 
         
         </div>
-        <!-- /.class -->
+        <!-- /.mx__rt-image__block-row -->
       
-    </div>
-    <!-- /.mx__rt-image -->
+      </div>
+      <!-- /.mx__rt-image -->
+
+    <?php elseif ($block->type == 'rich_text_no_image') : ?>
+
+      <?php 
+        $rt_block_counter++;
+        $subsection_header_counter++;
+        $alternateClass = $rt_block_counter % 2 == 0 ? " mx__rt-noimage-even" : ""; 
+      ?>
+
+      <div class="mx__rt-noimage<?= $alternateClass ?>" id="<?= createSlug($block->title) ?>">
+
+        <div class="mx__rt-noimage__block-row">
+          
+          <div class="mx__rt-noimage__text-content">
+            <h3 class="mx__rt-noimage__title"><?= $section_header_counter.".".$subsection_header_counter." ".$block->title ?></h3> 
+            <div class="mx__rt-noimage__rich-text">
+              <?= $block->rich_text ?>
+            </div>
+            <!-- /.mx__rt-noimage__rich-text -->
+          </div>
+          <!-- /.mx__rt-noimage__text-content -->
+
+
+        </div>
+        <!-- /.mx__rt-noimage__block-row -->
+
+      </div>
+      <!-- /.mx__rt-noimage -->
+
+      <?php elseif ($block->type == 'faqs') : ?>
+
+        <?php 
+          $rt_block_counter++;
+          $subsection_header_counter++;
+          $alternateClass = $rt_block_counter % 2 == 0 ? " mx__rt-noimage-even" : ""; 
+        ?>
+
+        <div class="mx__faqs<?= $alternateClass ?>" id="<?= createSlug($block->title) ?>">
+
+          <div class="mx__faqs__block-row">
+            
+            <div class="mx__rt-noimage__text-content">
+              <h3 class="mx__rt-noimage__title"><?= $section_header_counter.".".$subsection_header_counter." ".$block->title ?></h3> 
+              
+              <div class="mx__faqs__rich-text">
+                <?= $block->rich_text ?>
+              </div>
+              <!-- /.mx__faqs__rich-text -->
+            </div>
+            <!-- /.mx__faqs__text-content -->
+
+
+          </div>
+          <!-- /.mx__faqs__block-row -->
+
+        </div>
+        <!-- /.mx__faqs -->
 
     <?php endif; ?>
 
