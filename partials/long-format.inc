@@ -29,7 +29,8 @@
     ?>
 
     <div class="mx__section-heading">
-      <h2 class="mx__section-heading__title"><?= $section_header_counter.". ".$block->title ?></h2>
+
+      <h2 class="mx__section-heading__title"><?= $section_header_counter.". ".$block->title." <span class='mx__section-heading__title-tagline'>".$block->tagline."</span>" ?></h2>
     </div>
     <!-- /.mx__section-heading -->
 

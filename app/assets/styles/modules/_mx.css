@@ -14,6 +14,11 @@
       margin: 0;
       font-weight: 300;
       font-size: 2rem;
+
+      &-tagline {
+        display: block;
+        font-size: 0.7em;
+      }
     }
   }
 
@@ -180,11 +185,7 @@
 
   &__rt-noimage {
 
-
-    
-
     &__block-row{
-
       
     }
 
@@ -197,6 +198,7 @@
       font-weight: 300;
       font-size: 1.8rem;
       line-height: 2.5rem;
+      text-align: center;
 
       @mixin atHuge{
         margin: 1rem 0 0 0;
@@ -207,21 +209,23 @@
     &__rich-text {
 
       padding: 0.7rem;
-
       background-color: $white;
-      
-      
-      @mixin  atLarge {
-       
-        padding: 2rem 2rem;
 
+     
+      
+      @mixin  atMedium {
+        padding: 2rem;
       }
     }
 
     &__text-content {
 
-      @mixin atLarge {
+      @mixin atMedium {
         margin: 0 auto;
+        padding: 1rem 5%;
+      }
+
+      @mixin atLarge {
         max-width: 1000px;
       }
       
@@ -257,7 +261,7 @@
       table {
         font-size: 12px;
 
-        @mixin atLarge{
+        @mixin atMedium{
           font-size: 1rem;
         }
       }
@@ -267,13 +271,14 @@
         color: $white;
         font-weight: 400;
 
-        @mixin atLarge {
+        @mixin atMedium {
           padding: 0.9rem 1.2rem;
         }
       }
 
       td {
         padding: 6px 3px;
+        text-align: center;
 
         @mixin atLarge{
           padding: 0.9rem 1.2rem;
