@@ -74,17 +74,18 @@ $grid-space: .3125rem;
     flex-direction: column;
     justify-content: space-between;
 
-    .cards__card-wrapper--alternate &{
-      background-color: color($oasisBlue l(+11%) a(90%));
-    }
-
     @mixin atSmall {
       padding: calc($grid-space*2);
     }
   }
 
+  .cards__card-wrapper--alternate &__cardface-front {
+    background-color: color($oasisBlue l(+11%) a(90%));
+  }
+
   &__cardface-back {
     transform: rotateY(-180deg);
+    background-color: $oasisGreen;
   }
 
   &__title {
@@ -103,6 +104,18 @@ $grid-space: .3125rem;
 
     @mixin atMedium {
     font-size: 1.1rem;
+    }
+
+    &--program {
+      
+
+      @mixin atLarge {
+        font-size: 1.7rem;
+      }
+    }
+
+    &--back {
+      text-align: center;
     }
   }
 

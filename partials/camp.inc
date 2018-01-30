@@ -32,12 +32,12 @@
                 <div class="cards__card-wrapper of-<?= $nof_programs ?>">
                   <div class="cards__card">
                     <div class="cards__cardface cards__cardface-front">
-                      <h2 class="cards__title"><?= $block->menu_title ?></h2>
+                      <h2 class="cards__title cards__title--program"><?= $block->menu_title ?></h2>
                       <a href="tel:{{ camp.tel }}" class="cards__subtitle"><?= $block->program_ages ?></a>
                     </div>
                     <!-- /.cards__cardface -->
                     <div class="cards__cardface cards__cardface-back">
-                      <h2 class="cards__title">back of card</h2>
+                      <h2 class="cards__title--back">Learn More</h2>
                     </div>
                     <!-- /.cards__cardface -->
                   </div>
@@ -57,11 +57,11 @@
               <div class="cards__card">
                 <div class="cards__cardface cards__cardface-front">
                   <h2 class="cards__title">Director's Corner</h2>
-                  <a href="tel:{{ camp.tel }}" class="cards__subtitle">blog</a>
+                  <a href="tel:{{ camp.tel }}" class="cards__subtitle">Blog</a>
                 </div>
                 <!-- /.cards__cardface -->
                 <div class="cards__cardface cards__cardface-back">
-                  <h2 class="cards__title">back of card</h2>
+                  <h2 class="cards__title--back">Learn More</h2>
                 </div>
                 <!-- /.cards__cardface -->
               </div>
@@ -71,7 +71,7 @@
 
             <?php foreach ( $blocks as $block ) : ?>
 
-              <?php if ($block->type == 'rich_text_with_image_5050') : ?>
+              <?php if ($block->type == 'section_heading' || $block->type == 'rich_text_with_image_5050' || $block->type = 'rich_text_no_image') : ?>
 
                 <?php if ($block->featured) : ?>
                 
@@ -79,11 +79,11 @@
                     <div class="cards__card">
                       <div class="cards__cardface cards__cardface-front">
                         <h2 class="cards__title"><?= $block->title ?></h2>
-                        <a href="tel:{{ camp.tel }}" class="cards__subtitle">blog</a>
+                        <a href="tel:{{ camp.tel }}" class="cards__subtitle"><?= $block->tagline ?></a>
                       </div>
                       <!-- /.cards__cardface -->
                       <div class="cards__cardface cards__cardface-back">
-                        <h2 class="cards__title">back of card</h2>
+                        <h2 class="cards__title--back">Learn More</h2>
                       </div>
                       <!-- /.cards__cardface -->
                     </div>
@@ -116,7 +116,7 @@
     <!-- /.overlay -->
 
     <div class="card-details__wrapper">
-      <?php foreach ($camps as $camp) : ?>
+      <?php foreach ($blocks as $camp) : ?>
 
         <div class="card-details">
         <div class="card-details__headings">
