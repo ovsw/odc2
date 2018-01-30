@@ -34,8 +34,11 @@
       padding: 1rem 1rem 0.7rem 1rem;
       position: absolute;
       top: 0;
+      left: 5%;
+    }
+    
+    @mixin atHuge{
       left: 10%;
-      
     }
   }
 
