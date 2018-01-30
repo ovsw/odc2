@@ -12,6 +12,10 @@ img {
   height: auto;
 }
 
+a {
+	color: $mainAccent;
+}
+
 .button {
 	padding: 0.7rem 0;
 	border: none;
