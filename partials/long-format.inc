@@ -47,7 +47,10 @@
         <div class="mx__rt-image__block-row">
           
           <div class="mx__rt-image__image-wrapper">
-            <img class="mx__rt-image__image" src="<?= $block->matrix_single_image->getCrop("tall_large")->url ?>" alt="<?= $block->matrix_single_image->description ?>">
+            <picture>
+              <source srcset="<?= $block->matrix_single_image->getCrop("tall_large")->url ?>" media="(min-width: 600px)">
+              <img class="mx__rt-image__image" src="<?= $block->matrix_single_image->getCrop("square_small")->url ?>" alt="<?= $block->matrix_single_image->description ?>">
+            </picture>
           </div>
           <!-- /.mx__rt-image__image-wrapper -->
           
