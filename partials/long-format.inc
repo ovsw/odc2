@@ -28,7 +28,7 @@
       $subsection_header_counter = 0;
     ?>
 
-    <div class="mx__section-heading">
+    <div class="mx__section-heading" id="<?= createSlug($block->title) ?>">
 
       <h2 class="mx__section-heading__title"><?= $section_header_counter.". ".$block->title." <span class='mx__section-heading__title-tagline'>".$block->tagline."</span>" ?></h2>
     </div>

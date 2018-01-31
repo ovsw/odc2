@@ -171,5 +171,10 @@
   &__close-link {
     display: none;
   }
+
+  &__solo-description {
+    color: $white;
+    padding: 0.5rem 1rem;
+  }
 }
 

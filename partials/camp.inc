@@ -15,8 +15,9 @@
         </div>
         <!-- /.large-hero__slideshow-wrapper -->
       
-        <?php 
-          $blocks = $page->children("template=long-format")->first()->repeater_matrix;
+        <?php
+          $aboutPage = $page->children("template=long-format")->first();
+          $blocks = $aboutPage->repeater_matrix;
           $nof_programs = 0;
           foreach ( $blocks as $block ) {
             if ($block->type == "program") {$nof_programs++;}
@@ -29,7 +30,7 @@
 
               <?php if ($block->type == 'program') : ?>
                 
-                <div class="cards__card-wrapper of-<?= $nof_programs ?>">
+                <div class="cards__card-wrapper with-lightbox of-<?= $nof_programs ?>">
                   <div class="cards__card">
                     <div class="cards__cardface cards__cardface-front">
                       <h2 class="cards__title cards__title--program"><?= $block->menu_title ?></h2>
@@ -53,7 +54,7 @@
 
           <div class="cards">
 
-            <div class="cards__card-wrapper of-6">
+            <a class="cards__card-wrapper of-6" href="<?= $page->children("template=camp-blog-home")->first()->url ?>">
               <div class="cards__card">
                 <div class="cards__cardface cards__cardface-front cards__cardface-front--secondary">
                   <h2 class="cards__title">Director's Corner</h2>
@@ -66,7 +67,7 @@
                 <!-- /.cards__cardface -->
               </div>
               <!-- /.cards__card -->
-            </div>
+            </a>
             <!-- /.cards__card-wrapper -->
 
             <?php foreach ( $blocks as $block ) : ?>
@@ -75,7 +76,7 @@
 
                 <?php if ($block->featured) : ?>
                 
-                  <div class="cards__card-wrapper of-6">
+                  <a class="cards__card-wrapper of-6" href="<?= $aboutPage->httpUrl."#".createSlug($block->title) ?>">
                     <div class="cards__card">
                       <div class="cards__cardface cards__cardface-front cards__cardface-front--secondary">
                         <h2 class="cards__title"><?= $block->title ?></h2>
@@ -88,7 +89,7 @@
                       <!-- /.cards__cardface -->
                     </div>
                     <!-- /.cards__card -->
-                  </div>
+                  </a>
                   <!-- /.cards__card-wrapper -->
                 
                 <?php endif; ?>
@@ -97,7 +98,7 @@
 
             <?php endforeach; ?>
 
-            <div class="cards__card-wrapper of-6">
+            <a class="cards__card-wrapper of-6" href="<?= $page->children("template=typical-day")->first()->url ?>">
               <div class="cards__card">
                 <div class="cards__cardface cards__cardface-front cards__cardface-front--secondary">
                   <h2 class="cards__title">See a Typical Day</h2>
@@ -110,7 +111,7 @@
                 <!-- /.cards__cardface -->
               </div>
               <!-- /.cards__card -->
-            </div>
+            </a>
             <!-- /.cards__card-wrapper -->
 
           </div>
@@ -133,63 +134,46 @@
     <!-- /.overlay -->
 
     <div class="card-details__wrapper">
-      <?php foreach ($blocks as $camp) : ?>
+      <?php foreach ($blocks as $block) : ?>
+        
+        <?php if ($block->type == 'program') : ?>
 
-        <div class="card-details">
-        <div class="card-details__headings">
-          <p class="card-details__heading-intro">Oasis at</p>
-          <h2 class="card-details__heading"><?= $camp->title ?></h2>
-        </div>
-        <!-- /.headings -->
-
-        <div class="card-details__video" data-videourl="<?= $camp->video_url ?>">
-          <div class='embed-container'></div>
-        </div>
-        <!-- /.card-details__video -->
-
-        <div class="card-details__content">
-          <div class="tabs">
-
-            <ul class="tabs__buttons">
-              <li class="button tabs__button tabs__button--campdetails-tab active" data-tab="tab1">Programs</li>
-              <li class="button tabs__button tabs__button--campdetails-tab" data-tab="tab2">About</li>
-            </ul>
-            <!-- /.tabs__buttons -->
-            
-            <div class="tabs__content"> 
-
-              <div class="tabs__tab active tab1">
-                <div class="card-details__programs">
-                  <?= $camp->card_programs ?>
-                </div>
-                <!-- /.card-details__programs -->
-              </div>
-              <!-- /.tabs__tab -->
-
-              <div class="tabs__tab tab2">
-                <div class="card-details__description">
-                  <?= $camp->card_description ?>
-                </div>
-                <!-- /.card-details__programs -->
-              </div>
-              <!-- /.tabs__tab -->
+          <div class="card-details">
+            <div class="card-details__headings">
+              <p class="card-details__heading-intro">Program:</p>
+              <h2 class="card-details__heading"><?= $block->menu_title ?></h2>
             </div>
-            <!-- /.tabs__content -->
+            <!-- /.headings -->
 
+            <div class="card-details__video" data-videourl="#">
+              <div class='embed-container'></div>
+            </div>
+            <!-- /.card-details__video -->
+
+            <div class="card-details__content">
+
+            <div class="card-details__solo-description">
+
+              <p>Description</p>
+
+            </div>
+            <!-- /.card-details__solo-description -->
+
+                <div class="card-details__buttons">
+                  <a href="#" class="button button__cancel card-details__back-btn">back</button>
+                  <a href="<?= $aboutPage->httpUrl."#".createSlug($block->title) ?>" class="button button__cta card-details__learn-more-btn">Learn More ></button>
+                  <a class="card-details__back-link" href="#">< or select another camp</a>
+                  <a class="card-details__close-link" href="#">close</a>
+                </div>
+                <!-- /.card-details__buttons -->
+            </div>
+            <!-- /.card-details__content -->
           </div>
-          <!-- /.tabs -->
-            <div class="card-details__buttons">
-              <a href="#" class="button button__cancel card-details__back-btn">back</button>
-              <a href="<?= $camp->httpUrl ?>" class="button button__cta card-details__learn-more-btn">Learn More ></button>
-              <a class="card-details__back-link" href="#">< or select another camp</a>
-              <a class="card-details__close-link" href="#">close</a>
-            </div>
-            <!-- /.card-details__buttons -->
-        </div>
-        <!-- /.card-details__content -->
-      </div>
-      <!-- /.card-details -->
+          <!-- /.card-details -->
+
+        <?php endif ?>
+
       <?php endforeach; ?>
 
     </div>
-    <!-- /.card-details-container -->
+    <!-- /.card-details__wrapper -->
