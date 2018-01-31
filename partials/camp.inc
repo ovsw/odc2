@@ -9,7 +9,7 @@
         
         <div class="large-hero__top-area">
           <div class="text-slideshow">
-            <h1 class="text-slideshow__slide">Welcome to Oasis</h1>
+            <h1 class="text-slideshow__slide"><span>Welcome to</span> Oasis in <?= $page->title ?></h1>
           </div>
           <!-- /.text-slideshow -->
         </div>

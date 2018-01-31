@@ -13,7 +13,7 @@
     font-size: 2rem;
     line-height: .9em;
     font-weight: 800;
-    font-family: $heading-font;
+    font-family: "Josefin Sans", sans-serif;
     text-shadow: 1px 3px 5px rgba(58, 47, 47, 0.74);
     padding: 0 5%;
     margin: 0;
@@ -27,11 +27,16 @@
     }
 
     @mixin atMedium {
-      font-size: 6em;
+      font-size: 3.625rem;
     }
 
     @mixin atLarge {
-      font-size: 8em;
+      font-size: 4.625rem;
+    }
+
+    span {
+      font-size: 1.5rem;
+      display: block;
     }
   }
 }
