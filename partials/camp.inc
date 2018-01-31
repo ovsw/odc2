@@ -162,7 +162,7 @@
 
             <div class="card-details__solo-description">
 
-              <p>Description</p>
+              <p><?= $block->card_description ?></p>
 
             </div>
             <!-- /.card-details__solo-description -->
