@@ -18,7 +18,7 @@
             'outer_tpl' => '<ul class="top-nav__outer-list">||</ul>',
             'inner_tpl' => '<ul class="top-nav__inner-list">||</ul>',
             'list_tpl' => '<li%s>||</li>',
-            'list_field_class' => '{template}',
+            'list_field_class' => 'p-{id}',
             'item_tpl' => '<a href="{link_url|url}">{title}<i class="far fa-angle-down top-nav__ico-down"></i></a><span class="top-nav__submenu-button"><i class="fas fa-plus top-nav__ico-plus"></i><i class="fas fa-minus top-nav__ico-minus"></i></span>',
             'item_current_tpl' => '<a href="{link_url|url}">{title}<i class="far fa-angle-down top-nav__ico-down"></i></a><span class="top-nav__submenu-button"><i class="fas fa-plus top-nav__ico-plus"></i><i class="fas fa-minus top-nav__ico-minus"></i></span>',
             'code_formatting' => true,

@@ -170,6 +170,7 @@
   }
   &__back-btn {
     width: 30%;
+    color: $black;
   }
 
   &__back-link {
