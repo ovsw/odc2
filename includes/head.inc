@@ -18,5 +18,8 @@
     </script>
 
     <script src="<?= $config->urls->templates ?>vendor/fontawesome-all.min.js"></script>
-
+    <?php if ($page->template == 'typical-day') : ?>
+    <script src="<?= $config->urls->templates ?>vendor/fontawesome-all.min.js"></script>
+    <link rel="stylesheet" href="<?= $config->urls->templates ?>app/temp/styles/typical-day.css" />    
+    <?php endif; ?>
     <link rel="stylesheet" href="<?= $config->urls->templates ?>app/temp/styles/styles.css" />

@@ -1,0 +1,14 @@
+.td {
+  
+  &__wrapper{
+    background-color: rgb(255, 243, 196);
+
+    @mixin atLarge {
+      padding: 130px 2rem 2rem 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+  }
+
+}
