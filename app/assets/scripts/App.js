@@ -23,7 +23,11 @@ $('.top-nav__submenu-button').click(function(){
 });
 
 // slideshow
-var hpSlideshow = new Slideshow('.text-slideshow__slide', 3, 1);
+if ($('.text-slideshow__slide').length > 1) {
+  var hpSlideshow = new Slideshow('.text-slideshow__slide', 3, 1); 
+}else{
+  var hpSlideshow = new Slideshow('.text-slideshow__slide', 3, 1, true);
+}
 
 // flip cards
 $(".cards__card-wrapper").hover(
