@@ -28,6 +28,10 @@
   }
   
   &__video {
+
+    background-image: url('../../assets/images/spinner-132px.gif');
+    background-repeat: no-repeat;
+    background-position: center center;
   
     .embed-container {
       position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;
