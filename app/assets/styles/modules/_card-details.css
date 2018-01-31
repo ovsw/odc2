@@ -43,6 +43,14 @@
       padding:  10px;
     }
 
+    &--novideo {
+      
+      img {
+        min-width:100%;
+      }
+    
+    }
+
   }
   
   &__headings {

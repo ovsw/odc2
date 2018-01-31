@@ -52,9 +52,11 @@ $('.with-lightbox').click(function(){
 
   var video_url = $('.overlay__content .card-details__video').data("videourl");
 
-  //console.log(video_url);
-  $('.overlay__content .embed-container')
-  .html('<iframe src="https://player.vimeo.com/video/'+ getVimeoId(video_url) +'?autoplay=0&title=0&byline=0&portrait=0" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>');
+  var vimeoId = getVimeoId(video_url);
+
+  if (vimeoId != false) {
+    $('.overlay__content .embed-container').html('<iframe src="https://player.vimeo.com/video/'+ vimeoId +'?autoplay=0&title=0&byline=0&portrait=0" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>');
+  }
 });
 
 function getVimeoId( url ) {
@@ -67,6 +69,8 @@ function getVimeoId( url ) {
   if ( match ) {
     // The grouped/matched digits from the regex
     return match[1];
+  }else{
+    return false;
   }
 }
 

@@ -145,10 +145,18 @@
             </div>
             <!-- /.headings -->
 
-            <div class="card-details__video" data-videourl="#">
-              <div class='embed-container'></div>
+            <?php if ($block->video_url != "") : ?>
+            <div class="card-details__video"  data-videourl="<?= $block->video_url ?>">
+            <div class='embed-container'></div>
             </div>
             <!-- /.card-details__video -->
+            <?php else : ?>
+            <div class="card-details__video card-details__video--novideo">
+              <div class='embed-container'><img src="<?= $block->video_placeholder_img->getCrop('video-sized-crop')->url  ?>" alt="<?= $block->video_placeholder_img->description ?>"></div> 
+              
+            </div>
+            <!-- /.card-details__video -->
+            <?php endif; ?>
 
             <div class="card-details__content">
 
