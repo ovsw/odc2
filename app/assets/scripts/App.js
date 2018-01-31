@@ -41,7 +41,7 @@ $('.tabs__button').click( function(){
 });
 
 // show card details
-$('.cards__card-wrapper').click(function(){
+$('.with-lightbox').click(function(){
   //console.log($(this).index());
   $('.overlay').show();
   $('.card-details__wrapper .card-details:eq('+ $(this).index() +')').clone(true, true).appendTo( '.overlay__content' );

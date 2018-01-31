@@ -9,11 +9,11 @@
         
         <div class="large-hero__top-area" >
           <div class="text-slideshow">
+            <h1 class="text-slideshow__slide">Amazing Summers, Lifelong Friends!</h1>
+            <h1 class="text-slideshow__slide">Spirit</h1>
+            <h1 class="text-slideshow__slide">Community</h1>
             <h1 class="text-slideshow__slide">Play, Learn, Grow</h1>
-            <h1 class="text-slideshow__slide">Second Slide</h1>
-            <h1 class="text-slideshow__slide">Third Slide</h1>
-            <h1 class="text-slideshow__slide">Fourth Slide</h1>
-            <h1 class="text-slideshow__slide">Fifth Slide</h1>
+            <h1 class="text-slideshow__slide">Where Friends become Family</h1>
           </div>
           <!-- /.text-slideshow -->
         </div>
@@ -26,7 +26,7 @@
             <?php foreach ( $camps as $camp ) : ?>
               <?php $i++; $alternateClass = ($i % 2 == 0) ? " cards__card-wrapper--alternate" : "";  ?>
                 
-            	<div class="cards__card-wrapper<?= $alternateClass ?>">
+            	<div class="cards__card-wrapper with-lightbox<?= $alternateClass ?>">
                 <div class="cards__card">
                   <div class="cards__cardface cards__cardface-front">
                     <h2 class="cards__title"><?= $camp->title ?></h2>
@@ -88,7 +88,11 @@
 
               <div class="tabs__tab active tab1">
                 <div class="card-details__programs">
-                  <?= $camp->card_programs ?>
+                  <ul>
+                    <?php foreach ($camp->camp_programs as $program) : ?>
+                    <li><strong><?= $program->long_name != "" ? $program->long_name : $program->title ?></strong> (<?= $program->program_ages ?>)</li>
+                    <?php endforeach; ?>
+                  </ul>
                 </div>
                 <!-- /.card-details__programs -->
               </div>
