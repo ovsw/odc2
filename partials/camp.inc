@@ -53,11 +53,11 @@
 
           <div class="cards">
 
-            <div class="cards__card-wrapper">
+            <div class="cards__card-wrapper of-6">
               <div class="cards__card">
-                <div class="cards__cardface cards__cardface-front">
+                <div class="cards__cardface cards__cardface-front cards__cardface-front--secondary">
                   <h2 class="cards__title">Director's Corner</h2>
-                  <a href="tel:{{ camp.tel }}" class="cards__subtitle">Blog</a>
+                  <span class="cards__subtitle cards__subtitle--smaller">Blog</span>
                 </div>
                 <!-- /.cards__cardface -->
                 <div class="cards__cardface cards__cardface-back">
@@ -75,11 +75,11 @@
 
                 <?php if ($block->featured) : ?>
                 
-                  <div class="cards__card-wrapper">
+                  <div class="cards__card-wrapper of-6">
                     <div class="cards__card">
-                      <div class="cards__cardface cards__cardface-front">
+                      <div class="cards__cardface cards__cardface-front cards__cardface-front--secondary">
                         <h2 class="cards__title"><?= $block->title ?></h2>
-                        <a href="tel:{{ camp.tel }}" class="cards__subtitle"><?= $block->tagline ?></a>
+                        <span class="cards__subtitle cards__subtitle--smaller"><?= $block->tagline ?></span>
                       </div>
                       <!-- /.cards__cardface -->
                       <div class="cards__cardface cards__cardface-back">
@@ -96,6 +96,23 @@
               <?php endif; ?>
 
             <?php endforeach; ?>
+
+            <div class="cards__card-wrapper of-6">
+              <div class="cards__card">
+                <div class="cards__cardface cards__cardface-front cards__cardface-front--secondary">
+                  <h2 class="cards__title">See a Typical Day</h2>
+                  <span class="cards__subtitle cards__subtitle--smaller">at Oasis</span>
+                </div>
+                <!-- /.cards__cardface -->
+                <div class="cards__cardface cards__cardface-back">
+                  <h2 class="cards__title--back">Learn More</h2>
+                </div>
+                <!-- /.cards__cardface -->
+              </div>
+              <!-- /.cards__card -->
+            </div>
+            <!-- /.cards__card-wrapper -->
+
           </div>
           <!-- /.cards -->
           

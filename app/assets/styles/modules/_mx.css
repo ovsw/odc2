@@ -145,7 +145,7 @@
     &__title {
       column-span: all;
       background-color: color($oasisBlue  w(+ 30%) a(85%));
-      color: $white;
+      color: $white!important;
       margin: 0;
       padding: 0.5rem 5% 1rem 5%;
       font-weight: 300;
