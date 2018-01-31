@@ -84,7 +84,7 @@ $mobile_break: atLarge;
    } 
   }
 
-  &__item-level-1.menu_link {
+  &__item-level-1.p-1031 {
     background-color: $mainAccent;
   }
 
