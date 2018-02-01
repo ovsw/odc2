@@ -53,7 +53,7 @@
     &__title {
       background-color: color($oasisBlue  w(+ 30%) a(85%));
       color: $white!important;
-      margin: 0 2%;
+      margin: 0;
       padding: 0.5rem 5% 1rem 5%;
       font-weight: 300;
       font-size: 1.8rem;
@@ -75,7 +75,7 @@
    /*----------  image  ----------*/
 
     &__image-wrapper {
-     margin: 0 2%;
+     margin: 0 1rem;
      border: 7px solid color($oasisBlue  w(+ 30%) a(85%));
 
      @mixin atMedium {
