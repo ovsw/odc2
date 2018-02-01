@@ -4,16 +4,16 @@
   height: 100vh;
   overflow: hidden;
   /* background: @mixin simpleRadialGradient #fff #000; */
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAF0lEQVQIW2NkYGD4z8DAwMgAI0AMDA4AI3EBBCKrOnQAAAAASUVORK5CYII=');
+  /* or: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAF0lEQVQIW2NkYGD4z8DAwMgAI0AMDA4AI3EBBCKrOnQAAAAASUVORK5CYII= */
+
   
   &__video-bg {
     position: absolute;
     min-width: 100%; 
     min-height: 100%;
-    z-index: 1;
-    display: none;
+    z-index: -100;
+    
     top: 50%; left: 50%;
     transform: translate(-50%, -50%);
 

@@ -1,7 +1,7 @@
     <div class="large-hero">
 
       <video class="large-hero__video-bg" autoplay muted loop>
-        <source src="<?= $config->urls->templates ?>app/assets/video/oasis-children-all-camps-intro.mp4" type="video/mp4">
+        <source src="<?= $page->bg_video_url ?>" type="video/mp4" poster="<?= $page->bg_video_poster_url ?>">
       </video>
       <!-- /.large_hero__video-bg -->
       
