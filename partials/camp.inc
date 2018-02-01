@@ -1,4 +1,4 @@
-    <div class="large-hero">
+    <div class="large-hero" style="background-image: url('<?= $page->camp_bg_image->getCrop('tablet')->url ?>');">
 
       <video class="large-hero__video-bg" autoplay muted loop>
         <source src="<?= $config->urls->templates ?>app/assets/video/oasis-children-all-camps-intro.mp4" type="video/mp4">
