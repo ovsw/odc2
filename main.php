@@ -8,7 +8,6 @@
     <?php require($config->paths->templates."includes/header_hp.inc"); ?>
 
     <?php require($config->paths->templates."partials/".$page->template.".inc"); ?>
-
+    <?php require($config->paths->templates."includes/foot.inc"); ?>
   </body>
-  <?php require($config->paths->templates."includes/foot.inc"); ?>
 </html>
