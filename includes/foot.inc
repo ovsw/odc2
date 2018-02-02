@@ -1,3 +1,4 @@
+<footer class="footer__wrapper">
 <div class="footer">
 
   <div class="footer__logos">
@@ -42,8 +43,9 @@
 
 </div>
 <!-- /.footer -->
-
 <p class="footer__copyright">Copyright &copy;<?= date("Y") ?> Oasis Children's Services LLC | Website by <a href="http://ovswebsites.com/" target="_blank">OVS Websites</a></p>
+</footer>
+<!-- /.footer__wrapper -->
 
 <div class="please-rotate">
   <p>Please rotate your device</p>

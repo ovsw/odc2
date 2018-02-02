@@ -47,7 +47,8 @@ $('.tabs__button').click( function(){
 // show card details
 $('.with-lightbox').click(function(){
   //console.log($(this).index());
-  $('.overlay').show();
+  showOverlay();
+
   $('.card-details__wrapper .card-details:eq('+ $(this).index() +')').clone(true, true).appendTo( '.overlay__content' );
 
   var video_url = $('.overlay__content .card-details__video').data("videourl");
@@ -58,6 +59,15 @@ $('.with-lightbox').click(function(){
     $('.overlay__content .embed-container').html('<iframe src="https://player.vimeo.com/video/'+ vimeoId +'?autoplay=0&title=0&byline=0&portrait=0" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>');
   }
 });
+
+function showOverlay() {
+  $('.overlay').show();
+  $('.footer__wrapper,.large-hero').addClass('hideonMobile');
+}
+function hideOverlay(){
+  $('.overlay').hide();
+  $('.footer__wrapper,.large-hero').removeClass('hideonMobile');  
+}
 
 function getVimeoId( url ) {
 
@@ -78,7 +88,7 @@ function getVimeoId( url ) {
 $('.card-details__back-btn').click(function(e){
   e.preventDefault();
   $('.overlay__content .card-details').remove();
-  $('.overlay').hide();
+  hideOverlay();
 });
 
 

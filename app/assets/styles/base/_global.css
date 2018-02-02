@@ -154,5 +154,10 @@ a {
           padding: 0.9rem 1.2rem;
         }
       }
+}
 
+.hideonMobile {
+  @media (max-width: 760px) {
+    display: none!important;
+  }
 }

@@ -425,14 +425,12 @@ a {
 			font-size: 0.875rem;
       line-height: 1.5rem;
 			padding: 0  1rem;
-
 }
 @media (min-width: 1200px) {
 .rte_wrapper {
         padding-top: .9rem;
         font-size: 1rem;
         line-height: 1.7rem
-
 }
  }
 .rte_wrapper h2	{
@@ -506,6 +504,11 @@ a {
           padding: 0.9rem 1.2rem
       }
  }
+@media (max-width: 760px) {
+.hideonMobile {
+    display: none!important
+}
+  }
 .header {
   position: fixed;
   padding: 0 5% 10px 5%;
