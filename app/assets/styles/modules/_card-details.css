@@ -85,7 +85,7 @@
 
   &__heading-intro {
     position: absolute;
-    top:0 px;
+    top: 5px;
     left: 10px;
     color: #e6ece8;
     display:none;
@@ -107,6 +107,10 @@
       padding: 20px 0 0 20px;
       font-size: 1.5rem;
       margin: 15px 0 10px 0;
+    }
+
+    @mixin atMedium {
+      padding: 26px 0 8px 20px;
     }
   }
   
