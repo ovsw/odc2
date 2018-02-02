@@ -1,0 +1,579 @@
+/*
+ * jQuery FlexSlider v2.0
+ * http://www.woothemes.com/flexslider/
+ *
+ * Copyright 2012 WooThemes
+ * Free to use under the GPLv2 license.
+ * http://www.gnu.org/licenses/gpl-2.0.html
+ *
+ * Contributing author: Tyler Smith (@mbmufffin)
+ */
+
+ 
+/* Browser Resets */
+.flex-container a:active,
+.flexslider a:active,
+.flex-container a:focus,
+.flexslider a:focus  {outline: none;}
+.slides,
+.flex-control-nav,
+.flex-direction-nav {margin: 0; padding: 0; list-style: none;} 
+
+/* FlexSlider Necessary Styles
+*********************************/ 
+
+.flexslider .slides > li {display: none; -webkit-backface-visibility: hidden;} /* Hide the slides before the JS is loaded. Avoids image jumping */
+.flexslider .slides img {width: 100%; display: block;}
+.flex-pauseplay span {text-transform: capitalize;}
+
+/* Clearfix for the .slides element */
+.slides:after {content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0;} 
+html[xmlns] .slides {display: block;} 
+* html .slides {height: 1%;}
+
+/* No JavaScript Fallback */
+/* If you are not using another script, such as Modernizr, make sure you
+ * include js that eliminates this class on page load */
+.no-js .slides > li:first-child {display: block;}
+
+
+/* FlexSlider Default Theme
+*********************************/
+
+.flex-viewport {max-height: 2000px; -webkit-transition: all 1s ease; -moz-transition: all 1s ease; transition: all 1s ease;}
+.loading .flex-viewport {max-height: 300px;}
+.flexslider .slides {zoom: 1;}
+
+.carousel li {margin-right: 5px}
+
+
+/* Direction Nav */
+.flex-direction-nav {*height: 0;}
+/*.flex-direction-nav a {width: 30px; height: 30px; margin: -20px 0 0; display: block; background: url(images/bg_direction_nav.png) no-repeat 0 0; position: absolute; top: 50%; z-index: 10; cursor: pointer; text-indent: -9999px; opacity: 0; -webkit-transition: all .3s ease;}
+.flex-direction-nav .flex-next {background-position: 100% 0; right: -36px; }
+.flex-direction-nav .flex-prev {left: -36px;}*/
+
+.flexslider:hover .flex-next:hover, .flexslider:hover .flex-prev:hover {opacity: 1;}
+.flex-direction-nav .flex-disabled {opacity: .3!important; filter:alpha(opacity=30); cursor: default;}
+
+/* Control Nav */
+.flex-control-nav {width: 100%; position: absolute; bottom: -40px; text-align: center;}
+.flex-control-nav li {margin: 0 6px; display: inline-block; zoom: 1; *display: inline;}
+.flex-control-paging li a {width: 11px; height: 11px; display: block; background: #666; background: rgba(0,0,0,0.5); cursor: pointer; text-indent: -9999px; -webkit-border-radius: 20px; -moz-border-radius: 20px; -o-border-radius: 20px; border-radius: 20px; box-shadow: inset 0 0 3px rgba(0,0,0,0.3);}
+.flex-control-paging li a:hover { background: #333; background: rgba(0,0,0,0.7); }
+.flex-control-paging li a.flex-active { background: #000; background: rgba(0,0,0,0.9); cursor: default; }
+
+.flex-control-thumbs {margin: 5px 0 0; position: static; overflow: hidden;}
+.flex-control-thumbs li {width: 25%; float: left; margin: 0;}
+.flex-control-thumbs img {width: 100%; display: block; opacity: .7; cursor: pointer;}
+.flex-control-thumbs img:hover {opacity: 1;}
+.flex-control-thumbs .flex-active {opacity: 1; cursor: default;}
+
+@media screen and (max-width: 860px) {
+  .flex-direction-nav .flex-prev {opacity: 1; left: 0;}
+  .flex-direction-nav .flex-next {opacity: 1; right: 0;}
+}
+
+/*typical day page*/
+.typicalDayColumn {
+	
+}
+.typicalDayTitleOuterWrapper {
+	background: url('/site/templates/app/images/new/homepageContentTrim_bg.jpg') top left;
+	box-shadow: -3px 4px 13px;
+	padding: 15px;
+	margin-bottom: 20px;
+}
+.typicalDayTitleInnerWrapper {
+	background: url('/site/templates/app/images/new/paper2.jpg') top left;
+	padding: 10px;
+	padding-bottom: 20px;
+	overflow: hidden;
+}
+.typicalDayTitleInnerWrapper h1 {
+	margin: 0;
+	padding: 0;
+}
+.tdSlideShowOuterWrap {
+    padding-bottom: 20px;
+    position: relative;
+    margin-bottom: 60px;
+    margin: 0 auto;
+}
+.tdSlideShowWrap div {
+	display:none;
+	width:100%;
+	background-size: 100% 96%;
+}
+.tdSlideShowWrap div img {
+	max-height: 100%;
+}
+.tdSlideShowWrap div.welcomeMessage {
+	display:block;
+}
+.tdTopWrapper {
+	/* background-image: url('/site/templates/app/images/typicalDay/tdTopBg.png'); */
+	border-radius: 8px;
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+	padding-bottom: 80px;
+	position: relative;
+	top: 0px;
+	left: 0px;
+	background-color: #195F16;
+	z-index: 10;
+}
+.tdTopWrapper ul {
+	list-style: none;
+	list-style-image: none;
+	margin: 0;
+	padding:0;
+	position:relative;
+	top:9px;
+}
+.tdTopWrapper ul li {
+	float:left;
+	display:inline;
+	padding-right:10px;
+}
+.tdTopWrapper ul li a {
+	letter-spacing:0px;
+	background-color: #fdeac1;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	display:inline-block;
+	text-align:center;
+	padding: 4px 13px;
+	border:4px solid #5d2f17;
+	color:#1f5c34;
+	font-weight: normal;
+	text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.4);
+	text-decoration:none;
+	-webkit-box-shadow: inset 1px 2px 3px rgba(0, 0, 0, 0.6);
+	-moz-box-shadow:  inset 1px 2px 3px rgba(0, 0, 0, 0.6);
+	box-shadow:  inset 1px 2px 3px rgba(0, 0, 0, 0.6);
+	font-size: 20px;
+	font-family: Oswald,sans-serif;
+	
+}
+.tdTopWrapper ul li a:hover, .tdTopWrapper ul li a#b.tdButtonSelected, .tdTopWrapper ul li a#g.tdButtonSelected, .tdTopWrapper ul.ageSelector li a.tdButtonSelected {
+	-webkit-box-shadow:  0px 0px 4px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow:  0px 0px 4px rgba(0, 0, 0, 0.5);
+	box-shadow:  0px 0px 4px rgba(0, 0, 0, 0.5);
+	padding: 7px 16px 7px 16px;
+	background-color: #5d2f17;
+	color: white;
+	border: 1px solid #D48739;
+	background-image: none;
+	
+}
+.tdTopWrapper ul li a#b.tdButtonSelected {
+	color: white;
+	/*border-color: #5C84AC;
+	background: -webkit-linear-gradient(top, #6e99c4 12%, #2a5bc1 85%);
+	background: -moz-linear-gradient(top, #6e99c4 12%, #2a5bc1 85%);
+	background: -o-linear-gradient(top, #6e99c4 12%, #2a5bc1 85%);
+	background: -ms-linear-gradient(top, #6e99c4 12%, #2a5bc1 85%);
+	background: linear-gradient(top, #6e99c4 12%, #2a5bc1 85%);
+	-pie-background: linear-gradient(top, #6e99c4 12%, #2a5bc1 85%);
+	text-shadow: 0 0 10px rgba(0, 0, 0, 0.6);*/
+	
+}
+.tdTopWrapper ul li a#g.tdButtonSelected {
+	/*color:white;
+	border-color: #ffa3b5;
+	background: -webkit-linear-gradient(top, #fa49cb 12%, #e6008a 85%);
+	background: -moz-linear-gradient(top, #fa49cb 12%, #e6008a 85%);
+	background: -o-linear-gradient(top, #fa49cb 12%, #e6008a 85%);
+	background: -ms-linear-gradient(top, #fa49cb 12%, #e6008a 85%);
+	background: linear-gradient(top, #fa49cb 12%, #e6008a 85%);
+	-pie-background: linear-gradient(top, #fa49cb 12%, #e6008a 85%);
+	text-shadow: 0 0 10px rgba(0, 0, 0, 0.6);*/
+	
+}
+.tdTopWrapper ul.ageSelector li a.tdButtonSelected {
+	/*color:white;
+	border-color: #73B448;
+	background: -webkit-linear-gradient(top, #71c138 14%, #3d821d 88%);
+	background: -moz-linear-gradient(top, #71c138 14%, #3d821d 88%);
+	background: -o-linear-gradient(top, #71c138 14%, #3d821d 88%);
+	background: -ms-linear-gradient(top, #71c138 14%, #3d821d 88%);
+	background: linear-gradient(top, #71c138 14%, #3d821d 88%);
+	-pie-background: linear-gradient(top, #71c138 14%, #3d821d 88%);
+	text-shadow: 0 0 10px rgba(0, 0, 0, 0.6);*/
+	
+}
+.tdTopWrapper ul.genderSelector {
+	float: left;
+	margin-left: 2%;
+}
+.tdTopWrapper ul.ageSelector {
+	float: right;
+	margin-left: 2%;
+}
+.tdSlideShowWrap {
+	position: relative;
+	top:-60px;
+	z-index: 15;
+	/* background-image: url("/site/templates/app/images/typicalDay/paper_bg.jpg"); */
+	background-color: #fff;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	padding: 10px 1.5% 10px;
+	-webkit-box-shadow: 0px 10px 24px rgba(40, 0, 0, 0.53);
+	-moz-box-shadow: 0px 10px 24px rgba(40, 0, 0, 0.53);
+	box-shadow: 0px 10px 24px rgba(40, 0, 0, 0.53);
+	
+}
+/* .welcomeMessage {
+	background-image: url('/site/templates/app/images/typicalDay/typicalDayStart.jpg');
+	background-size: 100% 96%;
+}
+.ageError {
+	background-image: url('/site/templates/app/images/typicalDay/typicalDayAgeError.jpg');
+	height: 400px;
+}
+.genderError {
+	background-image: url('/site/templates/app/images/typicalDay/typicalDayGenderError.jpg');
+	height: 400px;
+} */
+.slideshowNavWrap {
+	/* background-image: url("/site/templates/app/images/typicalDay/paper_bg.jpg"); */
+	background-color: #5d2f17;
+	width:100%;
+	position:absolute;
+	bottom: 4px;
+	/*left:3%;*/
+	z-index: 25;
+	border-radius: 5px;
+	-webkit-box-shadow: 0px 0px 10px rgba(40, 0, 0, 0.2);
+	-moz-box-shadow: 0px 0px 10px rgba(40, 0, 0, 0.2);
+	box-shadow: 0px 0px 10px rgba(40, 0, 0, 0.2);
+	padding: 7px 0.8%;
+}
+.slideshowNavWrap .slideshownavWrapper2 {
+	/* background: green url('/site/templates/app/images/tdNav_bg.gif'); */
+	margin: 0px 0 0 0;
+	overflow: hidden;
+	/* background: -webkit-linear-gradient(top, #5B7A2E 20%, #4A6425 80%);
+	background: -moz-linear-gradient(top, #5B7A2E 20%, #4A6425 80%);
+	background: -o-linear-gradient(top, #5B7A2E 20%, #4A6425 80%);
+	background: -ms-linear-gradient(top, #5B7A2E 20%, #4A6425 80%);
+	background: linear-gradient(top, #5B7A2E 20%, #4A6425 80%);
+	-pie-background: linear-gradient(top, #5B7A2E 20%, #4A6425 80%); */
+	background-color: #195F16;
+	
+	
+}
+.slideshowNavWrap ul {
+	background-image:none;
+	/* background-color: #195F16; */
+	list-style: none;
+	list-style-image: none;
+	padding: 8px 0 8px 0.7%;
+	width:99%;
+	margin: 0px 0 0 0;
+	overflow: hidden;	
+}
+.slideshowNavWrap ul li {
+	float:left;
+	display:inline;
+	margin-right: 0.1%;
+	width: 9%;
+}
+.slideshowNavWrap ul li#last {
+	margin-right: 0px;
+}
+.slideshowNavWrap ul li a {
+	font-size: 15px;
+	font-family: Oswald,sans-serif;;
+	color: #4A2611;
+	display:block;
+	text-decoration: none;
+	height:45px;
+	line-height:1.2em;
+	background: -webkit-linear-gradient(top, #D3C086 20%, #E9E9C3 80%);
+	background: -moz-linear-gradient(top, #D3C086 20%, #E9E9C3 80%);
+	background: -o-linear-gradient(top, #D3C086 20%, #E9E9C3 80%);
+	background: -ms-linear-gradient(top, #D3C086 20%, #E9E9C3 80%);
+	background: linear-gradient(top, #D3C086 20%, #E9E9C3 80%);
+	-pie-background: linear-gradient(top, #D3C086 20%, #E9E9C3 80%);
+	text-align: center;
+	box-shadow:  1px 1px 4px rgba(0, 0, 0, 0.5);
+	border-radius: 4px;
+	font-weight: normal;
+	padding-top: 5px;
+	border: 1px solid #D48739;
+	
+}
+.slideshowNavWrap ul li#thirdButton {
+	margin-right: 27%;
+}
+.slideshowNavWrap ul li a:hover {
+	padding-top: 6px;
+	height:44px;
+	position:relative;
+	top:1px;
+	-webkit-box-shadow:  1px 1px 1px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow:  1px 1px 1px rgba(0, 0, 0, 0.5);
+	box-shadow:  1px 1px 1px rgba(0, 0, 0, 0.5);
+	
+}
+.slideshowNavWrap ul li.activeSlide a {
+	/*background: -webkit-linear-gradient(top, #A95B1C 20%, #DC8730 80%);
+	-pie-background: linear-gradient(#A95B1C 20%, #DC8730 80%);
+	background: -moz-linear-gradient(top, #A95B1C 20%, #DC8730 80%);
+	background: -o-linear-gradient(top, #A95B1C 20%, #DC8730 80%);
+	background: -ms-linear-gradient(top, #A95B1C 20%, #DC8730 80%);
+	background: linear-gradient(top, #A95B1C 20%, #DC8730 80%);*/
+	background-image: none;
+	background-color: #5d2f17;
+	color:white;
+	border: 1px solid #D48739;
+	height:45px;
+	
+}
+.slideshowNavWrap ul li.activeSlide a:hover {
+	height: 44px;
+}
+#prev2 {
+	position:absolute;
+	top:50%;
+	margin-top: -50px;
+	left: -17px;
+	z-index: 30;
+	width:50px;
+	height:100px;
+	display:block;
+	background: url('/site/templates/app/images/typicalDay/tdPrev.png') top left no-repeat;
+	text-indent: -99999px;
+}
+#next2 {
+	position:absolute;
+	top:50%;
+	margin-top: -50px;
+	right: -15px;
+	z-index: 30;
+	width:50px;
+	height:100px;
+	display:block;
+	background: url('/site/templates/app/images/typicalDay/tdNext.png') top left no-repeat;
+	text-indent: -99999px;
+}
+#next2:hover {
+	background-position: 3px 0;
+}
+#prev2:hover {
+	background-position: -3px 0;
+}
+#prev2, #next2 {
+	display:none;
+}
+a#prev2:focus, a#next2:focus {
+	outline: none;
+}
+.tdInactiveButtons li {
+	opacity:0.5;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+	filter: alpha(opacity=50);
+	-khtml-opacity: 0.5;
+	-moz-opacity: 0.5;
+	background-color: #66a53a;
+}
+.slideDescription {
+	padding:10px 2%;
+	width:25%;
+	min-height:125px;
+	position:absolute;
+	bottom:-40px;
+	right:50%;
+	margin-right: -12%;
+	z-index: 50;
+	background/*-image*/: #E5DFCE/* url("/site/templates/app/images/typicalDay/paper_bg.jpg" )*/;
+	border-radius: 6px;
+	display:none;
+	font-size: 16px;
+	text-align:center;
+	vertical-align: center;
+	color: #4a2611;
+	/*font-style: italic;*/
+	box-shadow:  0 0 4px rgba(0, 0, 0, 0.5);
+	border: 2px solid #5C2101!important;
+	
+}
+.tdSlideshowNavCover {
+	width:98%;
+	height:75px;
+	position:absolute;
+	top:10px;
+	left:1%;
+	z-index: 26;
+	background-color: transparent;
+}
+h1.campJacobson {
+	font-size: 28px;
+	color: #793504;
+	font-family: 'MuseoSans500', sans-serif;
+	text-align:center;
+	margin-top: 65px;
+	margin-bottom: 4px;
+}
+.tdCol1, .tdCol2 {
+	float: left;
+	display: inline;
+	width: 48%;
+	padding: 2px 0px 50px 2%;
+}
+.typicalDayContent {
+	font-size: 16px;
+}
+.slideshowNavWrap ul li a .oneLine {
+    padding-top: 10px;
+}
+.slideshowNavWrap ul li a span {
+    display: block;
+    padding-top: 1px;
+}
+/* //////////////////////////////////////////////////// */
+/* responsive css for typical day */
+/* //////////////////////////////////////////////////// */
+
+@media only screen and (max-width:960px) {
+/* typical day */
+.tdTopWrapper ul li a {
+	font-size: 18px;
+}
+.slideshowNavWrap ul {
+	width: 59%;
+	float: left;
+}
+.tdSlideshowNavCover {
+    height: 110px;
+}
+.slideshowNavWrap ul li#thirdButton, .slideshowNavWrap ul li {
+    margin-right: 1%;
+	width: 31%;
+	margin-bottom: 4px;
+}
+.slideshowNavWrap ul li a span span {display: block;}
+.slideshowNavWrap ul li a {
+    display: block;
+	width: 100%;
+	font-size: 16px;
+}
+.slideDescription {
+    bottom: -0px;
+    right: 0%;
+    margin-right: -0px;
+    min-height: 125px;
+    padding: 10px 2.5%;
+    position: absolute;
+    width: 35%;
+
+}
+.slideshowNavWrap {
+    bottom: -25px;
+}
+}
+@media only screen and (max-width:700px) {
+.tdTopWrapper ul.ageSelector li {
+	padding-right: 5px;
+}
+.tdTopWrapper ul.genderSelector li a {
+    font-size: 16px;
+	padding: 5px 10px;
+}
+.tdTopWrapper ul.ageSelector li a {
+	padding: 5px 7px;
+	font-size: 16px;
+	line-height: 1.1em;
+}
+.tdTopWrapper ul.ageSelector li a:hover, .tdTopWrapper ul.ageSelector li a#b.tdButtonSelected, .tdTopWrapper ul.ageSelector li a#g.tdButtonSelected, .tdTopWrapper ul.ageSelector li a.tdButtonSelected {
+	padding: 8px 10px;
+}	
+.tdTopWrapper ul.genderSelector li a:hover {
+	padding: 8px 13px;
+}
+.tdTopWrapper ul.genderSelector li a#b.tdButtonSelected, .tdTopWrapper ul li a#g.tdButtonSelected {
+	padding: 8px 13px;
+}
+}
+@media only screen and (max-width:580px) {
+.tdTopWrapper ul.genderSelector li {
+	width: 45%;
+	margin-bottom: 15px;
+	padding: 0 2%;
+	
+}
+.tdTopWrapper ul.genderSelector li a {
+	display: block;
+	float: none;
+	font-size: 20px;
+	
+}
+.tdTopWrapper ul.genderSelector, .tdTopWrapper ul.ageSelector {
+	float: none !important;
+	display: block !important;
+	width: 98%;
+	clear: both;
+	overflow: hidden;
+}
+.tdTopWrapper ul.ageSelector li {
+	width: 28.7%;
+	padding: 0 2%;
+}
+.tdTopWrapper ul.ageSelector li a {
+	display: block;
+	float: none;
+	font-size: 18px;
+}
+.tdTopWrapper ul.ageSelector li a span {
+	display: block;
+	font-size: 14px;
+}
+.slideshowNavWrap {
+    left: 3%;
+    padding: 10px 1%;
+    position: relative;
+    width: 92%;
+    z-index: 25;
+	margin-top: -100px;
+}
+.slideshowNavWrap ul {
+    float: none;
+    width: 98%;
+}
+.slideshowNavWrap ul li#thirdButton, .slideshowNavWrap ul li {
+    margin-bottom: 4px;
+    margin-right: 1%;
+    width: 23.6%;
+}
+.slideshowNavWrap ul li a{
+	font-size: 14px;
+	line-height: 1.1em;
+}
+.slideshowNavWrap ul li a span{
+	position: relative;
+	top: 4px;
+}
+.slideDescription {
+    bottom: -10px;
+    margin-right: 0;
+    min-height: 100px;
+    padding: 10px 2.5%;
+    position: relative;
+    right: 0;
+    width: 92%;
+	left: 1%;
+}
+}
+@media only screen and (max-width:470px) {
+	.slideshowNavWrap ul li#thirdButton, .slideshowNavWrap ul li {
+    margin-bottom: 4px;
+    margin-right: 1%;
+    width: 31.2%;
+}
+}
