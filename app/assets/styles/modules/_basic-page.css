@@ -2,6 +2,12 @@
   
   &__hero {
     padding-top: 84px;
+    position: relative;
+    min-height: 150px;
+
+    @mixin atSmaller {
+      min-height: 300px;      
+    }
 
     @mixin atMedium {
       padding-top: 107px;
@@ -10,8 +16,7 @@
     @mixin atLarge {
       padding-top: 0;
     }
-
-    position: relative;
+    
     img {
       display: block;
       min-width:100%;
@@ -19,6 +24,17 @@
   }
 
 
+  &__hero-wrapper {
+    padding-top: 80px;
+
+    @mixin atMedium{
+      padding-top:100px;      
+    }
+    
+    @mixin atLarge {
+      padding-top: 0;
+    }
+  }
 
   &__hero-title {
     text-align: center;
@@ -43,7 +59,7 @@
 
       @mixin atHuge {
        padding: 0;
-       max-width: 1200px;
+       
       }
   
   }

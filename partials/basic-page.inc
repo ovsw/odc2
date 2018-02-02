@@ -1,16 +1,16 @@
-<div class="basic-page__hero">
-  <picture>
-
-    <source srcset="<?= $page->hero_image->getCrop('crop-large-screen')->url." ".$page->hero_image->getCrop('crop-large-screen')->width."w" ?>" media="(min-width: 1200px)">
-
-    <source srcset="<?= $page->hero_image->getCrop('crop-medium-screen')->url." ".$page->hero_image->getCrop('crop-medium-screen')->width."w" ?>" media="(min-width: 640px)">
-
-    <img src="<?= $page->hero_image->getCrop('crop-mobile-screen')->url ?>" alt="<?= $page->hero_image->description ?>">
-  </picture>
-  <!-- <div class="basic-page__hero-screen"></div> -->
-  <h1 class="basic-page__hero-title"><span>Oasis Day Camp</span> - <?= $page->title ?></h1>
+<div class="basic-page__hero-wrapper">
+  <div class="basic-page__hero large-hero large-hero--smaller">
+    <?php $videoSource = $pages->get("1"); ?>
+    <video class="large-hero__video-bg" autoplay muted loop>
+      <source src="<?= $videoSource->bg_video_url ?>" type="video/mp4" poster="<?= $videoSource->bg_video_poster_url ?>">
+    </video>
+        <!-- /.large_hero__video-bg -->
+  </div>
+  <!-- /.basic-page__hero -->
 </div>
-<!-- /.basic-page__hero -->
+<!-- /.basic-page__hero-wrapper -->
+
+<h1 class="basic-page__hero-title"><span>Oasis Day Camp</span> - <?= $page->title ?></h1>
 
 <div class="basic-page__wrapper rte_wrapper">
 
