@@ -23,6 +23,11 @@
     position: relative;
   }
 
+  @mixin atTooShort {
+    background-color: transparent;
+    box-shadow: none;
+  }
+
   &__wrapper .card-details{
       display: none;
   }
@@ -32,6 +37,11 @@
     background-image: url('../../assets/images/spinner-132px.gif');
     background-repeat: no-repeat;
     background-position: center center;
+
+     @media (max-height: 470px) {
+      width: 1px;
+      height: 1px;
+ }
   
     .embed-container {
       position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;
@@ -70,7 +80,7 @@
       z-index:  999;
       background: linear-gradient(to right, #30b256 0%,#5ee064 99%);
     }  
-
+    @mixin hideAtTooShort;
   }
 
   &__heading-intro {
@@ -86,13 +96,17 @@
   }
 
   &__heading {
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: $white;
     padding: 0 20px;
+    margin:7px 0 7px 0;
+    font-weight: 300;
+    font-family: "Josefin Sans", sans-serif;
 
     @mixin atTiny {
       padding: 20px 0 0 20px;
       font-size: 1.5rem;
+      margin: 15px 0 10px 0;
     }
   }
   
@@ -102,13 +116,16 @@
     @mixin atHuge {
       padding-top: 95px;
     }
+
+    
   }
 
   &__programs {
     background-color: $oasisBlue;
     color: $white;
     padding: .5em;
-    font-size: .8rem;
+    font-size: .765rem;
+    @mixin hideAtTooShort;
 
     & ul {
       margin: 0;
@@ -167,6 +184,7 @@
     float: left;
     padding: 0.7em 1em;
     cursor: pointer;
+    @mixin hideAtTooShort;
   }
 
   &__learn-more-btn {

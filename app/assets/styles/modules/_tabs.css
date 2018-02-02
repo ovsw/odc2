@@ -5,7 +5,7 @@
   @mixin atHuge {
     height: inherit;
   }
-
+  @mixin hideAtTooShort;
 
   &__buttons {
     margin: 0px;

@@ -12,7 +12,7 @@
     <script>
       WebFont.load({
         google: {
-          families: ['PT Sans', 'Open Sans:300,400,800', 'Josefin Sans']
+          families: ['PT Sans', 'Open Sans:300,400,800', 'Josefin Sans:300,400,700']
         }
       });
     </script>

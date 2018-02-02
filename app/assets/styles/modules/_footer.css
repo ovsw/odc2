@@ -9,6 +9,8 @@
     background-color: color($oasisGreen);
   }
 
+  @mixin hideAtTooShort;
+
   &__logos {
     text-align: center;
     padding: 1rem;
@@ -113,6 +115,8 @@
     padding: 1rem 10% 1rem 10%;
     margin: 0;
     font-size: 0.9rem;
+
+    @mixin hideAtTooShort;
   }
 
 }

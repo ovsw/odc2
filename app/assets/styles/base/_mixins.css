@@ -31,7 +31,19 @@
  @media (min-width: 1200px) {
   @mixin-content;
  }
-} 
+}
+
+@define-mixin hideAtTooShort {
+ @media (max-height: 470px) {
+  display: none;
+ }
+}
+
+@define-mixin atTooShort {
+ @media (max-height: 470px) {
+  @mixin-content;
+ }
+}
 
 @define-mixin clearfix {
   content: "";

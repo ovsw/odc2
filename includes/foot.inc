@@ -45,6 +45,11 @@
 
 <p class="footer__copyright">Copyright &copy;<?= date("Y") ?> Oasis Children's Services LLC | Website by <a href="http://ovswebsites.com/" target="_blank">OVS Websites</a></p>
 
+<div class="please-rotate">
+  <p>Please rotate your device</p>
+</div>
+<!-- /.please-rotate -->
+
 <script src="<?= $config->urls->templates ?>app/temp/scripts/App.js"></script>
 <?php if ($page->template == 'typical-day') : ?>
 <script src="<?= $config->urls->templates ?>app/temp/scripts/jquery-1.9.1.min.js"></script>

@@ -17,6 +17,8 @@
     flex-direction: row-reverse;
   }
 
+  @mixin hideAtTooShort;
+
   &__logo {
     display: block;
     width: 50%;

@@ -25,6 +25,10 @@
     /*padding: 0;*/
   }
 
+  @mixin atTooShort{
+    background-color: transparent;
+  }
+
   &__content {
     /*background-color: red;*/
     height: 100%;

@@ -11,6 +11,8 @@
     height: auto;
 
   }
+
+  @mixin hideAtTooShort;
   
   &__video-bg {
     position: absolute;
