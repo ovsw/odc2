@@ -161,3 +161,12 @@ a {
     display: none!important;
   }
 }
+/* to remove styling from apple data detectors phone numbers */
+a[x-apple-data-detectors] {
+  color: white !important;
+  text-decoration: none !important;
+  font-size: inherit !important;
+  font-family: inherit !important;
+  font-weight: inherit !important;
+  line-height: inherit !important;
+}

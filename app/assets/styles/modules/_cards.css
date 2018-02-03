@@ -7,13 +7,18 @@ $grid-space: .3125rem;
   font-family: "PT Sans", sans-serif;
   margin: $grid-space-mobile;
   margin-top: 0;
-  display: flex;
+  
   /*flex-direction: column;*/
-  flex-wrap: wrap;
+  
 
   @mixin atSmall{
     flex-wrap: wrap;
     flex-direction: row;
+  }
+
+  @mixin atMedium {
+    display: flex;
+    flex-wrap: wrap;
   }
 
   @mixin atLarge{
@@ -31,6 +36,7 @@ $grid-space: .3125rem;
   &__card-wrapper {
     padding: $grid-space-mobile;
     width:  33%;
+    float:left;
     perspective:1500;
     
     @mixin atMedium{

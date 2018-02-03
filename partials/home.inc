@@ -30,7 +30,7 @@
                 <div class="cards__card">
                   <div class="cards__cardface cards__cardface-front">
                     <h2 class="cards__title"><?= $camp->title ?></h2>
-                    <span class="cards__subtitle"><?= $camp->phone_no ?></span>
+                    <a class="cards__subtitle" href="tel:<?= $camp->phone_no ?>"><?= $camp->phone_no ?></a>
                   </div>
                   <!-- /.cards__cardface -->
                   <div class="cards__cardface cards__cardface-back">

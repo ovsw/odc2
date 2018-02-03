@@ -509,6 +509,15 @@ a {
     display: none!important
 }
   }
+/* to remove styling from apple data detectors phone numbers */
+a[x-apple-data-detectors] {
+  color: white !important;
+  text-decoration: none !important;
+  font-size: inherit !important;
+  font-family: inherit !important;
+  font-weight: inherit !important;
+  line-height: inherit !important;
+}
 .header {
   position: fixed;
   padding: 0 5% 10px 5%;
@@ -1008,13 +1017,8 @@ a {
   font-family: "PT Sans", sans-serif;
   margin: 0.15625rem;
   margin-top: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  /*flex-direction: column;*/
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
 }
+/*flex-direction: column;*/
 @media (min-width: 530px) {
 .cards {
     -ms-flex-wrap: wrap;
@@ -1023,6 +1027,15 @@ a {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row
+}
+ }
+@media (min-width: 768px) {
+.cards {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap
 }
  }
 @media (min-width: 1024px) {
@@ -1045,6 +1058,7 @@ a {
 .cards__card-wrapper {
     padding: 0.15625rem;
     width:  33%;
+    float:left;
     -webkit-perspective:1500;
             perspective:1500;
     
