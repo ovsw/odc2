@@ -1,9 +1,14 @@
 import $ from 'jquery';
 import {TweenMax} from "gsap";
 //import Person from './modules/Person';
+import Iosfixes from './modules/Ios-fixes';
 import Slideshow from  './modules/Slideshow';
 
+
+
 $(document).ready(function() {
+
+  var ver = new Iosfixes();
  
 console.log($( window ).width() + " " + $( window ).height());
 

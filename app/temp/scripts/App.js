@@ -18315,13 +18315,20 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 var _gsap = __webpack_require__(1);
 
-var _Slideshow = __webpack_require__(5);
+var _IosFixes = __webpack_require__(5);
+
+var _IosFixes2 = _interopRequireDefault(_IosFixes);
+
+var _Slideshow = __webpack_require__(6);
 
 var _Slideshow2 = _interopRequireDefault(_Slideshow);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+//import Person from './modules/Person';
 (0, _jquery2.default)(document).ready(function () {
+
+  var ver = new _IosFixes2.default();
 
   console.log((0, _jquery2.default)(window).width() + " " + (0, _jquery2.default)(window).height());
 
@@ -18429,7 +18436,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
   // var jane = new Person("Jane Smith", "green");
   // jane.greet();
 });
-//import Person from './modules/Person';
 
 /***/ }),
 /* 3 */
@@ -18493,6 +18499,64 @@ module.exports = g;
 
 /***/ }),
 /* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var IosFixes = function () {
+  function IosFixes() {
+    _classCallCheck(this, IosFixes);
+
+    this.version = this.iOSversion();
+
+    //alert(this.version);
+
+    if (this.version !== undefined && this.version !== null) {
+      if (this.version[0] >= 10) {
+        alert(this.version + ' - This is running iOS 10 or later.');
+      } else {
+        alert('not running later than 10 ' + this.version[0]);
+      }
+    } else {
+      alert('not iOS!');
+    }
+  }
+
+  _createClass(IosFixes, [{
+    key: 'iOSversion',
+    value: function iOSversion() {
+
+      if (window.MSStream) {
+        // There is some iOS in Windows Phone...
+        // https://msdn.microsoft.com/en-us/library/hh869301(v=vs.85).aspx
+        return false;
+      }
+
+      if (/iP(hone|od|ad)/.test(navigator.platform)) {
+        // supports iOS 2.0 and later: <http://bit.ly/TJjs1V>
+        var v = navigator.appVersion.match(/OS (\d+)_(\d+)_?(\d+)?/);
+        var ver = [parseInt(v[1], 10), parseInt(v[2], 10), parseInt(v[3] || 0, 10)];
+        return ver;
+      }
+    }
+  }]);
+
+  return IosFixes;
+}();
+
+exports.default = IosFixes;
+
+/***/ }),
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
