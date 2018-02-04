@@ -113,7 +113,7 @@ $grid-space: .3125rem;
   &__cardface-front {
 
     &--secondary {
-      background-color: color($oasisDarkGreen a(90%));
+      background-color: color($oasisGreen a(95%));
     }
     
     .cards__card-wrapper--alternate & {
