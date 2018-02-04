@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import {TweenMax} from "gsap";
 //import Person from './modules/Person';
-//import Slideshow from  './modules/Slideshow';
+import Slideshow from  './modules/Slideshow';
 
 $(document).ready(function() {
  
@@ -28,11 +28,11 @@ $('.top-nav__submenu-button').click(function(){
 });
 
 // slideshow
-//  if ($('.text-slideshow__slide').length > 1) {
-//    var hpSlideshow = new Slideshow('.text-slideshow__slide', 3, 1); 
-//  }else{
-//    var hpSlideshow = new Slideshow('.text-slideshow__slide', 3, 1, true);
-//  }
+  if ($('.text-slideshow__slide').length > 1) {
+    var hpSlideshow = new Slideshow('.text-slideshow__slide', 3, 1); 
+  }else{
+    var hpSlideshow = new Slideshow('.text-slideshow__slide', 3, 1, true);
+  }
 
 // flip cards
 $(".cards__card-wrapper").hover(
