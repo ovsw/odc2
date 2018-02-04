@@ -18360,7 +18360,7 @@ var ver = new _IosFixes2.default();
   }
 
   // flip cards
-  (0, _jquery2.default)(".cards__card-wrapper").hover(function () {
+  (0, _jquery2.default)(".cards__card-wrapper").not('.noflip').hover(function () {
     TweenLite.to((0, _jquery2.default)(this).find(".cards__card"), 1.2, { rotationY: 180, ease: Back.easeOut });
   }, function () {
     TweenLite.to((0, _jquery2.default)(this).find(".cards__card"), 1.2, { rotationY: 0, ease: Back.easeOut });

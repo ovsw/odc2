@@ -1105,6 +1105,7 @@ a[x-apple-data-detectors] {
     -webkit-perspective:1500;
             perspective:1500;
     
+    
   }
 @media (min-width: 768px) {
 .cards__card-wrapper {
@@ -1112,6 +1113,7 @@ a[x-apple-data-detectors] {
       -webkit-flex: 0 1 20%;
           -ms-flex: 0 1 20%;
               flex: 0 1 20%
+    
     
   }
  }
@@ -1217,8 +1219,11 @@ a[x-apple-data-detectors] {
   }
  }
 .cards__cardface-front--secondary {
-      background-color: rgba(48, 178, 86, 0.95);
+      background-color: rgba(28, 146, 63, 0.95);
     }
+.cards__cardface-front--secondary:hover {
+        background-color: rgba(48, 178, 86, 0.95);
+      }
 .cards__card-wrapper--alternate .cards__cardface-front {
       background-color: rgba(1, 137, 233, 0.9);
     }

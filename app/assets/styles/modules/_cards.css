@@ -73,6 +73,7 @@ $grid-space: .3125rem;
       }
     }
     
+    
   }
   
   &__card { 
@@ -113,7 +114,11 @@ $grid-space: .3125rem;
   &__cardface-front {
 
     &--secondary {
-      background-color: color($oasisGreen a(95%));
+      background-color: color($oasisGreen a(95%) l(-10%) s(+10%));
+      
+      &:hover {
+        background-color: color($oasisGreen a(95%));
+      }
     }
     
     .cards__card-wrapper--alternate & {

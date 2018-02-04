@@ -40,7 +40,7 @@ $('.top-nav__submenu-button').click(function(){
   }
 
 // flip cards
-$(".cards__card-wrapper").hover(
+$(".cards__card-wrapper").not('.noflip').hover(
   function() {TweenLite.to($(this).find(".cards__card"), 1.2, {rotationY:180, ease:Back.easeOut});},
   function() {TweenLite.to($(this).find(".cards__card"), 1.2, {rotationY:0, ease:Back.easeOut});}
 );

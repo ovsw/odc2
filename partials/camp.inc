@@ -54,7 +54,7 @@
 
           <div class="cards">
 
-            <a class="cards__card-wrapper of-6" href="<?= $page->children("template=camp-blog-home")->first()->url ?>">
+            <a class="cards__card-wrapper noflip of-6" href="<?= $page->children("template=camp-blog-home")->first()->url ?>">
               <div class="cards__card">
                 <div class="cards__cardface cards__cardface-front cards__cardface-front--secondary">
                   <h2 class="cards__title">Director's Corner</h2>
@@ -76,7 +76,7 @@
 
                 <?php if ($block->featured) : ?>
                 
-                  <a class="cards__card-wrapper of-6" href="<?= $aboutPage->httpUrl."#".createSlug($block->title) ?>">
+                  <a class="cards__card-wrapper noflip of-6" href="<?= $aboutPage->httpUrl."#".createSlug($block->title) ?>">
                     <div class="cards__card">
                       <div class="cards__cardface cards__cardface-front cards__cardface-front--secondary">
                         <h2 class="cards__title"><?= $block->title ?></h2>
@@ -98,7 +98,7 @@
 
             <?php endforeach; ?>
 
-            <a class="cards__card-wrapper of-6" href="<?= $page->children("template=typical-day")->first()->url ?>">
+            <a class="cards__card-wrapper noflip of-6" href="<?= $page->children("template=typical-day")->first()->url ?>">
               <div class="cards__card">
                 <div class="cards__cardface cards__cardface-front cards__cardface-front--secondary">
                   <h2 class="cards__title">See a Typical Day</h2>
