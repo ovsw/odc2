@@ -1020,23 +1020,8 @@ a[x-apple-data-detectors] {
 }
 /*flex-direction: column;*/
 @media (min-width: 530px) {
-.cards {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row
-}
  }
 @media (min-width: 768px) {
-.cards {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap
-}
  }
 @media (min-width: 1024px) {
 .cards {
@@ -1332,13 +1317,13 @@ a[x-apple-data-detectors] {
     background-position: center center;
 
   }
-@media (max-height: 470px) {
+@media (max-height: 450px) {
 .card-details__video {
       width: 1px;
       height: 1px
 
   }
- }
+    }
 .card-details__video .embed-container {
       position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;
     }
@@ -1389,22 +1374,21 @@ a[x-apple-data-detectors] {
     color: #e6ece8;
     display:none;
   }
-@media (min-width: 360px) {
+@media (min-width: 768px) {
 .card-details__heading-intro {
       display:block
   }
-  }
+ }
 .card-details__heading {
     font-size: 1.2rem;
     color: #ffffff;
-    padding: 0 20px;
+    padding-left: 1rem;
     margin:7px 0 7px 0;
     font-weight: 300;
     font-family: "Josefin Sans", sans-serif;
   }
 @media (min-width: 360px) {
 .card-details__heading {
-      padding: 20px 0 0 20px;
       font-size: 1.5rem;
       margin: 15px 0 10px 0
   }
@@ -1444,7 +1428,7 @@ a[x-apple-data-detectors] {
     }
 @media (min-width: 360px) {
 .card-details__programs {
-      font-size: 0.925rem
+      font-size: 0.8rem
   }
   }
 @media (min-width: 530px) {

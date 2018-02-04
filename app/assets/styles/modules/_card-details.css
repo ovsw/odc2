@@ -38,10 +38,10 @@
     background-repeat: no-repeat;
     background-position: center center;
 
-     @media (max-height: 470px) {
+    @media (max-height: 450px) {
       width: 1px;
       height: 1px;
- }
+    }
   
     .embed-container {
       position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;
@@ -90,7 +90,7 @@
     color: #e6ece8;
     display:none;
 
-    @mixin atTiny {
+    @mixin atMedium {
       display:block;
     }
   }
@@ -98,13 +98,12 @@
   &__heading {
     font-size: 1.2rem;
     color: $white;
-    padding: 0 20px;
+    padding-left: 1rem;
     margin:7px 0 7px 0;
     font-weight: 300;
     font-family: "Josefin Sans", sans-serif;
 
     @mixin atTiny {
-      padding: 20px 0 0 20px;
       font-size: 1.5rem;
       margin: 15px 0 10px 0;
     }
@@ -136,7 +135,7 @@
     }
 
     @mixin atTiny {
-      font-size: 0.925rem;
+      font-size: 0.8rem;
     }
 
     @mixin atSmall {
