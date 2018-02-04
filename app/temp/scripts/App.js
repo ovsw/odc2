@@ -18326,9 +18326,9 @@ var _Slideshow2 = _interopRequireDefault(_Slideshow);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 //import Person from './modules/Person';
-(0, _jquery2.default)(document).ready(function () {
+var ver = new _IosFixes2.default();
 
-  var ver = new _IosFixes2.default();
+(0, _jquery2.default)(document).ready(function () {
 
   console.log((0, _jquery2.default)(window).width() + " " + (0, _jquery2.default)(window).height());
 
@@ -18510,6 +18510,12 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+var _jquery = __webpack_require__(0);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var IosFixes = function () {
@@ -18517,17 +18523,23 @@ var IosFixes = function () {
     _classCallCheck(this, IosFixes);
 
     this.version = this.iOSversion();
+    this.videoBgEl = document.querySelector('.large-hero__video-bg');
+    this.largeHeroEl = document.querySelector('.large-hero');
 
     //alert(this.version);
 
     if (this.version !== undefined && this.version !== null) {
       if (this.version[0] >= 10) {
-        alert(this.version + ' - This is running iOS 10 or later.');
+        //alert(this.version + ' - This is running iOS 10 or later.');
+        this.videoBgEl.style.display = 'block';
       } else {
-        alert('not running later than 10 ' + this.version[0]);
+        //alert('not running later than 10 ' + this.version[0]);
+        this.videoBgEl.parentNode.removeChild(this.videoBgEl);
       }
     } else {
-      alert('not iOS!');
+      // alert('not iOS!');
+      this.videoBgEl.setAttribute("style", "display: block;");
+      this.largeHeroEl.style.background = "url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAF0lEQVQIW2NkYGD4z8DAwMgAI0AMDA4AI3EBBCKrOnQAAAAASUVORK5CYII=')";
     }
   }
 

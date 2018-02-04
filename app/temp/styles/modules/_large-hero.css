@@ -22,13 +22,6 @@
   /*top: 50%; left: 50%;
     transform: translate(-50%, -50%);*/
   
-  @media (min-width: 530px) {
-  
-  .large-hero__video-bg {
-      display: block
-  }
- }
-  
   .large-hero__content {
     position: absolute;
     top:0;

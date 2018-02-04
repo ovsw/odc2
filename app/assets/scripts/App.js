@@ -4,11 +4,11 @@ import {TweenMax} from "gsap";
 import Iosfixes from './modules/Ios-fixes';
 import Slideshow from  './modules/Slideshow';
 
-
+var ver = new Iosfixes();
 
 $(document).ready(function() {
 
-  var ver = new Iosfixes();
+  
  
 console.log($( window ).width() + " " + $( window ).height());
 
