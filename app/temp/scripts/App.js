@@ -60,11 +60,137 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_jquery__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_gsap__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_gsap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_gsap__);
+
+
+//import Person from './modules/Person';
+//import Slideshow from  './modules/Slideshow';
+
+__WEBPACK_IMPORTED_MODULE_0_jquery___default()(document).ready(function() {
+ 
+console.log(__WEBPACK_IMPORTED_MODULE_0_jquery___default()( window ).width() + " " + __WEBPACK_IMPORTED_MODULE_0_jquery___default()( window ).height());
+
+__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.large-hero').height(__WEBPACK_IMPORTED_MODULE_0_jquery___default()( window ).height());
+
+// mobile menu toggle
+__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.header__menu-icon').click(function(){
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.top-nav').toggleClass('top-nav__visible');
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).toggleClass('header__menu-icon--close-x');
+});
+
+// mobile menu sub-items toggle
+__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.top-nav__submenu-button').click(function(){
+  var menuItem = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).parent();
+
+  if (menuItem.hasClass('`submenu`-open')) {
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.top-nav__has-children').removeClass('submenu-open');
+  }else{
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.top-nav__has-children').removeClass('submenu-open');
+    menuItem.addClass('submenu-open');
+  }
+});
+
+// slideshow
+//  if ($('.text-slideshow__slide').length > 1) {
+//    var hpSlideshow = new Slideshow('.text-slideshow__slide', 3, 1); 
+//  }else{
+//    var hpSlideshow = new Slideshow('.text-slideshow__slide', 3, 1, true);
+//  }
+
+// flip cards
+__WEBPACK_IMPORTED_MODULE_0_jquery___default()(".cards__card-wrapper").hover(
+  function() {TweenLite.to(__WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).find(".cards__card"), 1.2, {rotationY:180, ease:Back.easeOut});},
+  function() {TweenLite.to(__WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).find(".cards__card"), 1.2, {rotationY:0, ease:Back.easeOut});}
+);
+
+__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.tabs__button').click( function(){
+  var tab_id = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).attr('data-tab');
+  __WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).siblings().removeClass('active');
+  __WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).addClass('active');
+  __WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).parent().next('.tabs__content').children('.tabs__tab').removeClass('active');
+  __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.' + tab_id).addClass('active');
+
+});
+
+// show card details
+__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.with-lightbox').click(function(){
+  console.log(__WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).index());
+  showOverlay();
+
+  __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.card-details__wrapper .card-details:eq('+ __WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).index() +')').clone(true, true).appendTo( '.overlay__content' );
+
+  var video_url = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.overlay__content .card-details__video').data("videourl");
+
+  var vimeoId = getVimeoId(video_url);
+
+  if (vimeoId != false) {
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.overlay__content .embed-container').html('<iframe src="https://player.vimeo.com/video/'+ vimeoId +'?autoplay=0&title=0&byline=0&portrait=0" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>');
+  }
+});
+
+function showOverlay() {
+  __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.overlay').show();
+  __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.footer__wrapper,.large-hero').addClass('hideonMobile');
+}
+function hideOverlay(){
+  __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.overlay').hide();
+  __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.footer__wrapper,.large-hero').removeClass('hideonMobile');  
+}
+
+function getVimeoId( url ) {
+
+  // Look for a string with 'vimeo', then whatever, then a
+  // forward slash and a group of digits.
+  var match = /vimeo.*\/(\d+)/i.exec( url );
+
+  // If the match isn't null (i.e. it matched)
+  if ( match ) {
+    // The grouped/matched digits from the regex
+    return match[1];
+  }else{
+    return false;
+  }
+}
+
+// close card details
+__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.card-details__back-btn').click(function(e){
+  e.preventDefault();
+  __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.overlay__content .card-details').remove();
+  hideOverlay();
+});
+
+
+// toggle FAQs
+
+__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.mx__faqs__answer').hide();
+__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.mx__faqs__question').click(function() {
+  var toggle = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).nextUntil('.mx__faqs__question');
+  toggle.slideToggle();
+  __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.mx__faqs__answer').not(toggle).slideUp();
+});
+
+// var john = new Person("John Doe", "blue");
+// john.greet();
+
+// var jane = new Person("Jane Smith", "green");
+// jane.greet();
+
+});
+
+/***/ }),
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -10324,7 +10450,7 @@ return jQuery;
 
 
 /***/ }),
-/* 1 */
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -18293,127 +18419,6 @@ if (_gsScope._gsDefine) { _gsScope._gsQueue.pop()(); } //necessary in case Tween
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 2 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_jquery__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_gsap__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_gsap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_gsap__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modules_Person__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modules_Slideshow__ = __webpack_require__(5);
-
-
-
-
-
-
-// mobile menu toggle
-__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.header__menu-icon').click(function(){
-    __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.top-nav').toggleClass('top-nav__visible');
-    __WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).toggleClass('header__menu-icon--close-x');
-});
-
-// mobile menu sub-items toggle
-__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.top-nav__submenu-button').click(function(){
-  var menuItem = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).parent();
-
-  if (menuItem.hasClass('`submenu`-open')) {
-    __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.top-nav__has-children').removeClass('submenu-open');
-  }else{
-    __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.top-nav__has-children').removeClass('submenu-open');
-    menuItem.addClass('submenu-open');
-  }
-});
-
-// slideshow
-if (__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.text-slideshow__slide').length > 1) {
-  var hpSlideshow = new __WEBPACK_IMPORTED_MODULE_3__modules_Slideshow__["a" /* default */]('.text-slideshow__slide', 3, 1); 
-}else{
-  var hpSlideshow = new __WEBPACK_IMPORTED_MODULE_3__modules_Slideshow__["a" /* default */]('.text-slideshow__slide', 3, 1, true);
-}
-
-// flip cards
-__WEBPACK_IMPORTED_MODULE_0_jquery___default()(".cards__card-wrapper").hover(
-  function() {TweenLite.to(__WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).find(".cards__card"), 1.2, {rotationY:180, ease:Back.easeOut});},
-  function() {TweenLite.to(__WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).find(".cards__card"), 1.2, {rotationY:0, ease:Back.easeOut});}
-);
-
-__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.tabs__button').click( function(){
-  var tab_id = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).attr('data-tab');
-  __WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).siblings().removeClass('active');
-  __WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).addClass('active');
-  __WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).parent().next('.tabs__content').children('.tabs__tab').removeClass('active');
-  __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.' + tab_id).addClass('active');
-
-});
-
-// show card details
-__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.with-lightbox').click(function(){
-  //console.log($(this).index());
-  showOverlay();
-
-  __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.card-details__wrapper .card-details:eq('+ __WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).index() +')').clone(true, true).appendTo( '.overlay__content' );
-
-  var video_url = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.overlay__content .card-details__video').data("videourl");
-
-  var vimeoId = getVimeoId(video_url);
-
-  if (vimeoId != false) {
-    __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.overlay__content .embed-container').html('<iframe src="https://player.vimeo.com/video/'+ vimeoId +'?autoplay=0&title=0&byline=0&portrait=0" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>');
-  }
-});
-
-function showOverlay() {
-  __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.overlay').show();
-  __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.footer__wrapper,.large-hero').addClass('hideonMobile');
-}
-function hideOverlay(){
-  __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.overlay').hide();
-  __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.footer__wrapper,.large-hero').removeClass('hideonMobile');  
-}
-
-function getVimeoId( url ) {
-
-  // Look for a string with 'vimeo', then whatever, then a
-  // forward slash and a group of digits.
-  var match = /vimeo.*\/(\d+)/i.exec( url );
-
-  // If the match isn't null (i.e. it matched)
-  if ( match ) {
-    // The grouped/matched digits from the regex
-    return match[1];
-  }else{
-    return false;
-  }
-}
-
-// close card details
-__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.card-details__back-btn').click(function(e){
-  e.preventDefault();
-  __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.overlay__content .card-details').remove();
-  hideOverlay();
-});
-
-
-// toggle FAQs
-
-__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.mx__faqs__answer').hide();
-__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.mx__faqs__question').click(function() {
-  var toggle = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).nextUntil('.mx__faqs__question');
-  toggle.slideToggle();
-  __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.mx__faqs__answer').not(toggle).slideUp();
-});
-
-// var john = new Person("John Doe", "blue");
-// john.greet();
-
-// var jane = new Person("Jane Smith", "green");
-// jane.greet();
-
-/***/ }),
 /* 3 */
 /***/ (function(module, exports) {
 
@@ -18439,113 +18444,6 @@ try {
 
 module.exports = g;
 
-
-/***/ }),
-/* 4 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-class Person {
-  constructor (fullName, favColor) {
-    this.name = fullName;
-    this.favoriteColor = favColor;
-  }
-
-  greet() {
-    console.log("Hello hi, my name is " + this.name + " and my favorite color is " + this.favoriteColor + ".");
-  }
-}
-
-/* unused harmony default export */ var _unused_webpack_default_export = (Person);
-
-/***/ }),
-/* 5 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_jquery__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_gsap__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_gsap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_gsap__);
-
-
-
-class Slideshow {
-
-  constructor (slidesSel, fadeInDur = 1, fadeOutDur = 1, singleSlide = false) {
-    // set properties
-    this.singleSlide = singleSlide;
-    if (this.singleSlide == false) {
-      this.repeat = -1;
-    }else{
-      this.repeat = 0;
-    }
-    this.slideEls = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(slidesSel);
-    this.fadeInDur = fadeInDur;
-    this.fadeOutDur = fadeOutDur;
-    this.masterTl = new __WEBPACK_IMPORTED_MODULE_1_gsap__["TimelineMax"]({repeat: this.repeat});
-    this.tlArray = []; // array to store the timeline of each slide
-
-    this.createSlideTls(); // create timelines, one for each slide
-
-    // add all the individual timelines to the master one
-    this.masterTl.add(this.tlArray , 0, "sequence"); // optionally add stagger as last parameter
-  }
-
-  createSlideTls() {
-    var self = this;
-    
-    // create a timeline for each slide
-    __WEBPACK_IMPORTED_MODULE_0_jquery___default()(this.slideEls).each(function(i,slideEl){
-      var slideTl = new __WEBPACK_IMPORTED_MODULE_1_gsap__["TimelineLite"]();
-
-      if (self.singleSlide) {
-        // do single animation in
-        slideTl = self.animateSingleSlide( slideEl, slideTl );
-      }else{
-        // animate the slide as part of the slideshow
-        slideTl = self.animateSlide( slideEl, slideTl );
-      }
-
-      
-      // add it to the collection of timelines to be added to master timeline
-      self.tlArray.push(slideTl);
-    });
-  }
-
-  animateSlide( slideEl, slideTl ) {
-    // complete animation for one slide
-    slideTl.to(slideEl,
-       this.fadeInDur, // fade in dur.
-      {
-      // ease: Bounce.easeOut,
-      autoAlpha: 0.8
-      }
-    ).to(slideEl,
-       this.fadeOutDur, // fade out dur.
-      {
-      // ease: Bounce.easeOut,
-      autoAlpha: 0
-      }, '+=2' // time to stay visible
-    );
-    return slideTl;
-  }
-
-  animateSingleSlide( slideEl, slideTl ) {
-    // complete animation for one slide
-    slideTl.to(slideEl,
-       this.fadeInDur, // fade in dur.
-      {
-      // ease: Bounce.easeOut,
-      autoAlpha: 0.8
-      }
-    );
-    return slideTl;
-  }
-
-}
-
-/* harmony default export */ __webpack_exports__["a"] = (Slideshow);
 
 /***/ })
 /******/ ]);

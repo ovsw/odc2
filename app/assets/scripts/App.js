@@ -1,8 +1,13 @@
 import $ from 'jquery';
 import {TweenMax} from "gsap";
-import Person from './modules/Person';
-import Slideshow from  './modules/Slideshow';
+//import Person from './modules/Person';
+//import Slideshow from  './modules/Slideshow';
 
+$(document).ready(function() {
+ 
+console.log($( window ).width() + " " + $( window ).height());
+
+$('.large-hero').height($( window ).height());
 
 // mobile menu toggle
 $('.header__menu-icon').click(function(){
@@ -23,11 +28,11 @@ $('.top-nav__submenu-button').click(function(){
 });
 
 // slideshow
-if ($('.text-slideshow__slide').length > 1) {
-  var hpSlideshow = new Slideshow('.text-slideshow__slide', 3, 1); 
-}else{
-  var hpSlideshow = new Slideshow('.text-slideshow__slide', 3, 1, true);
-}
+//  if ($('.text-slideshow__slide').length > 1) {
+//    var hpSlideshow = new Slideshow('.text-slideshow__slide', 3, 1); 
+//  }else{
+//    var hpSlideshow = new Slideshow('.text-slideshow__slide', 3, 1, true);
+//  }
 
 // flip cards
 $(".cards__card-wrapper").hover(
@@ -46,7 +51,7 @@ $('.tabs__button').click( function(){
 
 // show card details
 $('.with-lightbox').click(function(){
-  //console.log($(this).index());
+  console.log($(this).index());
   showOverlay();
 
   $('.card-details__wrapper .card-details:eq('+ $(this).index() +')').clone(true, true).appendTo( '.overlay__content' );
@@ -106,3 +111,5 @@ $('.mx__faqs__question').click(function() {
 
 // var jane = new Person("Jane Smith", "green");
 // jane.greet();
+
+});
