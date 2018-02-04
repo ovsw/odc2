@@ -7,16 +7,19 @@ $grid-space: .3125rem;
   font-family: "PT Sans", sans-serif;
   margin: $grid-space-mobile;
   margin-top: 0;
-  
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
   /*flex-direction: column;*/
   
 
   @mixin atSmall{
-   
+    
   }
 
   @mixin atMedium {
-    
+
   }
 
   @mixin atLarge{
@@ -33,41 +36,40 @@ $grid-space: .3125rem;
   
   &__card-wrapper {
     padding: $grid-space-mobile;
-    width:  33%;
-    float:left;
+    flex: 1 1 33%;
     perspective:1500;
     
     @mixin atMedium{
-      width: 20%;
+      flex: 0 1 20%;
     }
 
     &.of-2 {
       @mixin atMedium {
-        width: 50%;
+        flex: 1 1 50%;
       }
     }
 
     &.of-3 {
       @mixin atMedium {
-        width: 33.33%;
+        flex: 1 1 33%;
       }
     }
     
     &.of-4 {
 
-      width: 50%;
+      flex: 1 1 50%;
 
       @mixin atMedium {
-        width: 25%;
+        flex: 1 1 25%;
       }
     }
     
     &.of-6 {
 
-      width: 33.33%;
+      flex: 1 1 33%;
 
       @mixin atMedium {
-        width: 16.66%;
+        flex: 1 1 16.66%;
       }
     }
     
