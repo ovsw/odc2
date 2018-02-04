@@ -1,6 +1,6 @@
     <div class="large-hero">
 
-      <video class="large-hero__video-bg" autoplay muted loop>
+      <video class="large-hero__video-bg" playsinline autoplay muted loop>
         <source src="<?= $page->bg_video_url ?>" type="video/mp4" poster="<?= $page->bg_video_poster_url ?>">
       </video>
       <!-- /.large_hero__video-bg -->
