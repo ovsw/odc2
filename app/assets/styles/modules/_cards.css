@@ -12,13 +12,11 @@ $grid-space: .3125rem;
   
 
   @mixin atSmall{
-    flex-wrap: wrap;
-    flex-direction: row;
+   
   }
 
   @mixin atMedium {
-    display: flex;
-    flex-wrap: wrap;
+    
   }
 
   @mixin atLarge{
