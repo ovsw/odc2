@@ -12,7 +12,7 @@ $(document).ready(function() {
  
 console.log($( window ).width() + " " + $( window ).height());
 
-$('.large-hero').height($( window ).height());
+$('.large-hero--full-height').height($( window ).height());
 
 // mobile menu toggle
 $('.header__menu-icon').click(function(){

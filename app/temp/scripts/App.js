@@ -18332,7 +18332,7 @@ var ver = new _IosFixes2.default();
 
   console.log((0, _jquery2.default)(window).width() + " " + (0, _jquery2.default)(window).height());
 
-  (0, _jquery2.default)('.large-hero').height((0, _jquery2.default)(window).height());
+  (0, _jquery2.default)('.large-hero--full-height').height((0, _jquery2.default)(window).height());
 
   // mobile menu toggle
   (0, _jquery2.default)('.header__menu-icon').click(function () {
