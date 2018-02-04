@@ -379,7 +379,8 @@ body {
   background-position: center 40%;
   height: 100vh;
   background-color: #0166af;
-  background-size: 130px 130px;
+  -webkit-background-size: 130px 130px;
+          background-size: 130px 130px;
 }
 @media (max-height: 450px) {
 .please-rotate {
@@ -393,6 +394,7 @@ body {
     text-align: center;
     font-size: 1.2rem;
     -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
             transform: translateY(-50%);
     padding-top: 80px;
   }
@@ -524,9 +526,11 @@ a[x-apple-data-detectors] {
   z-index: 999;
   width: 100%;
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
   /*background-color: rgba(210, 230, 209, 0.9);*/
@@ -543,6 +547,7 @@ a[x-apple-data-detectors] {
             box-shadow: none;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: reverse;
+    -webkit-flex-direction: row-reverse;
         -ms-flex-direction: row-reverse;
             flex-direction: row-reverse
 }
@@ -568,7 +573,8 @@ a[x-apple-data-detectors] {
       background-color: #ffffff;
       -webkit-box-shadow: 2px 2px 6px rgba(0,0,0, 0.3), -2px -2px 6px rgba(0,0,0, 0.3);
               box-shadow: 2px 2px 6px rgba(0,0,0, 0.3), -2px -2px 6px rgba(0,0,0, 0.3);
-      border-radius: 0 0 10px 10px;
+      -webkit-border-radius: 0 0 10px 10px;
+              border-radius: 0 0 10px 10px;
       padding: 1rem 1rem 0.7rem 1rem;
       position: absolute;
       top: 0;
@@ -591,6 +597,7 @@ a[x-apple-data-detectors] {
     top: 50%;
     right: 10px;
     -webkit-transform: translateY(-20px);
+        -ms-transform: translateY(-20px);
             transform: translateY(-20px);
   }
 .header__menu-icon::before {
@@ -602,9 +609,11 @@ a[x-apple-data-detectors] {
       height: 5px;
       background-color: red;
       -webkit-transform-origin: 0 0;
+          -ms-transform-origin: 0 0;
               transform-origin: 0 0;
       -webkit-transition: -webkit-transform 0.3s ease-out;
       transition: -webkit-transform 0.3s ease-out;
+      -o-transition: transform 0.3s ease-out;
       transition: transform 0.3s ease-out;
       transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
     }
@@ -617,6 +626,7 @@ a[x-apple-data-detectors] {
       height: 5px;
       background-color: red;
       -webkit-transition: all 0.3s ease-out;
+      -o-transition: all 0.3s ease-out;
       transition: all 0.3s ease-out;
     }
 .header__menu-icon::after {
@@ -628,26 +638,31 @@ a[x-apple-data-detectors] {
       height: 5px;
       background-color: red;
       -webkit-transform-origin: 0 100%;
+          -ms-transform-origin: 0 100%;
               transform-origin: 0 100%;
       -webkit-transition: -webkit-transform 0.3s ease-out;
       transition: -webkit-transform 0.3s ease-out;
+      -o-transition: transform 0.3s ease-out;
       transition: transform 0.3s ease-out;
       transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
     }
 .header__menu-icon--close-x::before {
           background-color: white;
           -webkit-transform: translateX(4px) rotate(45deg) scaleX(1.25) translateY(1px);
+              -ms-transform: translateX(4px) rotate(45deg) scaleX(1.25) translateY(1px);
                   transform: translateX(4px) rotate(45deg) scaleX(1.25) translateY(1px);
         }
 .header__menu-icon--close-x .header__menu-icon__middle {
           background-color: white;
           -webkit-transform: scaleX(0);
+              -ms-transform: scaleX(0);
                   transform: scaleX(0);
           opacity: 0;
         }
 .header__menu-icon--close-x::after {
           background-color: white;
           -webkit-transform: translateX(4px) rotate(-45deg) scaleX(1.25);
+              -ms-transform: translateX(4px) rotate(-45deg) scaleX(1.25);
                   transform: translateX(4px) rotate(-45deg) scaleX(1.25);
         }
 @media (min-width: 1024px) {
@@ -662,8 +677,10 @@ a[x-apple-data-detectors] {
 
   opacity: 0;
   -webkit-transform: scaleX(0);
+      -ms-transform: scaleX(0);
           transform: scaleX(0);
   -webkit-transform-origin: 100% 50%;
+      -ms-transform-origin: 100% 50%;
           transform-origin: 100% 50%;
   background-color: #0166af;
   height: 100vh;
@@ -672,6 +689,7 @@ a[x-apple-data-detectors] {
   left: 0;
   width: 100%;
   -webkit-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 
 }
@@ -682,8 +700,10 @@ a[x-apple-data-detectors] {
     width: auto;
     opacity: 1;
     -webkit-transition: none;
+    -o-transition: none;
     transition: none;
     -webkit-transform: none;
+        -ms-transform: none;
             transform: none;
     height: auto;
     background-color: transparent
@@ -692,6 +712,7 @@ a[x-apple-data-detectors] {
  }
 .top-nav.top-nav__visible {
     -webkit-transform: scaleX(1);
+        -ms-transform: scaleX(1);
             transform: scaleX(1);
     opacity: 1;
   }
@@ -714,6 +735,7 @@ a[x-apple-data-detectors] {
 @media (min-width: 1024px) {
 .top-nav__outer-list {
       display: -webkit-box;
+      display: -webkit-flex;
       display: -ms-flexbox;
       display: flex;
       border-top: none
@@ -730,7 +752,8 @@ a[x-apple-data-detectors] {
 @media (min-width: 1024px) {
 .top-nav__item-level-1 {
       display: inline-block;  
-      border-radius: 0 0 10px 10px ;
+      -webkit-border-radius: 0 0 10px 10px ;  
+              border-radius: 0 0 10px 10px ;
       margin-left: 10px;
       -webkit-box-shadow: 2px 2px 3px rgba(0,0,0, 0.3), -2px -2px 3px rgba(0,0,0, 0.3);
               box-shadow: 2px 2px 3px rgba(0,0,0, 0.3), -2px -2px 3px rgba(0,0,0, 0.3)
@@ -828,6 +851,7 @@ a[x-apple-data-detectors] {
         top: 50%;
         left: 40%;
         -webkit-transform: translate(-50%,-50%);
+            -ms-transform: translate(-50%,-50%);
                 transform: translate(-50%,-50%);
         margin-left: 5px;
       }
@@ -866,7 +890,8 @@ a[x-apple-data-detectors] {
 @media (min-width: 1024px) {
         .top-nav__has-children:hover {
           background-color: #30b256;
-          border-radius: 0;
+          -webkit-border-radius: 0;
+                  border-radius: 0;
         }
  }
 .top-nav__has-children:hover > .top-nav__inner-list {
@@ -904,6 +929,7 @@ a[x-apple-data-detectors] {
     
     top: 50%; left: 50%;
     -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
   }
 @media (min-width: 1024px) {
@@ -919,22 +945,27 @@ a[x-apple-data-detectors] {
     right: 0;
     z-index: 500;
     display: -webkit-box;
+    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
     -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
 .large-hero__top-area {
     -webkit-box-flex: 1;
+    -webkit-flex: 1 0 0;
         -ms-flex: 1 0 0px;
             flex: 1 0 0;
     position: relative;
     display: -webkit-box;
+    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
 
@@ -944,17 +975,22 @@ a[x-apple-data-detectors] {
     
     display:-webkit-box;
     
+    display:-webkit-flex;
+    
     display:-ms-flexbox;
     
     display:flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
     -webkit-box-align: stretch;
+    -webkit-align-items: stretch;
         -ms-flex-align: stretch;
             align-items: stretch;
     -webkit-box-pack: center;
+    -webkit-justify-content: center;
         -ms-flex-pack: center;
             justify-content: center;
 
@@ -967,6 +1003,7 @@ a[x-apple-data-detectors] {
  }
 .text-slideshow {
   -webkit-box-flex: 1;
+  -webkit-flex: 1;
       -ms-flex: 1;
           flex: 1;
   position: relative;
@@ -975,6 +1012,7 @@ a[x-apple-data-detectors] {
     position: absolute;
     top: 50%;
     -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
             transform: translateY(-50%);
     width: 100%;
     text-align: center;
@@ -1020,8 +1058,27 @@ a[x-apple-data-detectors] {
 }
 /*flex-direction: column;*/
 @media (min-width: 530px) {
+.cards {
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row
+}
  }
 @media (min-width: 768px) {
+.cards {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap
+}
  }
 @media (min-width: 1024px) {
 .cards {
@@ -1042,8 +1099,10 @@ a[x-apple-data-detectors] {
  }
 .cards__card-wrapper {
     padding: 0.15625rem;
-    width:  33%;
-    float:left;
+    -webkit-flex: 1 1 50%;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 33%;
+            flex: 1 1 33%;
     -webkit-perspective:1500;
             perspective:1500;
     
@@ -1112,18 +1171,22 @@ a[x-apple-data-detectors] {
     height: 100%;
     background-color: rgba(1,102,175,0.9);
     display: -webkit-box;
+    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
     -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
 @media (min-width: 530px) {
 .cards__cardface {
+      padding: -webkit-calc(.3125rem*2);
       padding: calc(.3125rem*2)
   }
  }
@@ -1266,11 +1329,13 @@ a[x-apple-data-detectors] {
 .card-details {
   height: 100%;
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   line-height: 1.5;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
   background-color: #0166af;
@@ -1293,6 +1358,7 @@ a[x-apple-data-detectors] {
 .card-details {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
         -ms-flex-direction: row;
             flex-direction: row;
     margin:0 auto;
@@ -1333,6 +1399,7 @@ a[x-apple-data-detectors] {
 @media (min-width: 1200px) {
 .card-details__video {
       -webkit-box-flex: 0;
+      -webkit-flex: 0 0 70%;
           -ms-flex: 0 0 70%;
               flex: 0 0 70%;
       background-color: #30b256;
@@ -1347,6 +1414,8 @@ a[x-apple-data-detectors] {
     background-color: #30b256;
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#30b256+0,50bf7a+100 */
     background: -webkit-gradient(linear, left top, left bottom, from(#30b256),color-stop(99%, #5ee064));
+    background: -webkit-linear-gradient(top, #30b256 0%,#5ee064 99%);
+    background: -o-linear-gradient(top, #30b256 0%,#5ee064 99%);
     background: linear-gradient(to bottom, #30b256 0%,#5ee064 99%);
   }
 /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
@@ -1358,6 +1427,8 @@ a[x-apple-data-detectors] {
       width:  30%;
       z-index:  999;
       background: -webkit-gradient(linear, left top, right top, from(#30b256),color-stop(99%, #5ee064));
+      background: -webkit-linear-gradient(left, #30b256 0%,#5ee064 99%);
+      background: -o-linear-gradient(left, #30b256 0%,#5ee064 99%);
       background: linear-gradient(to right, #30b256 0%,#5ee064 99%);
   }
  }
@@ -1400,6 +1471,7 @@ a[x-apple-data-detectors] {
  }
 .card-details__content {
     -webkit-box-flex:1;
+    -webkit-flex:1;
         -ms-flex:1;
             flex:1;
 
@@ -1514,13 +1586,16 @@ a[x-apple-data-detectors] {
   height: 100%;
   z-index: 1000;
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
   -webkit-box-pack: center;
+  -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
   /*background-color: rgba(0, 255, 0, 0.5);*/
@@ -1557,6 +1632,7 @@ a[x-apple-data-detectors] {
       position: relative;
       top: 50%;
       -webkit-transform: translateY(-60%);
+          -ms-transform: translateY(-60%);
               transform: translateY(-60%)
   }
  }
@@ -1654,6 +1730,7 @@ a[x-apple-data-detectors] {
 @media (min-width: 768px) {
 .mx__rt-image__block-row {
         display: -webkit-box;
+        display: -webkit-flex;
         display: -ms-flexbox;
         display: flex;
         padding-bottom: 1.3rem
@@ -1701,6 +1778,7 @@ a[x-apple-data-detectors] {
 @media (min-width: 768px) {
 .mx__rt-image__image-wrapper {
        -webkit-box-flex: 0;
+       -webkit-flex: 0 0 40%;
            -ms-flex: 0 0 40%;
                flex: 0 0 40%;
        overflow: hidden;
@@ -1710,6 +1788,7 @@ a[x-apple-data-detectors] {
 @media (min-width: 1024px) {
 .mx__rt-image__image-wrapper {
        -webkit-box-flex: 0;
+       -webkit-flex: 0 0 50%;
            -ms-flex: 0 0 50%;
                flex: 0 0 50%
     }
@@ -1733,6 +1812,7 @@ a[x-apple-data-detectors] {
         top:50%;
         left: 50%;
         -webkit-transform: translateX(-50%) translateY(-50%);
+            -ms-transform: translateX(-50%) translateY(-50%);
                 transform: translateX(-50%) translateY(-50%)
     }
  }
@@ -1740,6 +1820,7 @@ a[x-apple-data-detectors] {
 .mx__rt-image__image {
         top:0%;
         -webkit-transform: translateX(-50%) translateY(0);
+            -ms-transform: translateX(-50%) translateY(0);
                 transform: translateX(-50%) translateY(0);
         min-height: 100%;
         min-width: 100%;
@@ -1761,6 +1842,7 @@ a[x-apple-data-detectors] {
 .mx__rt-image-even .mx__rt-image__block-row {
           -webkit-box-orient: horizontal;
           -webkit-box-direction: reverse;
+          -webkit-flex-direction: row-reverse;
               -ms-flex-direction: row-reverse;
                   flex-direction: row-reverse
       }
@@ -1770,6 +1852,7 @@ a[x-apple-data-detectors] {
     }
 .mx__rt-noimage__title {
       -webkit-column-span: all;
+         -moz-column-span: all;
               column-span: all;
       background-color: rgba(77, 135, 176, 0.85);
       color: #ffffff!important;
@@ -1864,6 +1947,7 @@ a[x-apple-data-detectors] {
 @media (min-width: 768px) {
 .footer {
     display: -webkit-box;
+    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     background-color: rgb(48, 178, 86)
@@ -1885,6 +1969,7 @@ a[x-apple-data-detectors] {
 @media (min-width: 768px) {
 .footer__logos {
       -webkit-box-flex: 0;
+      -webkit-flex: 0 0 30%;
           -ms-flex: 0 0 30%;
               flex: 0 0 30%
 
@@ -1893,10 +1978,6 @@ a[x-apple-data-detectors] {
 @media (min-width: 768px) {
 .footer__logos a {
         position: relative;
-        top:50%;
-        left: 50%;
-        -webkit-transform: translateX(-50%) translateY(-50%);
-                transform: translateX(-50%) translateY(-50%);
         display:block;
         margin: 0 auto
 
@@ -1917,6 +1998,7 @@ a[x-apple-data-detectors] {
 @media (min-width: 768px) {
 .footer__text {
       -webkit-box-flex: 0;
+      -webkit-flex: 0 0 70%;
           -ms-flex: 0 0 70%;
               flex: 0 0 70%
   }
@@ -1951,6 +2033,7 @@ a[x-apple-data-detectors] {
 .footer__vcard .row {
       text-align: left;
       display: -webkit-box;
+      display: -webkit-flex;
       display: -ms-flexbox;
       display: flex
     }
@@ -1958,6 +2041,7 @@ a[x-apple-data-detectors] {
 @media (min-width: 768px) {
 .footer__vcard .column1 {
         -webkit-box-flex: 0;
+        -webkit-flex: 0 0 50%;
             -ms-flex: 0 0 50%;
                 flex: 0 0 50%;
         text-align: right;
@@ -1968,6 +2052,7 @@ a[x-apple-data-detectors] {
 @media (min-width: 768px) {
 .footer__vcard .column2 {
         -webkit-box-flex: 0;
+        -webkit-flex: 0 0 50%;
             -ms-flex: 0 0 50%;
                 flex: 0 0 50%;
         padding-left: 1rem
