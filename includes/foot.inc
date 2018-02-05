@@ -51,6 +51,8 @@
   <p>Please rotate your device</p>
 </div>
 <!-- /.please-rotate -->
+<script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="<?= $config->urls->templates ?>app/assets/scripts/vendor/jquery.fancybox.min.js"></script>
 
 <script src="<?= $config->urls->templates ?>app/temp/scripts/App.js"></script>
 <?php if ($page->template == 'typical-day') : ?>

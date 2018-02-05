@@ -1,3 +1,6 @@
+<?php require($config->paths->templates.'includes/modules/popup.inc'); ?>
+
+
 <div class="basic-page__hero">
   <picture>
 

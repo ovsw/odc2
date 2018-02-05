@@ -1,3 +1,5 @@
+    <?php require($config->paths->templates.'includes/modules/popup.inc'); ?>
+
     <div class="large-hero large-hero--full-height" style="background: url('<?= $page->bg_video_poster_url ?>') no-repeat center center;background-size:cover;">
 
       <video class="large-hero__video-bg" playsinline autoplay muted loop>

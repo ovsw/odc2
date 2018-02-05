@@ -18,6 +18,7 @@
     </script>
 
     <!-- <script src="<?= $config->urls->templates ?>vendor/fontawesome-all.min.js"></script> -->
+    <link rel="stylesheet" href="<?= $config->urls->templates ?>app/assets/styles/vendor/jquery.fancybox.min.css" />    
     <?php if ($page->template == 'typical-day') : ?>
     <link rel="stylesheet" href="<?= $config->urls->templates ?>app/temp/styles/typical-day.css" />    
     <?php endif; ?>
