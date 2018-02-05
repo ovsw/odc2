@@ -6,20 +6,24 @@ class IosFixes {
     this.videoBgEl = document.querySelector('.large-hero__video-bg');
     this.largeHeroEl = document.querySelector('.large-hero');
 
-    //alert(this.version);
-    
-    if (this.version !== undefined && this.version !== null) {
-      if (this.version[0] >= 10) {
-        //alert(this.version + ' - This is running iOS 10 or later.');
-        this.videoBgEl.style.display = 'block'
-      }else{
-        //alert('not running later than 10 ' + this.version[0]);
-        this.videoBgEl.parentNode.removeChild(this.videoBgEl);
-      }
-    }else{
-    // alert('not iOS!');
-      this.videoBgEl.setAttribute("style","display: block;");
-      this.largeHeroEl.style.background = "url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAF0lEQVQIW2NkYGD4z8DAwMgAI0AMDA4AI3EBBCKrOnQAAAAASUVORK5CYII=')";   
+    if (this.videoBgEl !== undefined && this.videoBgEl !== null) {
+      
+        //alert(this.version);
+        
+        if (this.version !== undefined && this.version !== null) {
+          if (this.version[0] >= 10) {
+            //alert(this.version + ' - This is running iOS 10 or later.');
+            this.videoBgEl.style.display = 'block'
+          }else{
+            //alert('not running later than 10 ' + this.version[0]);
+            this.videoBgEl.parentNode.removeChild(this.videoBgEl);
+          }
+        }else{
+        // alert('not iOS!');
+          this.videoBgEl.setAttribute("style","display: block;");
+          this.largeHeroEl.style.background = "url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAF0lEQVQIW2NkYGD4z8DAwMgAI0AMDA4AI3EBBCKrOnQAAAAASUVORK5CYII=')";   
+        }
+
     }
 
   }
