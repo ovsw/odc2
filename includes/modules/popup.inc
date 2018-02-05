@@ -8,11 +8,11 @@
     }else{
       $campHp = $page->parents("template=camp")->first()->id;
       $eventsPage = $pages->get(1016)->children("template=promo-events")->first();
-      $latestEvent = $eventsPage->children()->first();
     }
+    $latestEvent = $eventsPage->children()->first();
   ?>
 
   <h2><?= $latestEvent->title; ?></h2>
   <?= $latestEvent->short_description; ?>
-  <a href="<?= $eventsPage->url ?>" class="button button__cta"> RSVP / Learn more</a>
+  <a href="<?= $latestEvent->url ?>" class="button button__cta"> RSVP / Learn more</a>
 </div>
