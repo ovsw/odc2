@@ -1,7 +1,8 @@
 import {TweenMax} from "gsap";
 //import Person from './modules/Person';
 import Iosfixes from './modules/Ios-fixes';
-import Slideshow from  './modules/Slideshow'; 
+import Slideshow from  './modules/Slideshow';
+import Cookies from 'js-cookie';
 
 var ver = new Iosfixes();
 
@@ -157,6 +158,15 @@ $.fn.fancyMorph = function( opts ) {
       self.start();
     });
 
+    // alert(Cookies.get('odcpop'));
+
+    if (Cookies.get('odcpop') == undefined){
+      Cookies.set('odcpop', '1', { expires: 1});
+      $btn.trigger('click');
+      console.log('no cookie, setting it.');
+     }else{
+       console.log('cookie found');
+     }
   };
 
   Morphing.prototype.start = function() {
@@ -271,11 +281,6 @@ $.fn.fancyMorph = function( opts ) {
   return this;
 };
 
-
-// Step 2: Start using it!
-// =======================
-
 $("[data-morphing]").fancyMorph({
   // hash : 'morphing'
 });
-
