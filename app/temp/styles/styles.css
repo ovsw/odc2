@@ -406,7 +406,7 @@ a {
 	color: #ff6b35;
 }
 .button {
-	padding: 0.7rem 0;
+	padding: 0.7rem 1.2rem;
 	border: none;
 	color: white;
 	text-align: center;
@@ -2175,6 +2175,7 @@ a[x-apple-data-detectors] {
   }
 .posts-list__title a {
       text-decoration: none;
+      color: #ffffff;
     }
 .posts-list__date a {
       color: rgba(0, 0, 0, 0.6);
@@ -2191,6 +2192,137 @@ a.back-to-blog {
   position: relative;
   top: 15px;
   font-weight: 300;
+}
+.btn {
+  background: #ff6b35;
+  border-width: 0;
+  color: #fff;
+  text-decoration: none;
+  padding: 7px 20px;
+  line-height: 1.5;
+  -webkit-border-radius: 20px;
+          border-radius: 20px;
+  text-transform: uppercase;
+  font-size: 80%;
+  font-weight: 700;
+  margin: 5px 5px 5px 0;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  -webkit-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display:none;
+}
+.morphing-btn-wrap {
+  display: none;
+  position: fixed;
+  text-align: center;
+  top: 50%;
+  left:0;
+  -webkit-transform: rotateZ(-90deg);
+      -ms-transform: rotate(-90deg);
+          transform: rotateZ(-90deg);
+  -webkit-transform-origin: 0 0;
+      -ms-transform-origin: 0 0;
+          transform-origin: 0 0;
+  z-index: 1100;
+}
+.morphing-btn-wrap .btn {
+    display: inline-block;
+  }
+@media (min-width: 768px) {
+.morphing-btn-wrap {
+    display:inline-block
+}
+ }
+.morphing-btn {
+  -webkit-transition: background 0.3s, color 0.2s 0.2s, width 0.2s 0s;
+  -o-transition: background 0.3s, color 0.2s 0.2s, width 0.2s 0s;
+  -webkit-transition: color 0.3s 0.2s, width 0.2s 0s;
+  -o-transition: color 0.3s 0.2s, width 0.2s 0s;
+  transition: color 0.3s 0.2s, width 0.2s 0s;
+  white-space: nowrap;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  z-index: 1100;
+}
+.morphing-btn_circle {
+  color: transparent !important;
+  padding-left: 0;
+  padding-right: 0;
+  width: 35.6px !important;
+
+
+  /* Override inline style rule */
+  -webkit-transition: color 0.2s 0s, width .3s 0.2s;
+  -o-transition: color 0.2s 0s, width .3s 0.2s;
+  transition: color 0.2s 0s, width .3s 0.2s;
+}
+.morphing-btn-clone {
+  position: fixed;
+  background: rgba(48, 178, 86, 0.9);
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
+  z-index: 3;
+  -webkit-transition: all 0.5s cubic-bezier(.65, .05, .36, 1);
+  -o-transition: all 0.5s cubic-bezier(.65, .05, .36, 1);
+  transition: all 0.5s cubic-bezier(.65, .05, .36, 1);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  z-index: 1100;
+}
+.morphing-btn-clone_visible {
+  display: block;
+  -webkit-transform: scale(1) !important;
+  -ms-transform: scale(1) !important;
+  transform: scale(1) !important;
+}
+.fancybox-morphing .fancybox-bg {
+  /* background: green; */
+  opacity: 0;
+}
+.fancybox-morphing .fancybox-toolbar {
+  top: 20px;
+  right: 40px;
+}
+.fancybox-morphing .fancybox-button--close {
+  background: rgba(0, 0, 0, 0.2);
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
+  color: #fff;
+}
+.fancybox-morphing .fancybox-button--close::after, 
+.fancybox-morphing .fancybox-button--close::before {
+    height: 1.55px;
+    width: 22px;
+    left: -webkit-calc(50% - 11px);
+    left: calc(50% - 11px);
+}
+.fancybox-morphing .fancybox-button--close:hover {
+  background: rgba(0, 0, 0, 0.25);
+}
+/* Styling for element used in example */
+#event-content {
+  margin: 0;
+  position: relative;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 2rem;
+  min-width: 50%;
+  line-height: 2;
+  z-index: 3;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+#event-content h2 {
+    margin-top: 0;
+  }
+#morphing-content a {
+  color: #fff;
 }
 
 
