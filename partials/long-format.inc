@@ -33,7 +33,7 @@
 
     <div class="mx__section-heading" id="<?= createSlug($block->title) ?>">
 
-      <h2 class="mx__section-heading__title"><?= $section_header_counter.". ".$block->title." <span class='mx__section-heading__title-tagline'>".$block->tagline."</span>" ?></h2>
+      <h2 class="mx__section-heading__title"><?= $block->title." <span class='mx__section-heading__title-tagline'>".$block->tagline."</span>" ?></h2>
     </div>
     <!-- /.mx__section-heading -->
 
@@ -58,7 +58,7 @@
           <!-- /.mx__rt-image__image-wrapper -->
           
           <div class="mx__rt-image__text-content rte_wrapper">
-            <h3 class="mx__rt-image__title"><?= $section_header_counter.".".$subsection_header_counter." ".$block->title ?></h3> 
+            <h3 class="mx__rt-image__title"><?= $block->title ?></h3> 
             <div class="mx__rt-image__rich-text">
               <?= $block->rich_text ?>
             </div>
@@ -86,7 +86,7 @@
         <div class="mx__rt-noimage__block-row">
           
           <div class="mx__rt-noimage__text-content rte_wrapper ">
-            <h3 class="mx__rt-noimage__title"><?= $section_header_counter.".".$subsection_header_counter." ".$block->title ?></h3> 
+            <h3 class="mx__rt-noimage__title"><?= $block->title ?></h3> <?php // $section_header_counter.".".$subsection_header_counter." ". ?>
             <div class="mx__rt-noimage__rich-text">
               <?= $block->rich_text ?>
             </div>
@@ -114,7 +114,7 @@
           <div class="mx__faqs__block-row">
             
             <div class="mx__faqs__text-content">
-              <h3 class="mx__rt-noimage__title"><?= $section_header_counter.".".$subsection_header_counter." ".$block->title ?></h3> 
+              <h3 class="mx__rt-noimage__title"><?= $block->title ?></h3> 
               
               <div class="mx__faqs__rich-text ">
                 <?php foreach ($block->faqs_repeater as $faq) : ?>
