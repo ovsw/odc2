@@ -14,6 +14,10 @@
 
 <div class="basic-page__wrapper rte_wrapper">
 
+  <?php if( $page->template == "contact") {
+    $map = $modules->get('MarkupGoogleMap');
+    echo $map->render($page, 'contact_map', array('height' => '500px', 'type' => 'ROADMAP'));
+  }?>
   <?= $page->body ?>
 
 </div>

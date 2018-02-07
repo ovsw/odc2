@@ -1,0 +1,1 @@
+<?php require($config->paths->templates."partials/basic-page.inc"); ?>
