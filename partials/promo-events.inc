@@ -17,10 +17,12 @@
   <?php 
     $rt_block_counter = 0;
     $alternateClass = '';
+    $events = $page->children();
   ?>
 
+  <?php if (count($events) > 0) : ?>
 
-  <?php foreach ($page->children() as $event) : ?>
+  <?php foreach ($events as $event) : ?>
       
       <div class="posts-list__text">
         <h2 class="posts-list__title"><a href="<?= $event->url ?>"><?= $event->title ?></a></h2>
@@ -35,6 +37,16 @@
   </div>
 
   <?php endforeach; ?>
+
+  <?php else : ?>
+
+  <h2>Sorry, there are no events at this time.</h2>
+
+  <p>Please try again later.</p>
+
+  <br />
+  <br /><br /><br /><br /><br /><br /><br /><br /><br />
+  <?php endif; ?>
 
 </div>
 <!-- /.basic-page__wrapper -->

@@ -16,9 +16,10 @@
 
   <?php if( $page->template == "contact") {
     $map = $modules->get('MarkupGoogleMap');
-    echo $map->render($page, 'contact_map', array('height' => '500px', 'type' => 'ROADMAP'));
+    echo $map->render($page, 'contact_map', array('height' => '500px', 'type' => 'ROADMAP', 'markerTitleField' => $page->contact_map->address));
   }?>
   <?= $page->body ?>
+  <?= $page->contact_map->address ?>
 
 </div>
 <!-- /.basic-page__wrapper -->
