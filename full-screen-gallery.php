@@ -20,7 +20,7 @@ html, body,.galleria-container{
 /*	background-color: */
 }
 .galleria-thumbnails-list,.galleria-thumbnails {
-	background-color: #43601e;
+	background-color: #0166af;
 }
 a {
 	color:#823;
@@ -59,7 +59,7 @@ a {
 	top: 20px;
 	right: 10px;
 	z-index: 11000;
-	background:rgb(76, 110, 34);
+	background:#30b256;
 	padding: 5px 5px 4px;
 	border-radius: 5px;
 	border: 1px solid #fff;
@@ -99,8 +99,6 @@ a {
 	z-index:11200;
 	top:0;
 	left:20px;
-	background-color: white;
-	border-radius: 0 0 10px 10px;
 	padding: 1rem;
 }
 .logo img{
@@ -132,6 +130,10 @@ a.backToWebsite {
 	background:url('/site/templates/app/assets/images/fsgallery/playPause.gif') no-repeat left bottom;
 }
 
+.galleria-carousel .galleria-thumbnails-list {
+	border-left: 30px solid #30b256;
+	border-right: 30px solid #30b256;	
+}
 
 </style>
 <!-- load jQuery -->
