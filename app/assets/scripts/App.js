@@ -284,3 +284,10 @@ $.fn.fancyMorph = function( opts ) {
 $("[data-morphing]").fancyMorph({
   // hash : 'morphing'
 });
+
+// scroll to top
+
+$("a.scrollToTop").click(function(e) {
+  e.preventDefault();
+  $("html, body").animate({ scrollTop: 0 }, "slow");
+});

@@ -147,3 +147,5 @@
 
 </div>
 <!-- /.basic-page__wrapper -->
+
+<a href="#" class="scrollToTop">Bacl to Top</a>
