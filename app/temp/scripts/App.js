@@ -18689,7 +18689,7 @@ var IosFixes = function () {
     key: 'iOSversion',
     value: function iOSversion() {
 
-      if (window.MSStream) {
+      if (navigator.userAgent.match(/Windows Phone/i)) {
         // There is some iOS in Windows Phone...
         // https://msdn.microsoft.com/en-us/library/hh869301(v=vs.85).aspx
         return false;
