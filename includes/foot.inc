@@ -16,7 +16,7 @@
           <div class="column1">
           
             <div class="adr">
-                <div class="street-address">561 7th Ave – 3rd Floor</div>
+                <div class="street-address">575 5th Ave – 14th Floor</div>
                 <div> <span class="locality">New York</span>, <span class="region" title="New York">NY</span> <span class="postal-code">10018</span></div>
                 <div class="country-name">USA</div>
             </div>
