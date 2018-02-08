@@ -2222,11 +2222,12 @@ a[x-apple-data-detectors] {
   }
  }
 .posts-list__text{
-
+    padding: 2rem;
   }
 .posts-list__title {
 
     font-weight: 400;
+    margin-bottom: 0!important;
   }
 .posts-list__title a {
       text-decoration: none;

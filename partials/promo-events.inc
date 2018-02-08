@@ -29,14 +29,14 @@
         <h3 class="posts-list__date"><a href="<?= $event->url ?>"><?= $event->date ?></a></h3>
         
           <?= $event->short_description; ?>
-
+          <br>
           <a href="<?= $event->url ?>" class="button button__cta"> RSVP / Learn more</a>
         
       </div>
-    </div>  
-  </div>
+ 
 
   <?php endforeach; ?>
+</div> 
 
   <?php else : ?>
 

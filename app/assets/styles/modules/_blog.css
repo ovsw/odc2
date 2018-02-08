@@ -40,12 +40,13 @@
   }
 
   &__text{
-
+    padding: 2rem;
   }
 
   &__title {
 
     font-weight: 400;
+    margin-bottom: 0!important;
     
 
     a {
