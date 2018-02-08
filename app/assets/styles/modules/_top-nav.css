@@ -35,8 +35,12 @@ $mobile_break: atLarge;
 
   &__mobile-title {
     color: $white;
-    margin: 1.3rem 1rem;
+    margin: 2rem  1rem 1.3rem 1rem;
     font-size:  2em;
+
+    @mixin atMedium {
+      margin-top: 3rem;
+    }
 
     @mixin $mobile_break {
       display: none;

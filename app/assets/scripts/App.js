@@ -24,7 +24,7 @@ $('.header__menu-icon').click(function(){
 $('.top-nav__submenu-button').click(function(){
   var menuItem = $(this).parent();
 
-  if (menuItem.hasClass('`submenu`-open')) {
+  if (menuItem.hasClass('submenu-open')) {
     $('.top-nav__has-children').removeClass('submenu-open');
   }else{
     $('.top-nav__has-children').removeClass('submenu-open');
