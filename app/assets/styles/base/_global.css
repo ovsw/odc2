@@ -92,7 +92,13 @@ a {
 
 				@mixin atLarge{
 					font-size: 1.8rem;
+
+          &:first-child {
+            margin-top: 0;
+          }
 				}
+
+        
 			}
 
 			h3 {

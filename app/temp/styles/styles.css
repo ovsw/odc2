@@ -447,11 +447,19 @@ a {
 				font-weight: 300;
 				font-size: 1.3rem;
 				line-height: 2.5rem;
+
+        
 			}
 @media (min-width: 1024px) {
 .rte_wrapper h2	{
 					font-size: 1.8rem
+
+        
 			}
+
+          .rte_wrapper h2:first-child {
+            margin-top: 0;
+          }
  }
 .rte_wrapper h3 {
 				font-size: 1.325rem;
