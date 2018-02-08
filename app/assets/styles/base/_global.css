@@ -90,13 +90,16 @@ a {
 				font-size: 1.3rem;
 				line-height: 2.5rem;
 
-				@mixin atLarge{
-					font-size: 1.8rem;
+				@mixin atMedium{
 
           &:first-child {
             margin-top: 0;
           }
 				}
+
+        @mixin atLarge {
+          font-size: 1.8rem;
+        }
 
         
 			}

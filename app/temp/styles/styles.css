@@ -450,16 +450,18 @@ a {
 
         
 			}
-@media (min-width: 1024px) {
-.rte_wrapper h2	{
-					font-size: 1.8rem
-
-        
-			}
+@media (min-width: 768px) {
 
           .rte_wrapper h2:first-child {
             margin-top: 0;
           }
+ }
+@media (min-width: 1024px) {
+.rte_wrapper h2	{
+          font-size: 1.8rem
+
+        
+			}
  }
 .rte_wrapper h3 {
 				font-size: 1.325rem;
@@ -1744,13 +1746,21 @@ a[x-apple-data-detectors] {
   }
 .basic-page__wrapper {
     padding-bottom: 2rem;
+    padding-top: 0.01rem;
     background-color: rgb(255, 253, 245);
   
   }
+@media (min-width: 768px) {
+.basic-page__wrapper {
+        padding: 2rem
+  
+  }
+ }
 @media (min-width: 1024px) {
 .basic-page__wrapper {
         max-width: 900px;
-        margin: 0 auto
+        margin: 0 auto;
+        padding: 3rem
   
   }
  }

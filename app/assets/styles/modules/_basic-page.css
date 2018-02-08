@@ -48,15 +48,20 @@
 
   &__wrapper {
     padding-bottom: 2rem;
+    padding-top: 0.01rem;
     background-color: color($cream l(+5%));
+
+      @mixin atMedium {
+        padding: 2rem;
+      }
 
       @mixin atLarge{
         max-width: 900px;
         margin: 0 auto;
+        padding: 3rem;
       }
 
       @mixin atHuge {
-       
        
       }
   
