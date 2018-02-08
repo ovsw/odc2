@@ -1,10 +1,12 @@
     <?php require($config->paths->templates.'includes/modules/popup.inc'); ?>
 
-    <div class="large-hero large-hero--full-height" style="background: url('<?= $page->bg_video_poster_url ?>') no-repeat center center;background-size:cover;">
+    <div class="large-hero large-hero--full-height" style="background: url('http://odcv-ac97.kxcdn.com/<?= $page->video_name ?>-video-cover.jpg') no-repeat center center;background-size:cover;">
 
-      <video class="large-hero__video-bg" playsinline autoplay muted loop>
-        <source src="<?= $page->bg_video_url ?>" type="video/mp4" poster="<?= $page->bg_video_poster_url ?>">
-      </video>
+      <video class="large-hero__video-bg" playsinline autoplay muted loop poster="http://odcv-ac97.kxcdn.com/<?= $page->video_name ?>-video-cover.jpg">
+        <source src="http://odcv-ac97.kxcdn.com/<?= $page->video_name ?>.mp4" type="video/mp4">
+        <source src="http://odcv-ac97.kxcdn.com/<?= $page->video_name ?>.ogv" type="video/ogg">
+        <source src="http://odcv-ac97.kxcdn.com/<?= $page->video_name ?>.webm" type="video/webm">
+      </video> 
       <!-- /.large_hero__video-bg -->
       
       <div class="large-hero__content">

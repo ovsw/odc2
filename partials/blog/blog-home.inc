@@ -1,10 +1,12 @@
 <div class="basic-page__hero-wrapper">
   <div class="basic-page__hero large-hero large-hero--smaller">
     <?php $videoSource = $page->parents("template=camp")->first(); ?>
-    <video class="large-hero__video-bg" autoplay muted loop>
-      <source src="<?= $videoSource->bg_video_url ?>" type="video/mp4" poster="<?= $videoSource->bg_video_poster_url ?>">
-    </video>
-        <!-- /.large_hero__video-bg -->
+    <video class="large-hero__video-bg" playsinline autoplay muted loop poster="http://odcv-ac97.kxcdn.com/<?= $videoSource->video_name ?>-video-cover.jpg">
+      <source src="http://odcv-ac97.kxcdn.com/<?= $videoSource->video_name ?>.mp4" type="video/mp4">
+      <source src="http://odcv-ac97.kxcdn.com/<?= $videoSource->video_name ?>.ogv" type="video/ogg">
+      <source src="http://odcv-ac97.kxcdn.com/<?= $videoSource->video_name ?>.webm" type="video/webm">
+    </video> 
+    <!-- /.large_hero__video-bg -->
   </div>
   <!-- /.basic-page__hero -->
 </div>
