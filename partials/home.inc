@@ -1,7 +1,9 @@
-    <div class="large-hero large-hero--full-height" style="background: url('<?= $page->bg_video_poster_url ?>') no-repeat center center;background-size:cover;">
+    <div class="large-hero large-hero--full-height" >
 
-      <video class="large-hero__video-bg" playsinline autoplay muted loop>
-        <source src="<?= $page->bg_video_url ?>" type="video/mp4" poster="<?= $page->bg_video_poster_url ?>">
+      <video class="large-hero__video-bg" playsinline autoplay muted loop preload="auto" poster="http://odcv-ac97.kxcdn.com/oasis-intro-video-cover.jpg">
+        <source src="http://odcv-ac97.kxcdn.com/oasis-intro-hq.mp4" type="video/mp4">
+        <source src="http://odcv-ac97.kxcdn.com/oasis-intro-hq.ogv" type="video/ogg">
+        <source src="http://odcv-ac97.kxcdn.com/oasis-intro-hq.webm" type="video/webm">
       </video> 
       <!-- /.large_hero__video-bg -->
       
