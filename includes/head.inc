@@ -17,7 +17,8 @@
       });
     </script>
 
-    <!-- <script src="<?= $config->urls->templates ?>vendor/fontawesome-all.min.js"></script> -->
+     <script src="<?= $config->urls->templates ?>vendor/fa-solid.min.js"></script>
+     <script src="<?= $config->urls->templates ?>vendor/fontawesome.min.js"></script>
     <?= $page->template == "contact" ? "<script type='text/javascript' src='https://maps.googleapis.com/maps/api/js?sensor=false&key=AIzaSyBKpywPkXQEbH2WZMmMRetURTMmWDjmO7Q'></script>" : ''; ?>
 
     <link rel="stylesheet" href="<?= $config->urls->templates ?>app/assets/styles/vendor/jquery.fancybox.min.css" />    
