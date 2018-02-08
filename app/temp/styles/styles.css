@@ -428,9 +428,13 @@ a {
       line-height: 1.5rem;
 			padding: 0  1rem;
 }
+@media (min-width: 768px) {
+.rte_wrapper {
+        padding-top: 0.9rem
+}
+ }
 @media (min-width: 1200px) {
 .rte_wrapper {
-        padding-top: .9rem;
         font-size: 1rem;
         line-height: 1.7rem
 }

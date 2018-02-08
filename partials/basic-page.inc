@@ -19,7 +19,6 @@
     echo $map->render($page, 'contact_map', array('height' => '500px', 'type' => 'ROADMAP', 'markerTitleField' => $page->contact_map->address));
   }?>
   <?= $page->body ?>
-  <?= $page->contact_map->address ?>
 
 </div>
 <!-- /.basic-page__wrapper -->

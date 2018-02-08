@@ -100,7 +100,7 @@
 
             <?php endforeach; ?>
 
-            <a class="cards__card-wrapper noflip of-6" href="<?= $page->children("template=typical-day")->first()->url ?>">
+            <a class="cards__card-wrapper noflip of-6" href="<?= $page->children("template=basic-page")->first()->url ?>">
               <div class="cards__card">
                 <div class="cards__cardface cards__cardface-front cards__cardface-front--secondary">
                   <h2 class="cards__title">See a Typical Day</h2>

@@ -73,8 +73,10 @@ a {
       line-height: 1.5rem;
 			padding: 0  1rem;
 
+      @mixin atMedium {
+        padding-top: 0.9rem;
+      }
       @mixin atHuge {
-        padding-top: .9rem;
         font-size: 1rem;
         line-height: 1.7rem;
       }
