@@ -138,6 +138,7 @@ a {
 
       table {
         font-size: 12px;
+        border: none;
 
         @mixin atMedium{
           font-size: 1rem;
@@ -148,6 +149,7 @@ a {
         background-color: $oasisBlue;
         color: $white;
         font-weight: 400;
+        border: 1px solid white;
 
         @mixin atMedium {
           padding: 0.9rem 1.2rem;
@@ -157,6 +159,7 @@ a {
       td {
         padding: 6px 3px;
         text-align: center;
+        border-left: 1px solid $oasisGreen;
 
         @mixin atLarge{
           padding: 0.9rem 1.2rem;

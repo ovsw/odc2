@@ -493,6 +493,7 @@ a {
  }
 .rte_wrapper table {
         font-size: 12px;
+        border: none;
       }
 @media (min-width: 768px) {
 .rte_wrapper table {
@@ -503,6 +504,7 @@ a {
         background-color: #0166af;
         color: #ffffff;
         font-weight: 400;
+        border: 1px solid white;
       }
 @media (min-width: 768px) {
 .rte_wrapper th {
@@ -512,6 +514,7 @@ a {
 .rte_wrapper td {
         padding: 6px 3px;
         text-align: center;
+        border-left: 1px solid #30b256;
       }
 @media (min-width: 1024px) {
 .rte_wrapper td {
