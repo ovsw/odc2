@@ -147,7 +147,7 @@ $grid-space: .3125rem;
     }
 
     @mixin atMedium {
-    font-size: 1.1rem;
+    font-size: 1rem;
     }
 
     &--program {
@@ -162,6 +162,21 @@ $grid-space: .3125rem;
     }
   }
 
+  &__text {
+    line-height: 1.1;
+    color: color($white a(60%));
+    display: none;
+
+    @mixin atMedium {
+      display:block;
+      font-size: 0.75rem;
+    }
+
+    @mixin atLarge {
+      font-size: 0.875rem;
+    }
+  }
+
   &__subtitle {
     margin-bottom: 0;
     font-size: 0.7rem;
@@ -173,7 +188,7 @@ $grid-space: .3125rem;
     }
 
     @mixin atMedium {
-      font-size: 1.2rem;
+      font-size: 0.9rem;
     }
 
     &--smaller {
