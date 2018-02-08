@@ -31,10 +31,10 @@ class IosFixes {
 
   iOSversion() {
     
-    if(window.MSStream){
+    if(navigator.userAgent.match(/Windows Phone/i)){
       // There is some iOS in Windows Phone...
       // https://msdn.microsoft.com/en-us/library/hh869301(v=vs.85).aspx
-      return false;
+     return false;
     }
 
     if (/iP(hone|od|ad)/.test(navigator.platform)) {
