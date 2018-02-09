@@ -1,10 +1,3 @@
-//import {TimelineLite,TweenLite} from "gsap";
-//import Person from './modules/Person';
-import Iosfixes from './modules/Ios-fixes';
-//import Slideshow from  './modules/Slideshow';
-import Cookies from 'js-cookie'; 
-
-
 $(document).ready(function() {
 
   

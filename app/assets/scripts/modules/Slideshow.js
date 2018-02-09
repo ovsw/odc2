@@ -1,5 +1,4 @@
-import $ from 'jquery';
-import {TweenMax, TimelineLite, TimelineMax} from "gsap";
+import {TimelineLite} from "gsap";
 
 class Slideshow {
 
@@ -14,7 +13,7 @@ class Slideshow {
     this.slideEls = $(slidesSel);
     this.fadeInDur = fadeInDur;
     this.fadeOutDur = fadeOutDur;
-    this.masterTl = new TimelineMax({repeat: this.repeat});
+    this.masterTl = new TimelineLite({repeat: this.repeat});
     this.tlArray = []; // array to store the timeline of each slide
 
     this.createSlideTls(); // create timelines, one for each slide
