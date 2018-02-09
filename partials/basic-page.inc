@@ -1,12 +1,6 @@
 <div class="basic-page__hero-wrapper">
   <div class="basic-page__hero large-hero large-hero--smaller">
-    <?php $videoSource = $pages->get("1"); ?>
-    <video class="large-hero__video-bg" playsinline autoplay muted loop poster="http://odcv-ac97.kxcdn.com/<?= $videoSource->video_name ?>-video-cover.jpg">
-      <source src="http://odcv-ac97.kxcdn.com/<?= $videoSource->video_name ?>.mp4" type="video/mp4">
-      <source src="http://odcv-ac97.kxcdn.com/<?= $videoSource->video_name ?>.ogv" type="video/ogg">
-      <source src="http://odcv-ac97.kxcdn.com/<?= $videoSource->video_name ?>.webm" type="video/webm">
-    </video> 
-    <!-- /.large_hero__video-bg -->
+   <?php require($config->paths->templates."includes/modules/video-bg-hp.inc") ?>
   </div>
   <!-- /.basic-page__hero -->
 </div>
