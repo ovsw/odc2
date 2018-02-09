@@ -2020,6 +2020,11 @@ a[x-apple-data-detectors] {
   text-indent: -99999px;
   background: #0166af url('../../assets/images/chevron-up-w.png') no-repeat center center;
 }
+@media (min-width: 1024px) {
+.scrollToTop {
+    bottom: 90px
+}
+ }
 .scrollToTop:hover {
   background-color: #ff6b35;
 }
