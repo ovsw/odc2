@@ -253,7 +253,7 @@
   background: $oasisBlue url('../../assets/images/chevron-up-w.png') no-repeat center center;
 
   @mixin atLarge {
-    bottom: 90px; 
+    bottom: 90px;
   }
 }
 
