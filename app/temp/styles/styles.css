@@ -2236,7 +2236,7 @@ a[x-apple-data-detectors] {
   }
 .posts-list__title a {
       text-decoration: none;
-      color: #ffffff;
+      
     }
 .posts-list__date a {
       color: rgba(0, 0, 0, 0.6);
