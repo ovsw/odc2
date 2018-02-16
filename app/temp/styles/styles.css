@@ -2389,8 +2389,17 @@ a.back-to-blog {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
+#event-content .popup-event {
+    margin-bottom: 2rem;
+    border-top: 1px solid #30b256;
+    padding-top: 1rem;
+  }
+#event-content .popup-event:first-child {
+    border-top:none;
+  }
 #event-content h2 {
     margin-top: 0;
+    margin-bottom: 0;
   }
 #morphing-content a {
   color: #fff;

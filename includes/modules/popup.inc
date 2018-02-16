@@ -10,14 +10,20 @@
   ?>
 
   <?php if (count($eventsPage->children()) > 0 ) :
-    $latestEvent = $eventsPage->children()->first();
+    $latestEvents = $eventsPage->children();
    ?>
     <a data-morphing id="morphing" data-src="#event-content" href="javascript:;" class="btn">Info Sessions</a>
 
     <div id="event-content" style="display:none">
-      <h2><?= $latestEvent->title; ?></h2>
-      <?= $latestEvent->short_description; ?>
-      <a href="<?= $latestEvent->url ?>" class="button button__cta"> RSVP / Learn more</a>
+    <?php foreach($latestEvents as $event) :?>
+      <div class="popup-event">
+      <h2><?= $event->title; ?></h2>
+      <?= $event->short_description; ?>
+      
+      <a href="<?= $event->url ?>" class="button button__cta"> RSVP / Learn more</a>
+      </div>
+      <!-- /.popup-event -->
+    <?php endforeach; ?>
     </div>
 
   <?php endif; ?>
