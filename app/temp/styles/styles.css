@@ -2218,25 +2218,35 @@ a[x-apple-data-detectors] {
     border: 8px solid white;
     -webkit-box-shadow: 3px 3px 3px rgba(0,0,0, 0.2);
             box-shadow: 3px 3px 3px rgba(0,0,0, 0.2);
-    margin-right: 50px;
+    margin-left: 5%;
+    margin-right: 5%;
   }
 @media (min-width: 1024px) {
 .posts-list__image-wrapper {
       float: left;
-      width: 300px
+      width: 300px;
+      margin-right: 50px;
+      margin-left: 0
   }
  }
 .posts-list__text{
-    padding: 2rem;
-  }
-.posts-list__title {
 
+    padding: 0 2rem 2rem 2rem;
+  }
+@media (min-width: 1024px) {
+.posts-list__text{
+    padding: 2rem
+  }
+ }
+.posts-list__title {
+    background-color: #0166af;
+    padding: 1rem;
     font-weight: 400;
     margin-bottom: 0!important;
   }
 .posts-list__title a {
       text-decoration: none;
-      
+      color: #fff;
     }
 .posts-list__date a {
       color: rgba(0, 0, 0, 0.6);

@@ -31,27 +31,37 @@
     display: block;
     border: 8px solid white;
     box-shadow: 3px 3px 3px rgba($black, 0.2);
-    margin-right: 50px;
+    margin-left: 5%;
+    margin-right: 5%;
+    
 
     @mixin atLarge {
       float: left;
       width: 300px;
+      margin-right: 50px;
+      margin-left: 0;
     }
   }
 
   &__text{
-    padding: 2rem;
+
+    padding: 0 2rem 2rem 2rem;
+
+    @mixin atLarge {
+    padding: 2rem;      
+    }
   }
 
   &__title {
-
+    background-color: $oasisBlue;
+    padding: 1rem;
     font-weight: 400;
     margin-bottom: 0!important;
     
 
     a {
       text-decoration: none;
-      
+      color: #fff;
     }
   }
 
