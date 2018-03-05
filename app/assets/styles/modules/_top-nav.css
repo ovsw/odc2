@@ -92,6 +92,10 @@ $mobile_break: atLarge;
     background-color: $mainAccent;
   }
 
+  &__item-level-1.p-1529 {
+    background-color: $oasisGreen;
+  }
+
   &__item-level-1:hover {
     @mixin $mobile_break {
       background-color: $oasisGreen;

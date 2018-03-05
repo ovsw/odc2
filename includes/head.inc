@@ -37,7 +37,9 @@
     <link rel="stylesheet" href="<?php echo AIOM::CSS(array('app/assets/styles/vendor/jquery.fancybox.min.css', 'app/temp/styles/styles.css')); ?>">
     
     <!-- 
-      <link rel="stylesheet" href="<?= $config->urls->templates ?>app/assets/styles/vendor/jquery.fancybox.min.css" />   <link rel="stylesheet" href="<?= $config->urls->templates ?>app/temp/styles/styles.css" /> 
+      
+      <link rel="stylesheet" href="<?= $config->urls->templates ?>app/assets/styles/vendor/jquery.fancybox.min.css" />
+      <link rel="stylesheet" href="<?= $config->urls->templates ?>app/temp/styles/styles.css" /> 
     -->
 
 <!--Start of Tawk.to Script-->

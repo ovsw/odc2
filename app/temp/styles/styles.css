@@ -794,6 +794,9 @@ a[x-apple-data-detectors] {
 .top-nav__item-level-1.p-1031 {
     background-color: #ff6b35;
   }
+.top-nav__item-level-1.p-1529 {
+    background-color: #30b256;
+  }
 @media (min-width: 1024px) {
 .top-nav__item-level-1:hover {
       background-color: #30b256;
