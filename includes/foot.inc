@@ -1,5 +1,7 @@
 <footer class="footer__wrapper">
 <div class="footer">
+  
+  
 
   <div class="footer__logos">
     <a href="https://www.acacamps.org/">
@@ -7,6 +9,36 @@
     </a>
   </div>
   <!-- /.footer__logos -->
+
+  <?php
+  
+    $fbLink = ''; $instagramLink = '';
+
+    if ($page->id == '1' || $page->rootParent == '1042') {
+      $fbLink = $pages->get('1')->fb_link;
+      $instagramLink = $pages->get('1')->instagram_link;
+    }else if($page->template == 'camp'){
+      $fbLink = $page->fb_link ? $page->fb_link : '';
+      $instagramLink = $page->instagram_link ? $page->instagram_link : '';
+    }else{
+      $fbLink = $page->parents('template=camp')->first()->fb_link;
+      $instagramLink = $page->parents('template=camp')->first()->instagram_link;
+    }
+  ?>
+
+  <div class="footer__social">
+    <?php if ($fbLink != '') : ?>
+      <div>
+        <a href="<?= $fbLink ?>" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      </div>
+    <?php endif; ?>
+    <?php if ($instagramLink != '') : ?>
+      <div>
+        <a href="<?= $instagramLink ?>" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+    <?php endif; ?>
+  </div>
+  <!-- /.footer__social -->
 
   <div class="footer__text">
       <div class="vcard footer__vcard">
@@ -55,6 +87,7 @@
 
 <script src="<?php echo AIOM::JS(array(
   'scripts/vendor/fa-solid.min.js',
+  'scripts/vendor/fa-brands.js',
   'scripts/vendor/fontawesome.min.js',
   'scripts/vendor/jquery-3.2.1.min.js',
   'scripts/vendor/jquery.fancybox.min.js',
