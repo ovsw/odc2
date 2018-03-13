@@ -4,7 +4,7 @@
           $topMenu = $modules->get("MarkupSimpleNavigation");
           $topMenuRootPage = $pages->get('1042');
           
-          $menuPages = $topMenuRootPage->children('id!=1529');
+          $menuPages = $topMenuRootPage->children('id!=1529'); // not events page
           $eventsPageMain = $pages->get('1529');
 
 
@@ -37,6 +37,8 @@
             'item_tpl' => '<a href="{link_url|url}">{title}<i class="far fa-angle-down top-nav__ico-down"></i></a><span class="top-nav__submenu-button"><i class="fas fa-plus top-nav__ico-plus"></i><i class="fas fa-minus top-nav__ico-minus"></i></span>',
             'item_current_tpl' => '<a href="{link_url|url}">{title}<i class="far fa-angle-down top-nav__ico-down"></i></a><span class="top-nav__submenu-button"><i class="fas fa-plus top-nav__ico-plus"></i><i class="fas fa-minus top-nav__ico-minus"></i></span>',
             'code_formatting' => true,
+            'xtemplates' => 'menu_link',
+            'xitem_tpl' => '<a href="{link_url|url}" target="_blank">{title}<i class="far fa-angle-down top-nav__ico-down"></i></a><span class="top-nav__submenu-button"><i class="fas fa-plus top-nav__ico-plus"></i><i class="fas fa-minus top-nav__ico-minus"></i></span>',
             'debug' => false
         );
           //<i class="fas fa-plus top-nav__ico-plus"></i><i class="fas fa-minus top-nav__ico-minus"></i>
