@@ -1,4 +1,4 @@
-    <meta charset="utf-8">
+<meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title><?= $page->title ?></title>
     <meta name="description" content="">
@@ -37,9 +37,7 @@
     <link rel="stylesheet" href="<?php echo AIOM::CSS(array('app/assets/styles/vendor/jquery.fancybox.min.css', 'app/temp/styles/styles.css')); ?>">
     
     <!-- 
-      
-      <link rel="stylesheet" href="<?= $config->urls->templates ?>app/assets/styles/vendor/jquery.fancybox.min.css" />
-      <link rel="stylesheet" href="<?= $config->urls->templates ?>app/temp/styles/styles.css" /> 
+      <link rel="stylesheet" href="<?= $config->urls->templates ?>app/assets/styles/vendor/jquery.fancybox.min.css" />   <link rel="stylesheet" href="<?= $config->urls->templates ?>app/temp/styles/styles.css" /> 
     -->
 
 <!--Start of Tawk.to Script-->
@@ -76,6 +74,17 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=1428722157434827&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Facebook Pixel Code -->
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-80657026-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-80657026-1');
+</script>
 
 
 <!-- Global site tag (gtag.js) - AdWords: 951389957 -->
