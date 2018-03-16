@@ -34,13 +34,13 @@
 }
 
 @define-mixin hideAtTooShort {
- @media (max-height: 450px) {
+ @media (max-height: 485px) {
   display: none;
  }
 }
 
 @define-mixin atTooShort {
- @media (max-height: 450px) {
+ @media (max-height: 485px) {
   @mixin-content;
  }
 }

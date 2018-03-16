@@ -31,8 +31,6 @@ $grid-space: .3125rem;
   @mixin atHuge{
     max-width: 1200px;
   }
-
-  @mixin hideAtTooShort;
   
   &__card-wrapper {
     padding: $grid-space-mobile;

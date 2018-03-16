@@ -364,6 +364,7 @@ body {
   font-family: Open Sans, sans-serif;
   color: #333;
 	background-color: #fff8dd;
+  
 }
 .please-rotate {
   display:none;
@@ -565,11 +566,6 @@ a[x-apple-data-detectors] {
     -webkit-flex-direction: row-reverse;
         -ms-flex-direction: row-reverse;
             flex-direction: row-reverse
-}
- }
-@media (max-height: 450px) {
-.header {
-  display: none
 }
  }
 .header__logo {
@@ -940,15 +936,6 @@ a[x-apple-data-detectors] {
 
   }
 /* or: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAF0lEQVQIW2NkYGD4z8DAwMgAI0AMDA4AI3EBBCKrOnQAAAAASUVORK5CYII= */
-@media (max-height: 450px) {
-.large-hero {
-  display: none
-  
-
-
-}
- }
-/* background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAF0lEQVQIW2NkYGD4z8DAwMgAI0AMDA4AI3EBBCKrOnQAAAAASUVORK5CYII='); */
 .large-hero__video-bg {
     position: absolute;
     min-width: 100%; 
@@ -965,7 +952,7 @@ a[x-apple-data-detectors] {
       display: block;
     } */
   }
-/* &--video-grid { */
+/* background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAF0lEQVQIW2NkYGD4z8DAwMgAI0AMDA4AI3EBBCKrOnQAAAAASUVORK5CYII='); */
 .large-hero__content {
     position: absolute;
     top:0;
@@ -987,7 +974,7 @@ a[x-apple-data-detectors] {
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
-/* background: @mixin simpleRadialGradient #fff #000; */
+/* &--video-grid { */
 .large-hero__top-area {
     -webkit-box-flex: 1;
     -webkit-flex: 1 0 0;
@@ -1001,6 +988,7 @@ a[x-apple-data-detectors] {
 
     padding-top: 70px;
   }
+/* background: @mixin simpleRadialGradient #fff #000; */
 .large-hero__bottom-area {
     
     display:-webkit-box;
@@ -1117,11 +1105,6 @@ a[x-apple-data-detectors] {
 @media (min-width: 1200px) {
 .cards {
     max-width: 1200px
-}
- }
-@media (max-height: 450px) {
-.cards {
-  display: none
 }
  }
 .cards__card-wrapper {
@@ -1341,12 +1324,6 @@ a[x-apple-data-detectors] {
 
 }
  }
-@media (max-height: 450px) {
-.tabs {
-  display: none
-
-}
- }
 .tabs__buttons {
     margin: 0px;
     padding: 0px;
@@ -1441,7 +1418,7 @@ a[x-apple-data-detectors] {
     position: relative
 }
  }
-@media (max-height: 450px) {
+@media (max-height: 485px) {
 .card-details {
     background-color: transparent;
     -webkit-box-shadow: none;
@@ -1491,7 +1468,8 @@ a[x-apple-data-detectors] {
     background: -webkit-gradient(linear, left top, left bottom, from(#30b256),color-stop(99%, #5ee064));
     background: -webkit-linear-gradient(top, #30b256 0%,#5ee064 99%);
     background: -o-linear-gradient(top, #30b256 0%,#5ee064 99%);
-    background: linear-gradient(to bottom, #30b256 0%,#5ee064 99%);
+    background: linear-gradient(to bottom, #30b256 0%,#5ee064 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */  
+
   }
 /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 @media (min-width: 1200px) {
@@ -1504,13 +1482,8 @@ a[x-apple-data-detectors] {
       background: -webkit-gradient(linear, left top, right top, from(#30b256),color-stop(99%, #5ee064));
       background: -webkit-linear-gradient(left, #30b256 0%,#5ee064 99%);
       background: -o-linear-gradient(left, #30b256 0%,#5ee064 99%);
-      background: linear-gradient(to right, #30b256 0%,#5ee064 99%);
-  }
- }
-/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-@media (max-height: 450px) {
-.card-details__headings {
-  display: none;
+      background: linear-gradient(to right, #30b256 0%,#5ee064 99%)  
+
   }
  }
 .card-details__heading-intro {
@@ -1565,11 +1538,6 @@ a[x-apple-data-detectors] {
     padding: .5em;
     font-size: .765rem;
   }
-@media (max-height: 450px) {
-.card-details__programs {
-  display: none
-  }
- }
 .card-details__programs ul {
       margin: 0;
     }
@@ -1630,11 +1598,6 @@ a[x-apple-data-detectors] {
     padding: 0.7em 1em;
     cursor: pointer;
   }
-@media (max-height: 450px) {
-.card-details__back-btn, .card-details__learn-more-btn {
-  display: none;
-  }
- }
 .card-details__learn-more-btn {
     width: 70%;
   }
@@ -1692,7 +1655,7 @@ a[x-apple-data-detectors] {
     /*padding: 0;*/
 }
  }
-@media (max-height: 450px) {
+@media (max-height: 485px) {
 .overlay {
     background-color: transparent
 }
@@ -2053,12 +2016,6 @@ a[x-apple-data-detectors] {
 
 }
  }
-@media (max-height: 450px) {
-.footer {
-  display: none
-
-}
- }
 .footer__social {
     padding-top: 1px;
     background-color: #0166af;
@@ -2228,11 +2185,6 @@ a[x-apple-data-detectors] {
     margin: 0;
     font-size: 0.9rem;
   }
-@media (max-height: 450px) {
-.footer__copyright {
-  display: none;
-  }
- }
 .td__wrapper{
     background-color: rgb(255, 243, 196);
 

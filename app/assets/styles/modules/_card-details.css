@@ -80,7 +80,7 @@
       z-index:  999;
       background: linear-gradient(to right, #30b256 0%,#5ee064 99%);
     }  
-    @mixin hideAtTooShort;
+
   }
 
   &__heading-intro {
@@ -128,7 +128,6 @@
     color: $white;
     padding: .5em;
     font-size: .765rem;
-    @mixin hideAtTooShort;
 
     & ul {
       margin: 0;
@@ -187,7 +186,6 @@
     float: left;
     padding: 0.7em 1em;
     cursor: pointer;
-    @mixin hideAtTooShort;
   }
 
   &__learn-more-btn {

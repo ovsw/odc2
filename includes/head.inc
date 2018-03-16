@@ -34,11 +34,11 @@
     <?= $page->template == "contact" ? "<script type='text/javascript' src='https://maps.googleapis.com/maps/api/js?sensor=false&key=AIzaSyBKpywPkXQEbH2WZMmMRetURTMmWDjmO7Q'></script>" : ''; ?>
 
     
-    <link rel="stylesheet" href="<?php echo AIOM::CSS(array('app/assets/styles/vendor/jquery.fancybox.min.css', 'app/temp/styles/styles.css')); ?>">
+    <!-- <link rel="stylesheet" href="<?php echo AIOM::CSS(array('app/assets/styles/vendor/jquery.fancybox.min.css', 'app/temp/styles/styles.css')); ?>"> -->
     
-    <!-- 
+    
       <link rel="stylesheet" href="<?= $config->urls->templates ?>app/assets/styles/vendor/jquery.fancybox.min.css" />   <link rel="stylesheet" href="<?= $config->urls->templates ?>app/temp/styles/styles.css" /> 
-    -->
+    
 
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">

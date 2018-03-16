@@ -9,7 +9,6 @@
     background-color: color($oasisGreen);
   }
 
-  @mixin hideAtTooShort;
 
   &__social {
     padding-top: 1px;
@@ -166,8 +165,6 @@
     padding: 1rem 10% 1rem 10%;
     margin: 0;
     font-size: 0.9rem;
-
-    @mixin hideAtTooShort;
   }
 
 }
