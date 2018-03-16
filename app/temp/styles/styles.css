@@ -549,12 +549,10 @@ a[x-apple-data-detectors] {
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  /*background-color: rgba(210, 230, 209, 0.9);*/
-  background-color: #d6e8d6;
-  border-bottom: 1px solid rgba(48, 178, 86, 0.2);
-  -webkit-box-shadow: 0 3px 1px rgba(0,0,0,0.2);
-          box-shadow: 0 3px 1px rgba(0,0,0,0.2);
 }
+/* background-color: #d6e8d6;
+  border-bottom: 1px solid color($oasisGreen a(20%));
+  box-shadow: 0 3px 1px rgba($black,0.2); */
 @media (min-width: 1024px) {
 .header {
     background-color: transparent;
@@ -568,6 +566,7 @@ a[x-apple-data-detectors] {
             flex-direction: row-reverse
 }
  }
+/*background-color: rgba(210, 230, 209, 0.9);*/
 .header__logo {
     display: block;
     width: 50%;
@@ -599,24 +598,25 @@ a[x-apple-data-detectors] {
     
   }
 .header__menu-icon {
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     
     position: absolute;
-    top: 50%;
+    /* top: 50%;
     right: 10px;
-    -webkit-transform: translateY(-20px);
-        -ms-transform: translateY(-20px);
-            transform: translateY(-20px);
+    transform: translateY(-20px); */
+    top: 20px;
+    right: 20px;
+    background-color: #30b256;
   }
 .header__menu-icon::before {
       content: '';
       position: absolute; 
-      top: 3px; 
-      left: 3px;
+      top: 17px; 
+      left: 12px;
       width: 34px;
-      height: 5px;
-      background-color: red;
+      height: 3px;
+      background-color: #ffffff;
       -webkit-transform-origin: 0 0;
           -ms-transform-origin: 0 0;
               transform-origin: 0 0;
@@ -629,11 +629,11 @@ a[x-apple-data-detectors] {
 .header__menu-icon__middle {
       content: '';
       position: absolute; 
-      top: 18px; 
-      left: 3px;
+      top: 29px; 
+      left: 12px;
       width: 34px;
-      height: 5px;
-      background-color: red;
+      height: 3px;
+      background-color: #ffffff;
       -webkit-transition: all 0.3s ease-out;
       -o-transition: all 0.3s ease-out;
       transition: all 0.3s ease-out;
@@ -641,11 +641,11 @@ a[x-apple-data-detectors] {
 .header__menu-icon::after {
       content: '';
       position: absolute; 
-      bottom: 3px; 
-      left: 3px;
+      bottom: 17px; 
+      left: 12px;
       width: 34px;
-      height: 5px;
-      background-color: red;
+      height: 3px;
+      background-color: #ffffff;
       -webkit-transform-origin: 0 100%;
           -ms-transform-origin: 0 100%;
               transform-origin: 0 100%;
@@ -655,11 +655,15 @@ a[x-apple-data-detectors] {
       transition: transform 0.3s ease-out;
       transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
     }
+.header__menu-icon--close-x {
+
+        background-color: #0166af;
+    }
 .header__menu-icon--close-x::before {
           background-color: white;
-          -webkit-transform: translateX(4px) rotate(45deg) scaleX(1.25) translateY(1px);
-              -ms-transform: translateX(4px) rotate(45deg) scaleX(1.25) translateY(1px);
-                  transform: translateX(4px) rotate(45deg) scaleX(1.25) translateY(1px);
+          -webkit-transform: translateX(4px) rotate(45deg) translateY(1px);
+              -ms-transform: translateX(4px) rotate(45deg) translateY(1px);
+                  transform: translateX(4px) rotate(45deg) translateY(1px);
         }
 .header__menu-icon--close-x .header__menu-icon__middle {
           background-color: white;
@@ -670,9 +674,9 @@ a[x-apple-data-detectors] {
         }
 .header__menu-icon--close-x::after {
           background-color: white;
-          -webkit-transform: translateX(4px) rotate(-45deg) scaleX(1.25);
-              -ms-transform: translateX(4px) rotate(-45deg) scaleX(1.25);
-                  transform: translateX(4px) rotate(-45deg) scaleX(1.25);
+          -webkit-transform: translateX(4px) rotate(-45deg);
+              -ms-transform: translateX(4px) rotate(-45deg);
+                  transform: translateX(4px) rotate(-45deg);
         }
 @media (min-width: 1024px) {
 .header__menu-icon {

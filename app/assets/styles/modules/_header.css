@@ -6,9 +6,9 @@
   display: flex;
   justify-content: space-between;
   /*background-color: rgba(210, 230, 209, 0.9);*/
-  background-color: #d6e8d6;
+  /* background-color: #d6e8d6;
   border-bottom: 1px solid color($oasisGreen a(20%));
-  box-shadow: 0 3px 1px rgba($black,0.2);
+  box-shadow: 0 3px 1px rgba($black,0.2); */
 
   @mixin atLarge {
     background-color: transparent;
@@ -47,22 +47,25 @@
   }
 
   &__menu-icon {
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     
     position: absolute;
-    top: 50%;
+    /* top: 50%;
     right: 10px;
-    transform: translateY(-20px);
+    transform: translateY(-20px); */
+    top: 20px;
+    right: 20px;
+    background-color: $oasisGreen;
 
     &::before {
       content: '';
       position: absolute; 
-      top: 3px; 
-      left: 3px;
+      top: 17px; 
+      left: 12px;
       width: 34px;
-      height: 5px;
-      background-color: red;
+      height: 3px;
+      background-color: $white;
       transform-origin: 0 0;
       transition: transform 0.3s ease-out;
     }
@@ -70,30 +73,33 @@
     &__middle {
       content: '';
       position: absolute; 
-      top: 18px; 
-      left: 3px;
+      top: 29px; 
+      left: 12px;
       width: 34px;
-      height: 5px;
-      background-color: red;
+      height: 3px;
+      background-color: $white;
       transition: all 0.3s ease-out;
     }
 
     &::after {
       content: '';
       position: absolute; 
-      bottom: 3px; 
-      left: 3px;
+      bottom: 17px; 
+      left: 12px;
       width: 34px;
-      height: 5px;
-      background-color: red;
+      height: 3px;
+      background-color: $white;
       transform-origin: 0 100%;
       transition: transform 0.3s ease-out;
     }
 
     &--close-x {
+
+        background-color: $oasisBlue;
+
         &::before {
           background-color: white;
-          transform: translateX(4px) rotate(45deg) scaleX(1.25) translateY(1px);
+          transform: translateX(4px) rotate(45deg) translateY(1px);
         }
         .header__menu-icon__middle {
           background-color: white;
@@ -102,7 +108,7 @@
         }
         &::after {
           background-color: white;
-          transform: translateX(4px) rotate(-45deg) scaleX(1.25);
+          transform: translateX(4px) rotate(-45deg);
         }
     }
 
