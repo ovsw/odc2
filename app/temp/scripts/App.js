@@ -119,7 +119,9 @@ __webpack_require__(8);
 
 __webpack_require__(10);
 
-var _jsCookie = __webpack_require__(12);
+__webpack_require__(12);
+
+var _jsCookie = __webpack_require__(14);
 
 var _jsCookie2 = _interopRequireDefault(_jsCookie);
 
@@ -149,46 +151,6 @@ $(document).ready(function () {
 
 "use strict";
 
-
-function iOSversion() {
-
-  if (navigator.userAgent.match(/Windows Phone/i)) {
-    // There is some iOS in Windows Phone...
-    // https://msdn.microsoft.com/en-us/library/hh869301(v=vs.85).aspx
-    return false;
-  }
-
-  if (/iP(hone|od|ad)/.test(navigator.platform)) {
-    // supports iOS 2.0 and later: <http://bit.ly/TJjs1V>
-    var v = navigator.appVersion.match(/OS (\d+)_(\d+)_?(\d+)?/);
-    var ver = [parseInt(v[1], 10), parseInt(v[2], 10), parseInt(v[3] || 0, 10)];
-    return ver;
-  }
-}
-
-var version = iOSversion();
-var videoBgEl = document.querySelector('.large-hero__video-bg');
-var largeHeroEl = document.querySelector('.large-hero');
-
-if (videoBgEl !== undefined && videoBgEl !== null) {
-
-  //alert(version);
-
-  if (version !== undefined && version !== null) {
-    if (version[0] >= 10) {
-      //alert(version + ' - This is running iOS 10 or later.');
-      videoBgEl.style.display = 'block';
-    } else {
-      //alert('not running later than 10 ' + version[0]);
-      videoBgEl.parentNode.removeChild(videoBgEl);
-    }
-  } else {
-    // alert('not iOS!');
-    videoBgEl.setAttribute("style", "display: block;");
-    //largeHeroEl.style.background = "url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAF0lEQVQIW2NkYGD4z8DAwMgAI0AMDA4AI3EBBCKrOnQAAAAASUVORK5CYII=')";   
-    largeHeroEl.style.background = "none";
-  }
-}
 
 /***/ }),
 /* 3 */
@@ -301,7 +263,7 @@ __webpack_require__(0)(__webpack_require__(9))
 /* 9 */
 /***/ (function(module, exports) {
 
-module.exports = "'use strict';\n\n// Step 1: Create jQuery plugin\n// ============================\n\n$.fn.fancyMorph = function (opts) {\n\n  var Morphing = function Morphing($btn, opts) {\n    var self = this;\n\n    self.opts = $.extend({\n      animationEffect: false,\n      infobar: false,\n      buttons: ['close'],\n      smallBtn: false,\n      touch: false,\n      baseClass: 'fancybox-morphing',\n      afterClose: function afterClose() {\n        self.close();\n      }\n    }, opts);\n\n    self.init($btn);\n  };\n\n  Morphing.prototype.init = function ($btn) {\n    var self = this;\n\n    self.$btn = $btn.addClass('morphing-btn');\n\n    self.$clone = $('<div class=\"morphing-btn-clone\" />').hide().insertAfter($btn);\n\n    // Add wrapping element and set initial width used for positioning\n    $btn.wrap('<span class=\"morphing-btn-wrap\"></span>').on('click', function (e) {\n      e.preventDefault();\n\n      self.start();\n    });\n\n    // alert(Cookies.get('odcpop'));\n\n    // if (Cookies.get('odcpop') == undefined){\n    //   Cookies.set('odcpop', '1', { expires: 1});\n    //   $btn.trigger('click');\n    //   console.log('no cookie, setting it.');\n    //  }else{\n    //    console.log('cookie found');\n    //  }\n  };\n\n  Morphing.prototype.start = function () {\n    var self = this;\n\n    if (self.$btn.hasClass('morphing-btn_circle')) {\n      return;\n    }\n\n    // Set initial width, because it is not possible to start CSS transition from \"auto\"\n    self.$btn.width(self.$btn.width()).parent().width(self.$btn.outerWidth());\n\n    self.$btn.off('.fm').on(\"transitionend.fm webkitTransitionEnd.fm oTransitionEnd.fm MSTransitionEnd.fm\", function (e) {\n\n      if (e.originalEvent.propertyName === 'width') {\n        self.$btn.off('.fm');\n\n        self.animateBg();\n      }\n    }).addClass('morphing-btn_circle');\n  };\n\n  Morphing.prototype.animateBg = function () {\n    var self = this;\n\n    self.scaleBg();\n\n    self.$clone.show();\n\n    // Trigger repaint\n    self.$clone[0].offsetHeight;\n\n    self.$clone.off('.fm').on(\"transitionend.fm webkitTransitionEnd.fm oTransitionEnd.fm MSTransitionEnd.fm\", function (e) {\n      self.$clone.off('.fm');\n\n      self.complete();\n    }).addClass('morphing-btn-clone_visible');\n  };\n\n  Morphing.prototype.scaleBg = function () {\n    var self = this;\n\n    var $clone = self.$clone;\n    var scale = self.getScale();\n    var $btn = self.$btn;\n    var pos = $btn.offset();\n\n    $clone.css({\n      top: pos.top + $btn.outerHeight() * 0.5 - $btn.outerHeight() * scale * 0.5 - $(window).scrollTop(),\n      left: pos.left + $btn.outerWidth() * 0.5 - $btn.outerWidth() * scale * 0.5 - $(window).scrollLeft(),\n      width: $btn.outerWidth() * scale,\n      height: $btn.outerHeight() * scale,\n      transform: 'scale(' + 1 / scale + ')'\n    });\n  };\n\n  Morphing.prototype.getScale = function () {\n    var $btn = this.$btn,\n        radius = $btn.outerWidth() * 0.5,\n        left = $btn.offset().left + radius - $(window).scrollLeft(),\n        top = $btn.offset().top + radius - $(window).scrollTop(),\n        windowW = $(window).width(),\n        windowH = $(window).height();\n\n    var maxDistHor = left > windowW / 2 ? left : windowW - left,\n        maxDistVert = top > windowH / 2 ? top : windowH - top;\n\n    return Math.ceil(Math.sqrt(Math.pow(maxDistHor, 2) + Math.pow(maxDistVert, 2)) / radius);\n  };\n\n  Morphing.prototype.complete = function () {\n    var self = this;\n    var $btn = self.$btn;\n\n    $.fancybox.open({ src: $btn.data('src') || $btn.attr('href') }, self.opts);\n\n    $(window).on('resize.fm', function () {\n      //self.scaleBg();\n    });\n  };\n\n  Morphing.prototype.close = function () {\n    var self = this;\n    var $clone = self.$clone;\n\n    self.scaleBg();\n\n    $clone.one('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd', function (e) {\n      $clone.hide();\n\n      self.$btn.removeClass('morphing-btn_circle');\n    });\n\n    $clone.removeClass('morphing-btn-clone_visible');\n\n    $(window).off('resize.fm');\n  };\n\n  // Init\n  this.each(function () {\n    var $this = $(this);\n\n    if (!$this.data(\"morphing\")) {\n      $this.data(\"morphing\", new Morphing($this, opts));\n    }\n  });\n\n  return this;\n};\n\n$(\"[data-morphing]\").fancyMorph({\n  // hash : 'morphing'\n});"
+module.exports = "\"use strict\";\n\n// flip cards\n$(\".cards__card-wrapper\").not('.noflip').hover(function () {\n  TweenLite.to($(this).find(\".cards__card\"), 1.2, { rotationY: 180, ease: Back.easeOut });\n}, function () {\n  TweenLite.to($(this).find(\".cards__card\"), 1.2, { rotationY: 0, ease: Back.easeOut });\n});\n\n$('.tabs__button').click(function () {\n  var tab_id = $(this).attr('data-tab');\n  $(this).siblings().removeClass('active');\n  $(this).addClass('active');\n  $(this).parent().next('.tabs__content').children('.tabs__tab').removeClass('active');\n  $('.' + tab_id).addClass('active');\n});\n\n// show card details\n$('.with-lightbox').click(function () {\n  console.log($(this).index());\n  showOverlay();\n\n  $('.card-details__wrapper .card-details:eq(' + $(this).index() + ')').clone(true, true).appendTo('.overlay__content');\n\n  var video_url = $('.overlay__content .card-details__video').data(\"videourl\");\n\n  var vimeoId = getVimeoId(video_url);\n\n  if (vimeoId != false) {\n    $('.overlay__content .embed-container').html('<iframe src=\"https://player.vimeo.com/video/' + vimeoId + '?autoplay=0&title=0&byline=0&portrait=0\" frameborder=\"0\" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>');\n  }\n});\n\nfunction showOverlay() {\n  $('.overlay').show();\n  $('.footer__wrapper,.large-hero').addClass('hideonMobile');\n}\nfunction hideOverlay() {\n  $('.overlay').hide();\n  $('.footer__wrapper,.large-hero').removeClass('hideonMobile');\n}\n\nfunction getVimeoId(url) {\n\n  // Look for a string with 'vimeo', then whatever, then a\n  // forward slash and a group of digits.\n  var match = /vimeo.*\\/(\\d+)/i.exec(url);\n\n  // If the match isn't null (i.e. it matched)\n  if (match) {\n    // The grouped/matched digits from the regex\n    return match[1];\n  } else {\n    return false;\n  }\n}\n\n// close card details\n$('.card-details__back-btn').click(function (e) {\n  e.preventDefault();\n  $('.overlay__content .card-details').remove();\n  hideOverlay();\n});"
 
 /***/ }),
 /* 10 */
@@ -313,10 +275,22 @@ __webpack_require__(0)(__webpack_require__(11))
 /* 11 */
 /***/ (function(module, exports) {
 
-module.exports = "'use strict';\n\n// toggle FAQs\n\n$('.mx__faqs__answer').hide();\n$('.mx__faqs__question').click(function () {\n  var toggle = $(this).nextUntil('.mx__faqs__question');\n  toggle.slideToggle();\n  $('.mx__faqs__answer').not(toggle).slideUp();\n});"
+module.exports = "'use strict';\n\n// Step 1: Create jQuery plugin\n// ============================\n\n$.fn.fancyMorph = function (opts) {\n\n  var Morphing = function Morphing($btn, opts) {\n    var self = this;\n\n    self.opts = $.extend({\n      animationEffect: false,\n      infobar: false,\n      buttons: ['close'],\n      smallBtn: false,\n      touch: false,\n      baseClass: 'fancybox-morphing',\n      afterClose: function afterClose() {\n        self.close();\n      }\n    }, opts);\n\n    self.init($btn);\n  };\n\n  Morphing.prototype.init = function ($btn) {\n    var self = this;\n\n    self.$btn = $btn.addClass('morphing-btn');\n\n    self.$clone = $('<div class=\"morphing-btn-clone\" />').hide().insertAfter($btn);\n\n    // Add wrapping element and set initial width used for positioning\n    $btn.wrap('<span class=\"morphing-btn-wrap\"></span>').on('click', function (e) {\n      e.preventDefault();\n\n      self.start();\n    });\n\n    // alert(Cookies.get('odcpop'));\n\n    // if (Cookies.get('odcpop') == undefined){\n    //   Cookies.set('odcpop', '1', { expires: 1});\n    //   $btn.trigger('click');\n    //   console.log('no cookie, setting it.');\n    //  }else{\n    //    console.log('cookie found');\n    //  }\n  };\n\n  Morphing.prototype.start = function () {\n    var self = this;\n\n    if (self.$btn.hasClass('morphing-btn_circle')) {\n      return;\n    }\n\n    // Set initial width, because it is not possible to start CSS transition from \"auto\"\n    self.$btn.width(self.$btn.width()).parent().width(self.$btn.outerWidth());\n\n    self.$btn.off('.fm').on(\"transitionend.fm webkitTransitionEnd.fm oTransitionEnd.fm MSTransitionEnd.fm\", function (e) {\n\n      if (e.originalEvent.propertyName === 'width') {\n        self.$btn.off('.fm');\n\n        self.animateBg();\n      }\n    }).addClass('morphing-btn_circle');\n  };\n\n  Morphing.prototype.animateBg = function () {\n    var self = this;\n\n    self.scaleBg();\n\n    self.$clone.show();\n\n    // Trigger repaint\n    self.$clone[0].offsetHeight;\n\n    self.$clone.off('.fm').on(\"transitionend.fm webkitTransitionEnd.fm oTransitionEnd.fm MSTransitionEnd.fm\", function (e) {\n      self.$clone.off('.fm');\n\n      self.complete();\n    }).addClass('morphing-btn-clone_visible');\n  };\n\n  Morphing.prototype.scaleBg = function () {\n    var self = this;\n\n    var $clone = self.$clone;\n    var scale = self.getScale();\n    var $btn = self.$btn;\n    var pos = $btn.offset();\n\n    $clone.css({\n      top: pos.top + $btn.outerHeight() * 0.5 - $btn.outerHeight() * scale * 0.5 - $(window).scrollTop(),\n      left: pos.left + $btn.outerWidth() * 0.5 - $btn.outerWidth() * scale * 0.5 - $(window).scrollLeft(),\n      width: $btn.outerWidth() * scale,\n      height: $btn.outerHeight() * scale,\n      transform: 'scale(' + 1 / scale + ')'\n    });\n  };\n\n  Morphing.prototype.getScale = function () {\n    var $btn = this.$btn,\n        radius = $btn.outerWidth() * 0.5,\n        left = $btn.offset().left + radius - $(window).scrollLeft(),\n        top = $btn.offset().top + radius - $(window).scrollTop(),\n        windowW = $(window).width(),\n        windowH = $(window).height();\n\n    var maxDistHor = left > windowW / 2 ? left : windowW - left,\n        maxDistVert = top > windowH / 2 ? top : windowH - top;\n\n    return Math.ceil(Math.sqrt(Math.pow(maxDistHor, 2) + Math.pow(maxDistVert, 2)) / radius);\n  };\n\n  Morphing.prototype.complete = function () {\n    var self = this;\n    var $btn = self.$btn;\n\n    $.fancybox.open({ src: $btn.data('src') || $btn.attr('href') }, self.opts);\n\n    $(window).on('resize.fm', function () {\n      //self.scaleBg();\n    });\n  };\n\n  Morphing.prototype.close = function () {\n    var self = this;\n    var $clone = self.$clone;\n\n    self.scaleBg();\n\n    $clone.one('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd', function (e) {\n      $clone.hide();\n\n      self.$btn.removeClass('morphing-btn_circle');\n    });\n\n    $clone.removeClass('morphing-btn-clone_visible');\n\n    $(window).off('resize.fm');\n  };\n\n  // Init\n  this.each(function () {\n    var $this = $(this);\n\n    if (!$this.data(\"morphing\")) {\n      $this.data(\"morphing\", new Morphing($this, opts));\n    }\n  });\n\n  return this;\n};\n\n$(\"[data-morphing]\").fancyMorph({\n  // hash : 'morphing'\n});"
 
 /***/ }),
 /* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(0)(__webpack_require__(13))
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports) {
+
+module.exports = "'use strict';\n\n// toggle FAQs\n\n$('.mx__faqs__answer').hide();\n$('.mx__faqs__question').click(function () {\n  var toggle = $(this).nextUntil('.mx__faqs__question');\n  toggle.slideToggle();\n  $('.mx__faqs__answer').not(toggle).slideUp();\n});"
+
+/***/ }),
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

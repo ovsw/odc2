@@ -1,6 +1,7 @@
 .tabs {
-  
-  height: 100%;
+ 
+
+  padding-bottom: 100px;
 
   @mixin atHuge {
     height: inherit;
@@ -40,7 +41,8 @@
 
   &__content {
     /*display: flex;*/
-    @mixin clearfix;
+    float:left;
+    width: 100%;
     background-color: $oasisBlue;
   }
 
@@ -55,7 +57,7 @@
     
 
     &.active {
-      position: relative;
+      
       visibility: visible;
       z-index: 10;
       /*display:block;*/

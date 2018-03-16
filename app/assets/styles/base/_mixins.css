@@ -1,5 +1,5 @@
 @define-mixin atTiny {
-  @media (min-width: 360px) {
+  @media (min-width: 376px) {
     @mixin-content;
   }
 }

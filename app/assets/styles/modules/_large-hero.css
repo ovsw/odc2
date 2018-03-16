@@ -25,9 +25,9 @@
     transform: translate(-50%, -50%);
     display:none;
 
-    /*     @mixin atLarge {
+    @mixin atTiny {
       display: block;
-    } */
+    } 
   }
 
   &__content {

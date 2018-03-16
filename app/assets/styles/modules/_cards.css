@@ -8,8 +8,8 @@ $grid-space: .3125rem;
   margin: $grid-space-mobile;
   margin-top: 0;
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
+
+  flex-flow: row wrap;
   justify-content: center;
   /*flex-direction: column;*/
   
@@ -34,40 +34,48 @@ $grid-space: .3125rem;
   
   &__card-wrapper {
     padding: $grid-space-mobile;
-    flex: 1 1 33%;
+    width: 33.33%;
+    -webkit-flex-basis: 33.33%;
     perspective:1500;
     
     @mixin atMedium{
       flex: 0 1 20%;
+      width: 20%;
     }
 
     &.of-2 {
       @mixin atMedium {
-        flex: 1 1 50%;
+        flex: 0 1 50%;
+        width: 50%;
       }
     }
 
     &.of-3 {
       @mixin atMedium {
-        flex: 1 1 33%;
+        flex: 0 1 33%;
+        width: 33%;
       }
     }
     
     &.of-4 {
 
-      flex: 1 1 50%;
+      flex: 0 1 50%;
+      width: 50%;
 
       @mixin atMedium {
-        flex: 1 1 25%;
+        flex: 0 1 25%;
+        width: 25%;
       }
     }
     
     &.of-6 {
 
-      flex: 1 1 33%;
+      flex: 0 1 33%;
+      width: 33%;
 
       @mixin atMedium {
-        flex: 1 1 16.66%;
+        flex: 0 1 16.66%;
+        width: 16.66%;
       }
     }
     

@@ -1,4 +1,5 @@
-    <div class="large-hero large-hero--full-height" style="background: url('https://odcv-ac97.kxcdn.com/oasis-intro-hq-video-cover.jpg') no-repeat center center;background-size:cover;">
+    <div class="large-hero large-hero--full-height">
+    <!-- <div class="large-hero large-hero--full-height" style="background: url('https://odcv-ac97.kxcdn.com/oasis-intro-hq-video-cover.jpg') no-repeat center center;background-size:cover;"> -->
 
       <?php require($config->paths->templates."includes/modules/video-bg-hp.inc") ?>
       

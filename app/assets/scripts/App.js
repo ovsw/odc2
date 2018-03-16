@@ -4,7 +4,7 @@ import Iosfixes from './modules/Ios-fixes';
 import Slideshow from  './modules/Slideshow';
 import 'script-loader!./modules/Nav.js';
 import 'script-loader!./modules/Hero.js';
-import 'script-loader!./modules/Hero.js';
+import 'script-loader!./modules/Cards.js';
 import 'script-loader!./modules/newsletter-pop.js';
 import 'script-loader!./modules/Faqs.js';
 import Cookies from 'js-cookie';
