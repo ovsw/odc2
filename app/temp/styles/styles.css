@@ -382,11 +382,9 @@ body {
   -webkit-background-size: 130px 130px;
           background-size: 130px 130px;
 }
-@media (max-height: 450px) {
-.please-rotate {
-    display: block
-}
- }
+/* @mixin atTooShort {
+    display: block;
+  } */
 .please-rotate p {
     position: relative;
     color: #ffffff;

@@ -23,9 +23,9 @@ body {
   background-color: $oasisBlue;
   background-size: 130px 130px;
 
-  @mixin atTooShort {
+  /* @mixin atTooShort {
     display: block;
-  }
+  } */
 
   p {
     position: relative;
