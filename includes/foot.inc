@@ -85,7 +85,7 @@
 <!-- /.please-rotate -->
 
 
-<script src="<?php echo AIOM::JS(array(
+<!-- <script src="<?php echo AIOM::JS(array(
   'scripts/vendor/fa-solid.min.js',
   'scripts/vendor/fa-brands.js',
   'scripts/vendor/fontawesome.min.js',
@@ -96,9 +96,9 @@
   'scripts/vendor/gsap/EasePack.js',  
   'scripts/vendor/gsap/TweenLite.js',
   'scripts/vendor/gsap/TimelineLite.js',
-  'scripts/App.js')); ?>"></script>
+  'scripts/App.js')); ?>"></script> -->
 
-<!-- 
+
 <script src="<?= $config->urls->templates ?>scripts/vendor/fa-solid.min.js"></script>
 <script src="<?= $config->urls->templates ?>scripts/vendor/fontawesome.min.js"></script>
 <script src="<?= $config->urls->templates ?>scripts/vendor/jquery-3.2.1.min.js"></script>
@@ -108,7 +108,7 @@
 <script src="<?= $config->urls->templates ?>scripts/vendor/gsap/EasePack.js"></script>
 <script src="<?= $config->urls->templates ?>scripts/vendor/gsap/TweenLite.js"></script>
 <script src="<?= $config->urls->templates ?>scripts/vendor/gsap/TimelineLite.js"></script> 
-<script src="<?= $config->urls->templates ?>app/temp/scripts/App.js"></script> -->
+<script src="<?= $config->urls->templates ?>app/temp/scripts/App.js"></script>
 
 <?php if ($page->template == 'typical-day') : ?>
 <script src="<?= $config->urls->templates ?>app/temp/scripts/jquery-1.9.1.min.js"></script>
