@@ -5,6 +5,8 @@
   <?php require($config->paths->templates."includes/head.inc"); ?>
   </head>
   <body>
+    <?= $page->body_start_scripts != '' ?  $page->body_start_scripts : '' ; ?>
+    
     <?php require($config->paths->templates."includes/header_hp.inc"); ?>
 
     <?php require($config->paths->templates."partials/".$page->template.".inc"); ?>
