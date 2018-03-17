@@ -84,22 +84,29 @@
 </div>
 <!-- /.please-rotate -->
 
-
-<!-- <script src="<?php echo AIOM::JS(array(
-  'scripts/vendor/fa-solid.min.js',
-  'scripts/vendor/fa-brands.js',
-  'scripts/vendor/fontawesome.min.js',
-  'scripts/vendor/jquery-3.2.1.min.js',
-  'scripts/vendor/jquery.fancybox.min.js',
-  'scripts/vendor/js.cookie.js',
-  'scripts/vendor/gsap/CSSPlugin.js',
-  'scripts/vendor/gsap/EasePack.js',  
-  'scripts/vendor/gsap/TweenLite.js',
-  'scripts/vendor/gsap/TimelineLite.js',
-  'scripts/App.js')); ?>"></script> -->
-
+<ul class="social">
+  <?php if ($fbLink != '') : ?>
+  <li>
+    <a href="<?= $fbLink ?>" target="_blank">    
+      <i class="fab fa-facebook-f"></i><span>Facebook</span>
+    </a> 
+  </li>
+  <?php endif; ?>
+  <?php if ($instagramLink != '') : ?>
+    <li>
+      <a href="<?= $instagramLink ?>" target="_blank">
+        <i class="fab fa-instagram"></i><span>Instagram</span>
+      </a>
+    </li>
+  <?php endif; ?>
+  
+  
+  
+  
+</ul>
 
 <script src="<?= $config->urls->templates ?>scripts/vendor/fa-solid.min.js"></script>
+<script src="<?= $config->urls->templates ?>scripts/vendor/fa-brands.js"></script>
 <script src="<?= $config->urls->templates ?>scripts/vendor/fontawesome.min.js"></script>
 <script src="<?= $config->urls->templates ?>scripts/vendor/jquery-3.2.1.min.js"></script>
 <script src="<?= $config->urls->templates ?>scripts/vendor/jquery.fancybox.min.js"></script>
