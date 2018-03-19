@@ -60,12 +60,6 @@ gtag('js', new Date());
 gtag('config', 'AW-951389957');
 </script>
 
-<<<<<<< HEAD
-=======
-<!--Start of Tawk.to Script-->
-
-
->>>>>>> ba95929b86fd0bfdcf74790c18de68af349a46be
 <!-- Facebook Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -86,11 +80,7 @@ src="https://www.facebook.com/tr?id=965668133590704&ev=PageView
 </noscript>
 <!-- End Facebook Pixel Code -->
 
-<<<<<<< HEAD
 <!--Start of Tawk.to Script-->
-=======
-<?= $page->head_scripts != '' ?  $page->head_scripts : '' ; ?>
->>>>>>> ba95929b86fd0bfdcf74790c18de68af349a46be
 
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
