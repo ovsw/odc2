@@ -75,7 +75,7 @@
 
 </div>
 <!-- /.footer -->
-<p class="footer__copyright">Copyright &copy;<?= date("Y") ?> Oasis Children's Services LLC | Website by <a href="http://ovswebsites.com/" target="_blank">OVS Websites</a></p>
+<p class="footer__copyright">Copyright &copy;<?= date("Y") ?> Oasis Children's Services LLC | <a href="<?= $pages->get('1586')->url; ?>">Privacy Policy</a> | Website by <a href="http://ovswebsites.com/" target="_blank">OVS Websites</a></p>
 </footer>
 <!-- /.footer__wrapper -->
 
