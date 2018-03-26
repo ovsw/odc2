@@ -3,7 +3,7 @@
     <![endif]-->
 
     <header class="header">
-      <a href="/" class="header__logo"><img src="<?= $config->urls->templates ?>app/assets/images/oasis-children_logo.svg" alt="Oasis Children Logo" class="header__logo-img" ></a>
+      <a href="/" class="header__logo"><img src="<?= $config->urls->templates ?>images/oasis-children_logo.svg" alt="Oasis Children Logo" class="header__logo-img" ></a>
 
       <?php require($config->paths->templates."includes/modules/topnav_hp.inc"); ?>
   

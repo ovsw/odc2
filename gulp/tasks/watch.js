@@ -15,11 +15,11 @@ gulp.task('watch', function(){
 		browserSync.reload();
 	});
 
-	watch('./app/assets/styles/**/*.css', function(){
+	watch('./src/styles/**/*.css', function(){
 		gulp.start('cssInject');
 	});
 
-	watch('./app/assets/scripts/**/*.js', function(){
+	watch('./src/scripts/**/*.js', function(){
 		gulp.start('scriptsRefresh');
 	});
 
@@ -28,7 +28,7 @@ gulp.task('watch', function(){
 
 // browserSync CSS Inject
 gulp.task('cssInject', ['styles'], function(){
-	gulp.src('./app/temp/styles/styles.css')
+	gulp.src('./src/temp/styles/styles.css')
 	.pipe(browserSync.stream());
 });
 

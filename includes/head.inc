@@ -32,12 +32,10 @@
     </script>
 
     <?= $page->template == "contact" ? "<script type='text/javascript' src='https://maps.googleapis.com/maps/api/js?sensor=false&key=AIzaSyBKpywPkXQEbH2WZMmMRetURTMmWDjmO7Q'></script>" : ''; ?>
-
-    
-    <!-- <link rel="stylesheet" href="<?php echo AIOM::CSS(array('app/assets/styles/vendor/jquery.fancybox.min.css', 'app/temp/styles/styles.css')); ?>"> -->
     
     
-      <link rel="stylesheet" href="<?= $config->urls->templates ?>app/assets/styles/vendor/jquery.fancybox.min.css" />   <link rel="stylesheet" href="<?= $config->urls->templates ?>app/temp/styles/styles.css" /> 
+    <link rel="stylesheet" href="<?= $config->urls->templates ?>styles/vendor/jquery.fancybox.min.css" />
+    <link rel="stylesheet" href="<?= $config->urls->templates ?>styles/styles.css" /> 
     
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-80657026-1"></script>

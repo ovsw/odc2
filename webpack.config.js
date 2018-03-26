@@ -2,9 +2,9 @@ var path = require('path');
 
 module.exports = {
   devtool: 'source-map',
-	entry: './app/assets/scripts/App.js',
+	entry: './src/scripts/App.js',
 	output: {
-		path: path.resolve(__dirname, './app/temp/scripts'),
+		path: path.resolve(__dirname, './scripts'),
 		filename: 'App.js'
 	},
     module: {

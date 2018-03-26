@@ -13,7 +13,7 @@ import Cookies from 'js-cookie';
 $(document).ready(function() {
 
 // var john = new Person("John Doe", "blue");
-// john.greet();
+// john.greet(); 
 
 // var jane = new Person("Jane Smith", "green");
 // jane.greet();

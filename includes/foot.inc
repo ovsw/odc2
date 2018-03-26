@@ -5,7 +5,7 @@
 
   <div class="footer__logos">
     <a href="https://www.acacamps.org/">
-      <img src="<?= $config->urls->templates ?>app/assets/images/accreditedlogo.png" alt="American Camp Association Logo">
+      <img src="<?= $config->urls->templates ?>images/accreditedlogo.png" alt="American Camp Association Logo">
     </a>
   </div>
   <!-- /.footer__logos -->
@@ -115,7 +115,7 @@
 <script src="<?= $config->urls->templates ?>scripts/vendor/gsap/EasePack.js"></script>
 <script src="<?= $config->urls->templates ?>scripts/vendor/gsap/TweenLite.js"></script>
 <script src="<?= $config->urls->templates ?>scripts/vendor/gsap/TimelineLite.js"></script> 
-<script src="<?= $config->urls->templates ?>app/temp/scripts/App.js"></script>
+<script src="<?= $config->urls->templates ?>scripts/App.js"></script>
 
 <?php if ($page->template == 'typical-day') : ?>
 <script src="<?= $config->urls->templates ?>app/temp/scripts/jquery-1.9.1.min.js"></script>

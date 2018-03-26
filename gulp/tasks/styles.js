@@ -11,7 +11,7 @@ mixins = require('postcss-mixins'),
 sourcemaps = require('gulp-sourcemaps');
 
 gulp.task('styles', function(){
-  return gulp.src('./app/assets/styles/**/styles.css')
+  return gulp.src('./src/styles/**/styles.css')
     .pipe(sourcemaps.init())
     .pipe(postcss([cssimport, cssvars, mixins, csscolor, nested, hexrgba, autoprefixer])) // cssvars was after mixins
     .on('error', function(errorInfo){
@@ -19,5 +19,5 @@ gulp.task('styles', function(){
       this.emit('end');
     })
     .pipe(sourcemaps.write('maps'))
-    .pipe(gulp.dest('./app/temp/styles'));
+    .pipe(gulp.dest('./styles'));
 });
