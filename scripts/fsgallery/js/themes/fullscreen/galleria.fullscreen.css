@@ -64,7 +64,6 @@ body { background: #200C00 }
     overflow: hidden;
 }
 .galleria-thumbnails-list {
-    background: url('../../../../../images/leather.jpg') repeat-x top left;
     padding-top: 5px;
     padding-bottom: 5px;
     overflow: hidden;

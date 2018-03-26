@@ -115,7 +115,7 @@ a.backToWebsite {
 #playToggle {
 	position:absolute;
 	left:-70px;
-	background:url('/site/templates/app/assets/images/fsgallery/playPause.gif') no-repeat left top;
+	background:url('/site/templates/images/fsgallery/playPause.gif') no-repeat left top;
 	text-align:center;
 	width:57px;
 	height: 55px;
@@ -127,7 +127,7 @@ a.backToWebsite {
 	border: 1px solid #fff;
 }
 #playToggle.play {
-	background:url('/site/templates/app/assets/images/fsgallery/playPause.gif') no-repeat left bottom;
+	background:url('/site/templates/images/fsgallery/playPause.gif') no-repeat left bottom;
 }
 
 .galleria-carousel .galleria-thumbnails-list {
@@ -137,25 +137,25 @@ a.backToWebsite {
 
 </style>
 <!-- load jQuery -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 
 <!-- load Galleria -->
-<script src="<?= $config->urls->templates?>app/temp/scripts/fsgallery/galleria-1.2.8.min.js"></script>
+<script src="<?= $config->urls->templates?>scripts/fsgallery/galleria-1.2.8.min.js"></script>
 
 <!-- load flickr plugin -->
-<script src="<?= $config->urls->templates?>app/temp/scripts/fsgallery/plugins/flickr/galleria.flickr.min.js"></script>
+<script src="<?= $config->urls->templates?>scripts/fsgallery/plugins/flickr/galleria.flickr.min.js"></script>
 </head>
 <body>
 
 
 <div class="logo">
-	<a href="/"><img src="<?= $config->urls->templates?>app/assets/images/oasis-children_logo.svg" alt="Oasis Day Camp Logo" /></a>
+	<a href="/"><img src="<?= $config->urls->templates?>images/oasis-children_logo.svg" alt="Oasis Day Camp Logo" /></a>
 	<a href="/" class="backToWebsite">&laquo; back to website</a>
 </div>
 <!-- end logo-->
 
 <div id="menu"> <a href="#" id="playToggle" class="pause">Pause Slide-Show</a>
-	<p><img src="<?= $config->urls->templates?>app/assets/images/fsgallery/selectGallery.gif" alt="Select Photo Gallery" /></p>
+	<p><img src="<?= $config->urls->templates?>images/fsgallery/selectGallery.gif" alt="Select Photo Gallery" /></p>
 	<ul>
 		<?php foreach ($page->fs_albums as $album): ?>
 		<li><a href="<?= $album->flickr_url?>"><?= $album->title?></a></li>
@@ -174,7 +174,7 @@ a.backToWebsite {
 <script>
 
         // load the theme
-        Galleria.loadTheme('<?= $config->urls->templates?>app/temp/scripts/fsgallery/js/themes/fullscreen/galleria.fullscreen.min.js');
+        Galleria.loadTheme('<?= $config->urls->templates?>scripts/fsgallery/js/themes/fullscreen/galleria.fullscreen.min.js');
 
         // create a flickr instance
         var flickr = new Galleria.Flickr();
