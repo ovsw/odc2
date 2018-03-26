@@ -1,4 +1,7 @@
-// Step 1: Create jQuery plugin
+// This handles the events pop-up on a camp's pages.
+// uses cookie to only auto-trigger the events pop-up once per day
+
+// Create jQuery plugin
 // ============================
 
 $.fn.fancyMorph = function( opts ) {
@@ -37,15 +40,12 @@ $.fn.fancyMorph = function( opts ) {
       self.start();
     });
 
-    // alert(Cookies.get('odcpop'));
-
-    // if (Cookies.get('odcpop') == undefined){
-    //   Cookies.set('odcpop', '1', { expires: 1});
-    //   $btn.trigger('click');
-    //   console.log('no cookie, setting it.');
-    //  }else{
-    //    console.log('cookie found');
-    //  }
+    
+    // Check for cookie, if not present, trigger pop-up and set it
+    if (Cookies.get('odcpop') == undefined){
+      Cookies.set('odcpop', '1', { expires: 1});
+      $btn.trigger('click');
+     }
   };
 
   Morphing.prototype.start = function() {

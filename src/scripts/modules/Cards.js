@@ -33,6 +33,7 @@ function showOverlay() {
   $('.overlay').show();
   $('.footer__wrapper,.large-hero').addClass('hideonMobile');
 }
+
 function hideOverlay(){
   $('.overlay').hide();
   $('.footer__wrapper,.large-hero').removeClass('hideonMobile');  

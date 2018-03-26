@@ -1,9 +1,13 @@
+//////////////////////
+// fixes for iOS
+//////////////////////
+
 function iOSversion() {
     
   if(navigator.userAgent.match(/Windows Phone/i)){
     // There is some iOS in Windows Phone...
     // https://msdn.microsoft.com/en-us/library/hh869301(v=vs.85).aspx
-   return false;
+    return false;
   }
 
   if (/iP(hone|od|ad)/.test(navigator.platform)) {
@@ -32,7 +36,7 @@ function iOSversion() {
           videoBgEl.parentNode.removeChild(videoBgEl);
         }
       }else{
-      // alert('not iOS!');
+        // alert('not iOS!');
         videoBgEl.setAttribute("style","display: block;");
         //largeHeroEl.style.background = "url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAF0lEQVQIW2NkYGD4z8DAwMgAI0AMDA4AI3EBBCKrOnQAAAAASUVORK5CYII=')";   
         largeHeroEl.style.background = "none";   

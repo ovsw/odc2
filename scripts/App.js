@@ -98,177 +98,60 @@ module.exports = function(src) {
 
 /***/ }),
 /* 1 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_script_loader_modules_Ios_fixes__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_script_loader_modules_Ios_fixes___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_script_loader_modules_Ios_fixes__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_script_loader_modules_Slideshow__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_script_loader_modules_Slideshow___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_script_loader_modules_Slideshow__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_script_loader_modules_Nav_js__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_script_loader_modules_Nav_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_script_loader_modules_Nav_js__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_script_loader_modules_Hero_js__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_script_loader_modules_Hero_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_script_loader_modules_Hero_js__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_script_loader_modules_Cards_js__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_script_loader_modules_Cards_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_script_loader_modules_Cards_js__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_script_loader_modules_newsletter_pop_js__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_script_loader_modules_newsletter_pop_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_script_loader_modules_newsletter_pop_js__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_script_loader_modules_Faqs_js__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_script_loader_modules_Faqs_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_script_loader_modules_Faqs_js__);
 
 
-var _IosFixes = __webpack_require__(2);
 
-var _IosFixes2 = _interopRequireDefault(_IosFixes);
 
-var _Slideshow = __webpack_require__(3);
 
-var _Slideshow2 = _interopRequireDefault(_Slideshow);
 
-__webpack_require__(4);
 
-__webpack_require__(6);
 
-__webpack_require__(8);
 
-__webpack_require__(10);
+$(document).ready(function() {
 
-__webpack_require__(12);
+  Slideshows.init();
+  Nav.init();
 
-var _jsCookie = __webpack_require__(14);
-
-var _jsCookie2 = _interopRequireDefault(_jsCookie);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-//import {TimelineLite,TweenLite} from "gsap";
-//import Person from './modules/Person';
-$(document).ready(function () {
-
-  // var john = new Person("John Doe", "blue");
-  // john.greet(); 
-
-  // var jane = new Person("Jane Smith", "green");
-  // jane.greet();
-
-  $("a.scrollToTop").click(function (e) {
+  // scroll to top
+  $("a.scrollToTop").click(function(e) {
     e.preventDefault();
     $("html, body").animate({ scrollTop: 0 }, "slow");
   });
+
 });
 
-// scroll to top
+
+
 
 /***/ }),
 /* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-
-
-function iOSversion() {
-
-  if (navigator.userAgent.match(/Windows Phone/i)) {
-    // There is some iOS in Windows Phone...
-    // https://msdn.microsoft.com/en-us/library/hh869301(v=vs.85).aspx
-    return false;
-  }
-
-  if (/iP(hone|od|ad)/.test(navigator.platform)) {
-    // supports iOS 2.0 and later: <http://bit.ly/TJjs1V>
-    var v = navigator.appVersion.match(/OS (\d+)_(\d+)_?(\d+)?/);
-    var ver = [parseInt(v[1], 10), parseInt(v[2], 10), parseInt(v[3] || 0, 10)];
-    return ver;
-  }
-}
-
-var version = iOSversion();
-var videoBgEl = document.querySelector('.large-hero__video-bg');
-var largeHeroEl = document.querySelector('.large-hero');
-
-if (videoBgEl !== undefined && videoBgEl !== null) {
-
-  //alert(version);
-
-  if (version !== undefined && version !== null) {
-    if (version[0] >= 10) {
-      //alert(version + ' - This is running iOS 10 or later.');
-      videoBgEl.style.display = 'block';
-      largeHeroEl.style.background = "none";
-    } else {
-      //alert('not running later than 10 ' + version[0]);
-      videoBgEl.parentNode.removeChild(videoBgEl);
-    }
-  } else {
-    // alert('not iOS!');
-    videoBgEl.setAttribute("style", "display: block;");
-    //largeHeroEl.style.background = "url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAF0lEQVQIW2NkYGD4z8DAwMgAI0AMDA4AI3EBBCKrOnQAAAAASUVORK5CYII=')";   
-    largeHeroEl.style.background = "none";
-  }
-}
+__webpack_require__(0)(__webpack_require__(3))
 
 /***/ }),
 /* 3 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-
-
-function slideshow(slidesSel) {
-  var fadeInDur = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
-  var fadeOutDur = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 1;
-  var singleSlide = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
-
-  // set properties
-  var singleSlide = singleSlide;
-  if (singleSlide == false) {
-    var repeat = -1;
-  } else {
-    var repeat = 0;
-  }
-  var slideEls = $(slidesSel);
-  //var fadeInDur = fadeInDur;
-  //var fadeOutDur = fadeOutDur;
-  var masterTl = new TimelineLite({ repeat: repeat });
-  var tlArray = []; // array to store the timeline of each slide
-
-  // create a timeline for each slide
-  $(slideEls).each(function (i, slideEl) {
-    var slideTl = new TimelineLite();
-
-    if (singleSlide) {
-      // do single animation in
-      slideTl = animateSingleSlide(slideEl, slideTl, fadeInDur, fadeOutDur);
-    } else {
-      // animate the slide as part of the slideshow
-      slideTl = animateSlide(slideEl, slideTl, fadeInDur);
-    }
-
-    // add it to the collection of timelines to be added to master timeline
-    tlArray.push(slideTl);
-  });
-
-  // add all the individual timelines to the master one
-  masterTl.add(tlArray, 0, "sequence"); // optionally add stagger as last parameter
-}
-
-function animateSlide(slideEl, slideTl, fadeInDur, fadeOutDur) {
-  // complete animation for one slide
-  slideTl.to(slideEl, fadeInDur, // fade in dur.
-  {
-    // ease: Bounce.easeOut,
-    autoAlpha: 0.8
-  }).to(slideEl, fadeOutDur, // fade out dur.
-  {
-    // ease: Bounce.easeOut,
-    autoAlpha: 0
-  }, '+=2' // time to stay visible
-  );
-  return slideTl;
-}
-
-function animateSingleSlide(slideEl, slideTl, fadeInDur) {
-  // complete animation for one slide
-  slideTl.to(slideEl, fadeInDur, // fade in dur.
-  {
-    // ease: Bounce.easeOut,
-    autoAlpha: 0.8
-  });
-  return slideTl;
-}
-
-// slideshow
-if ($('.text-slideshow__slide').length > 1) {
-  var hpSlideshow = new slideshow('.text-slideshow__slide', 3, 1);
-} else {
-  var hpSlideshow = new slideshow('.text-slideshow__slide', 3, 1, true);
-}
+module.exports = "//////////////////////\r\n// fixes for iOS\r\n//////////////////////\r\n\r\nfunction iOSversion() {\r\n    \r\n  if(navigator.userAgent.match(/Windows Phone/i)){\r\n    // There is some iOS in Windows Phone...\r\n    // https://msdn.microsoft.com/en-us/library/hh869301(v=vs.85).aspx\r\n    return false;\r\n  }\r\n\r\n  if (/iP(hone|od|ad)/.test(navigator.platform)) {\r\n    // supports iOS 2.0 and later: <http://bit.ly/TJjs1V>\r\n    var v = (navigator.appVersion).match(/OS (\\d+)_(\\d+)_?(\\d+)?/);\r\n    var ver = [parseInt(v[1], 10), parseInt(v[2], 10), parseInt(v[3] || 0, 10)];\r\n    return ver;\r\n  }\r\n}\r\n\r\n  var version = iOSversion();\r\n  var videoBgEl = document.querySelector('.large-hero__video-bg');\r\n  var largeHeroEl = document.querySelector('.large-hero');\r\n\r\n  if (videoBgEl !== undefined && videoBgEl !== null) {\r\n    \r\n      //alert(version);\r\n      \r\n      if (version !== undefined && version !== null) {\r\n        if (version[0] >= 10) {\r\n          //alert(version + ' - This is running iOS 10 or later.');\r\n          videoBgEl.style.display = 'block';\r\n          largeHeroEl.style.background = \"none\";\r\n        }else{\r\n          //alert('not running later than 10 ' + version[0]);\r\n          videoBgEl.parentNode.removeChild(videoBgEl);\r\n        }\r\n      }else{\r\n        // alert('not iOS!');\r\n        videoBgEl.setAttribute(\"style\",\"display: block;\");\r\n        //largeHeroEl.style.background = \"url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAF0lEQVQIW2NkYGD4z8DAwMgAI0AMDA4AI3EBBCKrOnQAAAAASUVORK5CYII=')\";   \r\n        largeHeroEl.style.background = \"none\";   \r\n      }\r\n\r\n  }"
 
 /***/ }),
 /* 4 */
@@ -280,7 +163,7 @@ __webpack_require__(0)(__webpack_require__(5))
 /* 5 */
 /***/ (function(module, exports) {
 
-module.exports = "'use strict';\n\n// mobile menu toggle\n$('.header__menu-icon').click(function () {\n  $('.top-nav').toggleClass('top-nav__visible');\n  $(this).toggleClass('header__menu-icon--close-x');\n});\n\n// mobile menu sub-items toggle\n$('.top-nav__submenu-button').click(function () {\n  var menuItem = $(this).parent();\n\n  if (menuItem.hasClass('submenu-open')) {\n    $('.top-nav__has-children').removeClass('submenu-open');\n  } else {\n    $('.top-nav__has-children').removeClass('submenu-open');\n    menuItem.addClass('submenu-open');\n  }\n});"
+module.exports = "var Slideshows = {\r\n  \r\n  init: function () {\r\n\r\n    if ($('.text-slideshow__slide').length > 1) {\r\n      this.hpSlideshow = this.makeSlideshow('.text-slideshow__slide', 3, 1); \r\n    }else{\r\n      this.hpSlideshow = this.makeSlideshow('.text-slideshow__slide', 3, 1, true);\r\n    }\r\n\r\n  },\r\n\r\n\r\n  makeSlideshow : function (slidesSel, fadeInDur = 1, fadeOutDur = 1, singleSlide = false) {\r\n    // set properties\r\n\r\n    var repeat = 0;\r\n    var singleSlideSetting = singleSlide;\r\n\r\n    if (singleSlideSetting == false) {\r\n      repeat = -1;\r\n    }\r\n\r\n    var slideEls = $(slidesSel);\r\n    //var fadeInDur = fadeInDur;\r\n    //var fadeOutDur = fadeOutDur;\r\n    var masterTl = new TimelineLite({repeat: repeat});\r\n    var tlArray = []; // array to store the timeline of each slide\r\n  \r\n    // create a timeline for each slide\r\n    $(slideEls).each(function(i,slideEl){\r\n      var slideTl = new TimelineLite();\r\n  \r\n      if (singleSlide) {\r\n        // do single animation in\r\n        slideTl = Slideshows.animateSingleSlide( slideEl, slideTl, fadeInDur, fadeOutDur );\r\n      }else{\r\n        // animate the slide as part of the slideshow\r\n        slideTl = Slideshows.animateSlide( slideEl, slideTl, fadeInDur );\r\n      }\r\n  \r\n      // add it to the collection of timelines to be added to master timeline\r\n      tlArray.push(slideTl);\r\n    });\r\n  \r\n    // add all the individual timelines to the master one\r\n    masterTl.add(tlArray , 0, \"sequence\"); // optionally add stagger as last parameter\r\n  },\r\n\r\n  animateSlide : function ( slideEl, slideTl, fadeInDur, fadeOutDur ) {\r\n    // complete animation for one slide\r\n    slideTl.to(slideEl,\r\n       fadeInDur, // fade in dur.\r\n      {\r\n      // ease: Bounce.easeOut,\r\n      autoAlpha: 0.8\r\n      }\r\n    ).to(slideEl,\r\n       fadeOutDur, // fade out dur.\r\n      {\r\n      // ease: Bounce.easeOut,\r\n      autoAlpha: 0\r\n      }, '+=2' // time to stay visible\r\n    );\r\n    return slideTl;\r\n  },\r\n\r\n  animateSingleSlide : function ( slideEl, slideTl, fadeInDur ) {\r\n    // complete animation for one slide\r\n    slideTl.to(slideEl,\r\n       fadeInDur, // fade in dur.\r\n      {\r\n      // ease: Bounce.easeOut,\r\n      autoAlpha: 0.8\r\n      }\r\n    );\r\n    return slideTl;\r\n  }\r\n\r\n};\r\n"
 
 /***/ }),
 /* 6 */
@@ -292,7 +175,7 @@ __webpack_require__(0)(__webpack_require__(7))
 /* 7 */
 /***/ (function(module, exports) {
 
-module.exports = "\"use strict\";\n\nconsole.log($(window).width() + \" \" + $(window).height());\n\n$('.large-hero--full-height').height($(window).height());"
+module.exports = "var Nav = {\r\n\r\n  init : function () {\r\n\r\n    this.cacheDom();\r\n\r\n    this.bindEvents();\r\n\r\n  },\r\n\r\n  cacheDom : function () {\r\n\r\n    this.$menuButton = $('.header__menu-icon');\r\n\r\n    this.$topNav = $('.top-nav');\r\n\r\n    this.$submenuButton = $('.top-nav__submenu-button');\r\n\r\n    this.$menuItemWithChildren = $('.top-nav__has-children');\r\n\r\n  },\r\n\r\n  bindEvents : function () {\r\n\r\n    this.$menuButton.on('click', this.toggleMainMenu);\r\n\r\n    this.$submenuButton.on('click', this.toggleSubItems);\r\n\r\n  },\r\n\r\n  toggleMainMenu : function () {\r\n    Nav.$topNav.toggleClass('top-nav__visible');\r\n    Nav.$menuButton.toggleClass('header__menu-icon--close-x');\r\n  },\r\n\r\n  toggleSubItems : function () {\r\n\r\n    var menuItem = $(this).parent();\r\n\r\n    if (menuItem.hasClass('submenu-open')) {\r\n      Nav.$menuItemWithChildren.removeClass('submenu-open');\r\n    }else{\r\n      Nav.$menuItemWithChildren.removeClass('submenu-open');\r\n      menuItem.addClass('submenu-open');\r\n    }\r\n\r\n  }\r\n\r\n};"
 
 /***/ }),
 /* 8 */
@@ -304,7 +187,7 @@ __webpack_require__(0)(__webpack_require__(9))
 /* 9 */
 /***/ (function(module, exports) {
 
-module.exports = "\"use strict\";\n\n// flip cards\n$(\".cards__card-wrapper\").not('.noflip').hover(function () {\n  TweenLite.to($(this).find(\".cards__card\"), 1.2, { rotationY: 180, ease: Back.easeOut });\n}, function () {\n  TweenLite.to($(this).find(\".cards__card\"), 1.2, { rotationY: 0, ease: Back.easeOut });\n});\n\n$('.tabs__button').click(function () {\n  var tab_id = $(this).attr('data-tab');\n  $(this).siblings().removeClass('active');\n  $(this).addClass('active');\n  $(this).parent().next('.tabs__content').children('.tabs__tab').removeClass('active');\n  $('.' + tab_id).addClass('active');\n});\n\n// show card details\n$('.with-lightbox').click(function () {\n  console.log($(this).index());\n  showOverlay();\n\n  $('.card-details__wrapper .card-details:eq(' + $(this).index() + ')').clone(true, true).appendTo('.overlay__content');\n\n  var video_url = $('.overlay__content .card-details__video').data(\"videourl\");\n\n  var vimeoId = getVimeoId(video_url);\n\n  if (vimeoId != false) {\n    $('.overlay__content .embed-container').html('<iframe src=\"https://player.vimeo.com/video/' + vimeoId + '?autoplay=0&title=0&byline=0&portrait=0\" frameborder=\"0\" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>');\n  }\n});\n\nfunction showOverlay() {\n  $('.overlay').show();\n  $('.footer__wrapper,.large-hero').addClass('hideonMobile');\n}\nfunction hideOverlay() {\n  $('.overlay').hide();\n  $('.footer__wrapper,.large-hero').removeClass('hideonMobile');\n}\n\nfunction getVimeoId(url) {\n\n  // Look for a string with 'vimeo', then whatever, then a\n  // forward slash and a group of digits.\n  var match = /vimeo.*\\/(\\d+)/i.exec(url);\n\n  // If the match isn't null (i.e. it matched)\n  if (match) {\n    // The grouped/matched digits from the regex\n    return match[1];\n  } else {\n    return false;\n  }\n}\n\n// close card details\n$('.card-details__back-btn').click(function (e) {\n  e.preventDefault();\n  $('.overlay__content .card-details').remove();\n  hideOverlay();\n});"
+module.exports = "//sets hero height to viewport height\r\n$('.large-hero--full-height').height($( window ).height());"
 
 /***/ }),
 /* 10 */
@@ -316,7 +199,7 @@ __webpack_require__(0)(__webpack_require__(11))
 /* 11 */
 /***/ (function(module, exports) {
 
-module.exports = "'use strict';\n\n// Step 1: Create jQuery plugin\n// ============================\n\n$.fn.fancyMorph = function (opts) {\n\n  var Morphing = function Morphing($btn, opts) {\n    var self = this;\n\n    self.opts = $.extend({\n      animationEffect: false,\n      infobar: false,\n      buttons: ['close'],\n      smallBtn: false,\n      touch: false,\n      baseClass: 'fancybox-morphing',\n      afterClose: function afterClose() {\n        self.close();\n      }\n    }, opts);\n\n    self.init($btn);\n  };\n\n  Morphing.prototype.init = function ($btn) {\n    var self = this;\n\n    self.$btn = $btn.addClass('morphing-btn');\n\n    self.$clone = $('<div class=\"morphing-btn-clone\" />').hide().insertAfter($btn);\n\n    // Add wrapping element and set initial width used for positioning\n    $btn.wrap('<span class=\"morphing-btn-wrap\"></span>').on('click', function (e) {\n      e.preventDefault();\n\n      self.start();\n    });\n\n    // alert(Cookies.get('odcpop'));\n\n    // if (Cookies.get('odcpop') == undefined){\n    //   Cookies.set('odcpop', '1', { expires: 1});\n    //   $btn.trigger('click');\n    //   console.log('no cookie, setting it.');\n    //  }else{\n    //    console.log('cookie found');\n    //  }\n  };\n\n  Morphing.prototype.start = function () {\n    var self = this;\n\n    if (self.$btn.hasClass('morphing-btn_circle')) {\n      return;\n    }\n\n    // Set initial width, because it is not possible to start CSS transition from \"auto\"\n    self.$btn.width(self.$btn.width()).parent().width(self.$btn.outerWidth());\n\n    self.$btn.off('.fm').on(\"transitionend.fm webkitTransitionEnd.fm oTransitionEnd.fm MSTransitionEnd.fm\", function (e) {\n\n      if (e.originalEvent.propertyName === 'width') {\n        self.$btn.off('.fm');\n\n        self.animateBg();\n      }\n    }).addClass('morphing-btn_circle');\n  };\n\n  Morphing.prototype.animateBg = function () {\n    var self = this;\n\n    self.scaleBg();\n\n    self.$clone.show();\n\n    // Trigger repaint\n    self.$clone[0].offsetHeight;\n\n    self.$clone.off('.fm').on(\"transitionend.fm webkitTransitionEnd.fm oTransitionEnd.fm MSTransitionEnd.fm\", function (e) {\n      self.$clone.off('.fm');\n\n      self.complete();\n    }).addClass('morphing-btn-clone_visible');\n  };\n\n  Morphing.prototype.scaleBg = function () {\n    var self = this;\n\n    var $clone = self.$clone;\n    var scale = self.getScale();\n    var $btn = self.$btn;\n    var pos = $btn.offset();\n\n    $clone.css({\n      top: pos.top + $btn.outerHeight() * 0.5 - $btn.outerHeight() * scale * 0.5 - $(window).scrollTop(),\n      left: pos.left + $btn.outerWidth() * 0.5 - $btn.outerWidth() * scale * 0.5 - $(window).scrollLeft(),\n      width: $btn.outerWidth() * scale,\n      height: $btn.outerHeight() * scale,\n      transform: 'scale(' + 1 / scale + ')'\n    });\n  };\n\n  Morphing.prototype.getScale = function () {\n    var $btn = this.$btn,\n        radius = $btn.outerWidth() * 0.5,\n        left = $btn.offset().left + radius - $(window).scrollLeft(),\n        top = $btn.offset().top + radius - $(window).scrollTop(),\n        windowW = $(window).width(),\n        windowH = $(window).height();\n\n    var maxDistHor = left > windowW / 2 ? left : windowW - left,\n        maxDistVert = top > windowH / 2 ? top : windowH - top;\n\n    return Math.ceil(Math.sqrt(Math.pow(maxDistHor, 2) + Math.pow(maxDistVert, 2)) / radius);\n  };\n\n  Morphing.prototype.complete = function () {\n    var self = this;\n    var $btn = self.$btn;\n\n    $.fancybox.open({ src: $btn.data('src') || $btn.attr('href') }, self.opts);\n\n    $(window).on('resize.fm', function () {\n      //self.scaleBg();\n    });\n  };\n\n  Morphing.prototype.close = function () {\n    var self = this;\n    var $clone = self.$clone;\n\n    self.scaleBg();\n\n    $clone.one('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd', function (e) {\n      $clone.hide();\n\n      self.$btn.removeClass('morphing-btn_circle');\n    });\n\n    $clone.removeClass('morphing-btn-clone_visible');\n\n    $(window).off('resize.fm');\n  };\n\n  // Init\n  this.each(function () {\n    var $this = $(this);\n\n    if (!$this.data(\"morphing\")) {\n      $this.data(\"morphing\", new Morphing($this, opts));\n    }\n  });\n\n  return this;\n};\n\n$(\"[data-morphing]\").fancyMorph({\n  // hash : 'morphing'\n});"
+module.exports = "// flip cards\r\n$(\".cards__card-wrapper\").not('.noflip').hover(\r\n  function() {TweenLite.to($(this).find(\".cards__card\"), 1.2, {rotationY:180, ease:Back.easeOut});},\r\n  function() {TweenLite.to($(this).find(\".cards__card\"), 1.2, {rotationY:0, ease:Back.easeOut});}\r\n);\r\n\r\n$('.tabs__button').click( function(){\r\n  var tab_id = $(this).attr('data-tab');\r\n  $(this).siblings().removeClass('active');\r\n  $(this).addClass('active');\r\n  $(this).parent().next('.tabs__content').children('.tabs__tab').removeClass('active');\r\n  $('.' + tab_id).addClass('active');\r\n\r\n});\r\n\r\n// show card details\r\n$('.with-lightbox').click(function(){\r\n  console.log($(this).index());\r\n  showOverlay();\r\n\r\n  $('.card-details__wrapper .card-details:eq('+ $(this).index() +')').clone(true, true).appendTo( '.overlay__content' );\r\n\r\n  var video_url = $('.overlay__content .card-details__video').data(\"videourl\");\r\n\r\n  var vimeoId = getVimeoId(video_url);\r\n\r\n  if (vimeoId != false) {\r\n    $('.overlay__content .embed-container').html('<iframe src=\"https://player.vimeo.com/video/'+ vimeoId +'?autoplay=0&title=0&byline=0&portrait=0\" frameborder=\"0\" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>');\r\n  }\r\n});\r\n\r\nfunction showOverlay() {\r\n  $('.overlay').show();\r\n  $('.footer__wrapper,.large-hero').addClass('hideonMobile');\r\n}\r\n\r\nfunction hideOverlay(){\r\n  $('.overlay').hide();\r\n  $('.footer__wrapper,.large-hero').removeClass('hideonMobile');  \r\n}\r\n\r\nfunction getVimeoId( url ) {\r\n\r\n  // Look for a string with 'vimeo', then whatever, then a\r\n  // forward slash and a group of digits.\r\n  var match = /vimeo.*\\/(\\d+)/i.exec( url );\r\n\r\n  // If the match isn't null (i.e. it matched)\r\n  if ( match ) {\r\n    // The grouped/matched digits from the regex\r\n    return match[1];\r\n  }else{\r\n    return false;\r\n  }\r\n}\r\n\r\n// close card details\r\n$('.card-details__back-btn').click(function(e){\r\n  e.preventDefault();\r\n  $('.overlay__content .card-details').remove();\r\n  hideOverlay();\r\n});\r\n"
 
 /***/ }),
 /* 12 */
@@ -328,183 +211,19 @@ __webpack_require__(0)(__webpack_require__(13))
 /* 13 */
 /***/ (function(module, exports) {
 
-module.exports = "'use strict';\n\n// toggle FAQs\n\n$('.mx__faqs__answer').hide();\n$('.mx__faqs__question').click(function () {\n  var toggle = $(this).nextUntil('.mx__faqs__question');\n  toggle.slideToggle();\n  $('.mx__faqs__answer').not(toggle).slideUp();\n});"
+module.exports = "// This handles the events pop-up on a camp's pages.\r\n// uses cookie to only auto-trigger the events pop-up once per day\r\n\r\n// Create jQuery plugin\r\n// ============================\r\n\r\n$.fn.fancyMorph = function( opts ) {\r\n\r\n  var Morphing = function( $btn, opts ) {\r\n    var self = this;\r\n\r\n    self.opts = $.extend({\r\n      animationEffect : false,\r\n      infobar    : false,\r\n      buttons    : ['close'],\r\n      smallBtn   : false,\r\n      touch      : false,\r\n      baseClass  : 'fancybox-morphing',\r\n      afterClose : function() {\r\n        self.close();\r\n      }\r\n    }, opts);\r\n\r\n    self.init( $btn );\r\n  };\r\n\r\n  Morphing.prototype.init = function( $btn ) {\r\n    var self = this;\r\n\r\n    self.$btn = $btn.addClass('morphing-btn');\r\n\r\n    self.$clone = $('<div class=\"morphing-btn-clone\" />')\r\n      .hide()\r\n      .insertAfter( $btn );\r\n\r\n    // Add wrapping element and set initial width used for positioning\r\n    $btn.wrap( '<span class=\"morphing-btn-wrap\"></span>' ).on('click', function(e) {\r\n      e.preventDefault();\r\n\r\n      self.start();\r\n    });\r\n\r\n    \r\n    // Check for cookie, if not present, trigger pop-up and set it\r\n    if (Cookies.get('odcpop') == undefined){\r\n      Cookies.set('odcpop', '1', { expires: 1});\r\n      $btn.trigger('click');\r\n     }\r\n  };\r\n\r\n  Morphing.prototype.start = function() {\r\n    var self = this;\r\n\r\n    if ( self.$btn.hasClass('morphing-btn_circle') ) {\r\n      return;\r\n    }\r\n\r\n    // Set initial width, because it is not possible to start CSS transition from \"auto\"\r\n    self.$btn.width( self.$btn.width() ).parent().width( self.$btn.outerWidth() );\r\n\r\n    self.$btn.off('.fm').on(\"transitionend.fm webkitTransitionEnd.fm oTransitionEnd.fm MSTransitionEnd.fm\", function(e) {\r\n\r\n      if ( e.originalEvent.propertyName === 'width' ) {\r\n        self.$btn.off('.fm');\r\n\r\n        self.animateBg();\r\n      }\r\n\r\n    }).addClass('morphing-btn_circle');\r\n\r\n  };\r\n\r\n  Morphing.prototype.animateBg = function() {\r\n    var self = this;\r\n\r\n    self.scaleBg();\r\n\r\n    self.$clone.show();\r\n\r\n    // Trigger repaint\r\n    self.$clone[0].offsetHeight;\r\n\r\n    self.$clone.off('.fm').on(\"transitionend.fm webkitTransitionEnd.fm oTransitionEnd.fm MSTransitionEnd.fm\", function(e) {\r\n      self.$clone.off('.fm');\r\n\r\n      self.complete();\r\n\r\n    }).addClass('morphing-btn-clone_visible');\r\n  };\r\n\r\n  Morphing.prototype.scaleBg = function() {\r\n    var self = this;\r\n\r\n    var $clone = self.$clone;\r\n    var scale  = self.getScale();\r\n    var $btn   = self.$btn;\r\n    var pos    = $btn.offset();\r\n\r\n    $clone.css({\r\n      top       : pos.top  + $btn.outerHeight() * 0.5 - ( $btn.outerHeight() * scale * 0.5 ) - $(window).scrollTop(),\r\n      left      : pos.left + $btn.outerWidth()  * 0.5 - ( $btn.outerWidth()  * scale * 0.5 ) - $(window).scrollLeft(),\r\n      width     : $btn.outerWidth()  * scale,\r\n      height    : $btn.outerHeight() * scale,\r\n      transform : 'scale(' + ( 1 / scale ) + ')'\r\n    });\r\n  };\r\n\r\n  Morphing.prototype.getScale = function() {\r\n    var $btn    = this.$btn,\r\n        radius  = $btn.outerWidth() * 0.5,\r\n        left    = $btn.offset().left + radius - $(window).scrollLeft(),\r\n        top     = $btn.offset().top  + radius - $(window).scrollTop(),\r\n        windowW = $(window).width(),\r\n        windowH = $(window).height();\r\n\r\n    var maxDistHor  = ( left > windowW / 2 ) ? left : ( windowW - left ),\r\n        maxDistVert = ( top > windowH / 2 )  ? top  : ( windowH - top );\r\n\r\n    return Math.ceil(Math.sqrt( Math.pow( maxDistHor, 2 ) + Math.pow( maxDistVert, 2 ) ) / radius );\r\n  };\r\n\r\n  Morphing.prototype.complete = function() {\r\n    var self = this;\r\n    var $btn = self.$btn;\r\n\r\n    $.fancybox.open({ src : $btn.data('src') || $btn.attr('href') }, self.opts);\r\n\r\n    $(window).on('resize.fm', function() {\r\n      //self.scaleBg();\r\n    });\r\n  };\r\n\r\n  Morphing.prototype.close = function() {\r\n    var self   = this;\r\n    var $clone = self.$clone;\r\n\r\n    self.scaleBg();\r\n\r\n    $clone.one('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd', function(e) {\r\n      $clone.hide();\r\n\r\n      self.$btn.removeClass('morphing-btn_circle');\r\n    });\r\n\r\n    $clone.removeClass('morphing-btn-clone_visible');\r\n\r\n    $(window).off('resize.fm');\r\n  };\r\n\r\n  // Init\r\n  this.each(function() {\r\n    var $this = $(this);\r\n\r\n    if ( !$this.data(\"morphing\") ) {\r\n      $this.data( \"morphing\", new Morphing( $this, opts ) );\r\n    }\r\n\r\n  });\r\n\r\n  return this;\r\n};\r\n\r\n$(\"[data-morphing]\").fancyMorph({\r\n  // hash : 'morphing'\r\n});"
 
 /***/ }),
 /* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;
+__webpack_require__(0)(__webpack_require__(15))
 
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+/***/ }),
+/* 15 */
+/***/ (function(module, exports) {
 
-/*!
- * JavaScript Cookie v2.2.0
- * https://github.com/js-cookie/js-cookie
- *
- * Copyright 2006, 2015 Klaus Hartl & Fagner Brack
- * Released under the MIT license
- */
-;(function (factory) {
-	var registeredInModuleLoader = false;
-	if (true) {
-		!(__WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
-				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
-				(__WEBPACK_AMD_DEFINE_FACTORY__.call(exports, __webpack_require__, exports, module)) :
-				__WEBPACK_AMD_DEFINE_FACTORY__),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-		registeredInModuleLoader = true;
-	}
-	if (( false ? 'undefined' : _typeof(exports)) === 'object') {
-		module.exports = factory();
-		registeredInModuleLoader = true;
-	}
-	if (!registeredInModuleLoader) {
-		var OldCookies = window.Cookies;
-		var api = window.Cookies = factory();
-		api.noConflict = function () {
-			window.Cookies = OldCookies;
-			return api;
-		};
-	}
-})(function () {
-	function extend() {
-		var i = 0;
-		var result = {};
-		for (; i < arguments.length; i++) {
-			var attributes = arguments[i];
-			for (var key in attributes) {
-				result[key] = attributes[key];
-			}
-		}
-		return result;
-	}
-
-	function init(converter) {
-		function api(key, value, attributes) {
-			var result;
-			if (typeof document === 'undefined') {
-				return;
-			}
-
-			// Write
-
-			if (arguments.length > 1) {
-				attributes = extend({
-					path: '/'
-				}, api.defaults, attributes);
-
-				if (typeof attributes.expires === 'number') {
-					var expires = new Date();
-					expires.setMilliseconds(expires.getMilliseconds() + attributes.expires * 864e+5);
-					attributes.expires = expires;
-				}
-
-				// We're using "expires" because "max-age" is not supported by IE
-				attributes.expires = attributes.expires ? attributes.expires.toUTCString() : '';
-
-				try {
-					result = JSON.stringify(value);
-					if (/^[\{\[]/.test(result)) {
-						value = result;
-					}
-				} catch (e) {}
-
-				if (!converter.write) {
-					value = encodeURIComponent(String(value)).replace(/%(23|24|26|2B|3A|3C|3E|3D|2F|3F|40|5B|5D|5E|60|7B|7D|7C)/g, decodeURIComponent);
-				} else {
-					value = converter.write(value, key);
-				}
-
-				key = encodeURIComponent(String(key));
-				key = key.replace(/%(23|24|26|2B|5E|60|7C)/g, decodeURIComponent);
-				key = key.replace(/[\(\)]/g, escape);
-
-				var stringifiedAttributes = '';
-
-				for (var attributeName in attributes) {
-					if (!attributes[attributeName]) {
-						continue;
-					}
-					stringifiedAttributes += '; ' + attributeName;
-					if (attributes[attributeName] === true) {
-						continue;
-					}
-					stringifiedAttributes += '=' + attributes[attributeName];
-				}
-				return document.cookie = key + '=' + value + stringifiedAttributes;
-			}
-
-			// Read
-
-			if (!key) {
-				result = {};
-			}
-
-			// To prevent the for loop in the first place assign an empty array
-			// in case there are no cookies at all. Also prevents odd result when
-			// calling "get()"
-			var cookies = document.cookie ? document.cookie.split('; ') : [];
-			var rdecode = /(%[0-9A-Z]{2})+/g;
-			var i = 0;
-
-			for (; i < cookies.length; i++) {
-				var parts = cookies[i].split('=');
-				var cookie = parts.slice(1).join('=');
-
-				if (!this.json && cookie.charAt(0) === '"') {
-					cookie = cookie.slice(1, -1);
-				}
-
-				try {
-					var name = parts[0].replace(rdecode, decodeURIComponent);
-					cookie = converter.read ? converter.read(cookie, name) : converter(cookie, name) || cookie.replace(rdecode, decodeURIComponent);
-
-					if (this.json) {
-						try {
-							cookie = JSON.parse(cookie);
-						} catch (e) {}
-					}
-
-					if (key === name) {
-						result = cookie;
-						break;
-					}
-
-					if (!key) {
-						result[name] = cookie;
-					}
-				} catch (e) {}
-			}
-
-			return result;
-		}
-
-		api.set = api;
-		api.get = function (key) {
-			return api.call(api, key);
-		};
-		api.getJSON = function () {
-			return api.apply({
-				json: true
-			}, [].slice.call(arguments));
-		};
-		api.defaults = {};
-
-		api.remove = function (key, attributes) {
-			api(key, '', extend(attributes, {
-				expires: -1
-			}));
-		};
-
-		api.withConverter = init;
-
-		return api;
-	}
-
-	return init(function () {});
-});
+module.exports = "// toggle FAQs\r\n\r\n$('.mx__faqs__answer').hide();\r\n$('.mx__faqs__question').click(function() {\r\n  var toggle = $(this).nextUntil('.mx__faqs__question');\r\n  toggle.slideToggle();\r\n  $('.mx__faqs__answer').not(toggle).slideUp();\r\n});"
 
 /***/ })
 /******/ ]);

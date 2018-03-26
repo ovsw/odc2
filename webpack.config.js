@@ -6,17 +6,17 @@ module.exports = {
 	output: {
 		path: path.resolve(__dirname, './scripts'),
 		filename: 'App.js'
-	},
-    module: {
-      rules: [
-        {
-        test: /\.js$/,
-        loader: 'babel-loader',
-        query: {
-          presets: ['es2015']
-        }
-          
-        }
-      ]
-    }
+	}
+  // module: {
+  //   rules: [
+  //     {
+  //     test: /\.js$/,
+  //     loader: 'babel-loader',
+  //     query: {
+  //       presets: ['es2015']
+  //     }
+        
+  //     }
+  //   ]
+  // }
 }

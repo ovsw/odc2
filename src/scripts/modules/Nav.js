@@ -1,17 +1,49 @@
-// mobile menu toggle
-$('.header__menu-icon').click(function(){
-  $('.top-nav').toggleClass('top-nav__visible');
-  $(this).toggleClass('header__menu-icon--close-x');
-});
+var Nav = {
 
-// mobile menu sub-items toggle
-$('.top-nav__submenu-button').click(function(){
-var menuItem = $(this).parent();
+  init : function () {
 
-if (menuItem.hasClass('submenu-open')) {
-  $('.top-nav__has-children').removeClass('submenu-open');
-}else{
-  $('.top-nav__has-children').removeClass('submenu-open');
-  menuItem.addClass('submenu-open');
-}
-});
+    this.cacheDom();
+
+    this.bindEvents();
+
+  },
+
+  cacheDom : function () {
+
+    this.$menuButton = $('.header__menu-icon');
+
+    this.$topNav = $('.top-nav');
+
+    this.$submenuButton = $('.top-nav__submenu-button');
+
+    this.$menuItemWithChildren = $('.top-nav__has-children');
+
+  },
+
+  bindEvents : function () {
+
+    this.$menuButton.on('click', this.toggleMainMenu);
+
+    this.$submenuButton.on('click', this.toggleSubItems);
+
+  },
+
+  toggleMainMenu : function () {
+    Nav.$topNav.toggleClass('top-nav__visible');
+    Nav.$menuButton.toggleClass('header__menu-icon--close-x');
+  },
+
+  toggleSubItems : function () {
+
+    var menuItem = $(this).parent();
+
+    if (menuItem.hasClass('submenu-open')) {
+      Nav.$menuItemWithChildren.removeClass('submenu-open');
+    }else{
+      Nav.$menuItemWithChildren.removeClass('submenu-open');
+      menuItem.addClass('submenu-open');
+    }
+
+  }
+
+};
